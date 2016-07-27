@@ -66,7 +66,7 @@ public class UsersApi {
     }
 
     /* Build call for apiV1UsersCreate */
-    private com.squareup.okhttp.Call apiV1UsersCreateCall(String name, String authenticator, List<Object> groups, String password, String description, String email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call apiV1UsersCreateCall(String name, String authenticator, List<String> groups, String password, String description, String email, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'name' is set
@@ -150,7 +150,7 @@ public class UsersApi {
      * @param email Email (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void apiV1UsersCreate(String name, String authenticator, List<Object> groups, String password, String description, String email) throws ApiException {
+    public void apiV1UsersCreate(String name, String authenticator, List<String> groups, String password, String description, String email) throws ApiException {
         apiV1UsersCreateWithHttpInfo(name, authenticator, groups, password, description, email);
     }
 
@@ -166,7 +166,7 @@ public class UsersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> apiV1UsersCreateWithHttpInfo(String name, String authenticator, List<Object> groups, String password, String description, String email) throws ApiException {
+    public ApiResponse<Void> apiV1UsersCreateWithHttpInfo(String name, String authenticator, List<String> groups, String password, String description, String email) throws ApiException {
         com.squareup.okhttp.Call call = apiV1UsersCreateCall(name, authenticator, groups, password, description, email, null, null);
         return apiClient.execute(call);
     }
@@ -184,7 +184,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call apiV1UsersCreateAsync(String name, String authenticator, List<Object> groups, String password, String description, String email, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call apiV1UsersCreateAsync(String name, String authenticator, List<String> groups, String password, String description, String email, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -514,7 +514,7 @@ public class UsersApi {
         return call;
     }
     /* Build call for apiV1UsersUpdate */
-    private com.squareup.okhttp.Call apiV1UsersUpdateCall(Integer id, String name, String description, String authenticator, String email, List<Object> groups, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call apiV1UsersUpdateCall(Integer id, String name, String description, String authenticator, String email, List<String> groups, String password, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'id' is set
@@ -585,7 +585,7 @@ public class UsersApi {
      * @param password Password for local authentication (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void apiV1UsersUpdate(Integer id, String name, String description, String authenticator, String email, List<Object> groups, String password) throws ApiException {
+    public void apiV1UsersUpdate(Integer id, String name, String description, String authenticator, String email, List<String> groups, String password) throws ApiException {
         apiV1UsersUpdateWithHttpInfo(id, name, description, authenticator, email, groups, password);
     }
 
@@ -602,7 +602,7 @@ public class UsersApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> apiV1UsersUpdateWithHttpInfo(Integer id, String name, String description, String authenticator, String email, List<Object> groups, String password) throws ApiException {
+    public ApiResponse<Void> apiV1UsersUpdateWithHttpInfo(Integer id, String name, String description, String authenticator, String email, List<String> groups, String password) throws ApiException {
         com.squareup.okhttp.Call call = apiV1UsersUpdateCall(id, name, description, authenticator, email, groups, password, null, null);
         return apiClient.execute(call);
     }
@@ -621,7 +621,7 @@ public class UsersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call apiV1UsersUpdateAsync(Integer id, String name, String description, String authenticator, String email, List<Object> groups, String password, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call apiV1UsersUpdateAsync(Integer id, String name, String description, String authenticator, String email, List<String> groups, String password, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

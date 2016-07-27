@@ -23,7 +23,7 @@ Deletes an existing Job item
 
 
 JobsApi apiInstance = new JobsApi();
-String idOrUri = "idOrUri_example"; // String | Resource Id or URI
+String idOrUri = "idOrUri_example"; // String | Job Id or URI
 try {
     apiInstance.apiV1JobsDestroy(idOrUri);
 } catch (ApiException e) {
@@ -36,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **idOrUri** | **String**| Resource Id or URI |
+ **idOrUri** | **String**| Job Id or URI |
 
 ### Return type
 
@@ -65,7 +65,7 @@ Fetches a single Job
 
 
 JobsApi apiInstance = new JobsApi();
-String idOrUri = "idOrUri_example"; // String | Resource Id or URI
+String idOrUri = "idOrUri_example"; // String | Job Id or URI
 try {
     Resource result = apiInstance.apiV1JobsShow(idOrUri);
     System.out.println(result);
@@ -79,7 +79,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **idOrUri** | **String**| Resource Id or URI |
+ **idOrUri** | **String**| Job Id or URI |
 
 ### Return type
 
@@ -111,8 +111,8 @@ Input and output resources are also created if they do not exist. Use Resource A
 
 JobsApi apiInstance = new JobsApi();
 String uri = "uri_example"; // String | Job URI
-List<Object> inputResources = null; // List<Object> | Input Resources
-List<Object> outputResources = null; // List<Object> | Output Resources
+List<Resource> inputResources = Arrays.asList(new Resource()); // List<Resource> | Input Resources
+List<Resource> outputResources = Arrays.asList(new Resource()); // List<Resource> | Output Resources
 try {
     apiInstance.apiV1JobsUpdate(uri, inputResources, outputResources);
 } catch (ApiException e) {
@@ -126,8 +126,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uri** | **String**| Job URI |
- **inputResources** | [**List&lt;Object&gt;**](Object.md)| Input Resources | [optional]
- **outputResources** | [**List&lt;Object&gt;**](Object.md)| Output Resources | [optional]
+ **inputResources** | [**List&lt;Resource&gt;**](Resource.md)| Input Resources | [optional]
+ **outputResources** | [**List&lt;Resource&gt;**](Resource.md)| Output Resources | [optional]
 
 ### Return type
 

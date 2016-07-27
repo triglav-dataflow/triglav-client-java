@@ -27,7 +27,7 @@ Creates a new User
 UsersApi apiInstance = new UsersApi();
 String name = "name_example"; // String | Name
 String authenticator = "authenticator_example"; // String | local or ldap.dena.local
-List<Object> groups = null; // List<Object> | Groups
+List<String> groups = Arrays.asList("groups_example"); // List<String> | Groups
 String password = "password_example"; // String | Password
 String description = "description_example"; // String | Description
 String email = "email_example"; // String | Email
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Name |
  **authenticator** | **String**| local or ldap.dena.local |
- **groups** | [**List&lt;Object&gt;**](Object.md)| Groups |
+ **groups** | [**List&lt;String&gt;**](String.md)| Groups |
  **password** | **String**| Password |
  **description** | **String**| Description | [optional]
  **email** | **String**| Email | [optional]
@@ -207,7 +207,7 @@ String name = "name_example"; // String | Name
 String description = "description_example"; // String | Description
 String authenticator = "authenticator_example"; // String | Local or ldap
 String email = "email_example"; // String | Email
-List<Object> groups = null; // List<Object> | Groups
+List<String> groups = Arrays.asList("groups_example"); // List<String> | Groups
 String password = "password_example"; // String | Password for local authentication
 try {
     apiInstance.apiV1UsersUpdate(id, name, description, authenticator, email, groups, password);
@@ -226,7 +226,7 @@ Name | Type | Description  | Notes
  **description** | **String**| Description | [optional]
  **authenticator** | **String**| Local or ldap | [optional]
  **email** | **String**| Email | [optional]
- **groups** | [**List&lt;Object&gt;**](Object.md)| Groups | [optional]
+ **groups** | [**List&lt;String&gt;**](String.md)| Groups | [optional]
  **password** | **String**| Password for local authentication | [optional]
 
 ### Return type

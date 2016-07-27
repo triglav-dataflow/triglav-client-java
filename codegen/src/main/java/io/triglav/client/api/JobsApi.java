@@ -116,7 +116,7 @@ public class JobsApi {
     /**
      * Deletes an existing Job item
      * 
-     * @param idOrUri Resource Id or URI (required)
+     * @param idOrUri Job Id or URI (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public void apiV1JobsDestroy(String idOrUri) throws ApiException {
@@ -126,7 +126,7 @@ public class JobsApi {
     /**
      * Deletes an existing Job item
      * 
-     * @param idOrUri Resource Id or URI (required)
+     * @param idOrUri Job Id or URI (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -138,7 +138,7 @@ public class JobsApi {
     /**
      * Deletes an existing Job item (asynchronously)
      * 
-     * @param idOrUri Resource Id or URI (required)
+     * @param idOrUri Job Id or URI (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -219,7 +219,7 @@ public class JobsApi {
     /**
      * Fetches a single Job
      * 
-     * @param idOrUri Resource Id or URI (required)
+     * @param idOrUri Job Id or URI (required)
      * @return Resource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -231,7 +231,7 @@ public class JobsApi {
     /**
      * Fetches a single Job
      * 
-     * @param idOrUri Resource Id or URI (required)
+     * @param idOrUri Job Id or URI (required)
      * @return ApiResponse&lt;Resource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -244,7 +244,7 @@ public class JobsApi {
     /**
      * Fetches a single Job (asynchronously)
      * 
-     * @param idOrUri Resource Id or URI (required)
+     * @param idOrUri Job Id or URI (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -276,7 +276,7 @@ public class JobsApi {
         return call;
     }
     /* Build call for apiV1JobsUpdate */
-    private com.squareup.okhttp.Call apiV1JobsUpdateCall(String uri, List<Object> inputResources, List<Object> outputResources, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call apiV1JobsUpdateCall(String uri, List<Resource> inputResources, List<Resource> outputResources, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'uri' is set
@@ -336,7 +336,7 @@ public class JobsApi {
      * @param outputResources Output Resources (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void apiV1JobsUpdate(String uri, List<Object> inputResources, List<Object> outputResources) throws ApiException {
+    public void apiV1JobsUpdate(String uri, List<Resource> inputResources, List<Resource> outputResources) throws ApiException {
         apiV1JobsUpdateWithHttpInfo(uri, inputResources, outputResources);
     }
 
@@ -349,7 +349,7 @@ public class JobsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> apiV1JobsUpdateWithHttpInfo(String uri, List<Object> inputResources, List<Object> outputResources) throws ApiException {
+    public ApiResponse<Void> apiV1JobsUpdateWithHttpInfo(String uri, List<Resource> inputResources, List<Resource> outputResources) throws ApiException {
         com.squareup.okhttp.Call call = apiV1JobsUpdateCall(uri, inputResources, outputResources, null, null);
         return apiClient.execute(call);
     }
@@ -364,7 +364,7 @@ public class JobsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call apiV1JobsUpdateAsync(String uri, List<Object> inputResources, List<Object> outputResources, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call apiV1JobsUpdateAsync(String uri, List<Resource> inputResources, List<Resource> outputResources, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

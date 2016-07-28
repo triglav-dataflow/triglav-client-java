@@ -1,11 +1,11 @@
-# MessageApi
+# MessagesApi
 
 All URIs are relative to *http://localhost/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fetchMessages**](MessageApi.md#fetchMessages) | **GET** /messages | 
-[**sendMessage**](MessageApi.md#sendMessage) | **POST** /messages | 
+[**fetchMessages**](MessagesApi.md#fetchMessages) | **GET** /messages | 
+[**sendMessage**](MessagesApi.md#sendMessage) | **POST** /messages | 
 
 
 <a name="fetchMessages"></a>
@@ -19,11 +19,21 @@ Fetches messages
 ### Example
 ```java
 // Import classes:
+//import io.triglav.client.ApiClient;
 //import io.triglav.client.ApiException;
-//import io.triglav.client.api.MessageApi;
+//import io.triglav.client.Configuration;
+//import io.triglav.client.auth.*;
+//import io.triglav.client.api.MessagesApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-MessageApi apiInstance = new MessageApi();
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+MessagesApi apiInstance = new MessagesApi();
 String resourceUri = "resourceUri_example"; // String | URI of Resource
 Integer offset = 56; // Integer | Offset ID for Messages to fetch from
 String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601
@@ -31,7 +41,7 @@ try {
     List<MessageEach> result = apiInstance.fetchMessages(resourceUri, offset, datetime);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MessageApi#fetchMessages");
+    System.err.println("Exception when calling MessagesApi#fetchMessages");
     e.printStackTrace();
 }
 ```
@@ -50,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -68,11 +78,21 @@ Enqueues a new message
 ### Example
 ```java
 // Import classes:
+//import io.triglav.client.ApiClient;
 //import io.triglav.client.ApiException;
-//import io.triglav.client.api.MessageApi;
+//import io.triglav.client.Configuration;
+//import io.triglav.client.auth.*;
+//import io.triglav.client.api.MessagesApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-MessageApi apiInstance = new MessageApi();
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+MessagesApi apiInstance = new MessagesApi();
 String resourceUri = "resourceUri_example"; // String | URI of Resource
 String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601
 MessageInput message = new MessageInput(); // MessageInput | Message to add
@@ -80,7 +100,7 @@ try {
     Message result = apiInstance.sendMessage(resourceUri, datetime, message);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MessageApi#sendMessage");
+    System.err.println("Exception when calling MessagesApi#sendMessage");
     e.printStackTrace();
 }
 ```
@@ -99,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

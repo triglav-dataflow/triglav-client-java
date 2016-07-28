@@ -38,11 +38,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for UserApi
+ * API tests for UsersApi
  */
-public class UserApiTest {
+public class UsersApiTest {
 
-    private final UserApi api = new UserApi();
+    private final UsersApi api = new UsersApi();
 
     
     /**
@@ -54,9 +54,9 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addUserTest() throws ApiException {
+    public void createUserTest() throws ApiException {
         UserInput user = null;
-        // User response = api.addUser(user);
+        // User response = api.createUser(user);
 
         // TODO: test validations
     }
@@ -70,9 +70,9 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteUserByIdTest() throws ApiException {
+    public void deleteUserTest() throws ApiException {
         Long id = null;
-        // api.deleteUserById(id);
+        // api.deleteUser(id);
 
         // TODO: test validations
     }
@@ -86,9 +86,9 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findUserByIdTest() throws ApiException {
+    public void getUserTest() throws ApiException {
         Long id = null;
-        // User response = api.findUserById(id);
+        // User response = api.getUser(id);
 
         // TODO: test validations
     }
@@ -102,8 +102,8 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findUsersTest() throws ApiException {
-        // List<UserEach> response = api.findUsers();
+    public void listUsersTest() throws ApiException {
+        // List<UserEach> response = api.listUsers();
 
         // TODO: test validations
     }
@@ -117,10 +117,10 @@ public class UserApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateUserByIdTest() throws ApiException {
+    public void updateUserTest() throws ApiException {
         Long id = null;
         UserInput user = null;
-        // User response = api.updateUserById(id, user);
+        // User response = api.updateUser(id, user);
 
         // TODO: test validations
     }

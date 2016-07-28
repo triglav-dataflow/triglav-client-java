@@ -71,9 +71,9 @@ public class AuthApiExample {
     public static void main(String[] args) {
         
         AuthApi apiInstance = new AuthApi();
-        AuthInput auth = new AuthInput(); // AuthInput | 
+        Credential credential = new Credential(); // Credential | 
         try {
-            AccessToken result = apiInstance.createToken(auth);
+            AccessTokenStruct result = apiInstance.createToken(credential);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthApi#createToken");
@@ -93,36 +93,36 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**createToken**](docs/AuthApi.md#createToken) | **POST** /auth/token | 
 *AuthApi* | [**deleteToken**](docs/AuthApi.md#deleteToken) | **DELETE** /auth/token | 
 *AuthApi* | [**me**](docs/AuthApi.md#me) | **GET** /auth/me | 
-*ClusterApi* | [**addCluster**](docs/ClusterApi.md#addCluster) | **POST** /clusters | 
-*ClusterApi* | [**deleteClusterByIdOrName**](docs/ClusterApi.md#deleteClusterByIdOrName) | **DELETE** /clusters/{id_or_name} | 
-*ClusterApi* | [**findClusterByIdOrName**](docs/ClusterApi.md#findClusterByIdOrName) | **GET** /clusters/{id_or_name} | 
-*ClusterApi* | [**findClusters**](docs/ClusterApi.md#findClusters) | **GET** /clusters | 
-*ClusterApi* | [**updateClusterByIdOrName**](docs/ClusterApi.md#updateClusterByIdOrName) | **PATCH** /clusters/{id_or_name} | 
-*JobApi* | [**createOrUpdateJob**](docs/JobApi.md#createOrUpdateJob) | **PATCH** /jobs | 
-*JobApi* | [**deleteJobByIdOrUri**](docs/JobApi.md#deleteJobByIdOrUri) | **DELETE** /jobs/{id_or_uri} | 
-*JobApi* | [**findJobByIdOrUri**](docs/JobApi.md#findJobByIdOrUri) | **GET** /jobs/{id_or_uri} | 
-*JobApi* | [**findJobs**](docs/JobApi.md#findJobs) | **GET** /jobs | 
-*MessageApi* | [**fetchMessages**](docs/MessageApi.md#fetchMessages) | **GET** /messages | 
-*MessageApi* | [**sendMessage**](docs/MessageApi.md#sendMessage) | **POST** /messages | 
-*ResourceApi* | [**addResource**](docs/ResourceApi.md#addResource) | **POST** /resources | 
-*ResourceApi* | [**deleteResourceByIdOrUri**](docs/ResourceApi.md#deleteResourceByIdOrUri) | **DELETE** /resources/{id_or_uri} | 
-*ResourceApi* | [**findResourceByIdOrUri**](docs/ResourceApi.md#findResourceByIdOrUri) | **GET** /resources/{id_or_uri} | 
-*ResourceApi* | [**findResources**](docs/ResourceApi.md#findResources) | **GET** /resources | 
-*ResourceApi* | [**updateResourceByIdOrUri**](docs/ResourceApi.md#updateResourceByIdOrUri) | **PATCH** /resources/{id_or_uri} | 
-*UserApi* | [**addUser**](docs/UserApi.md#addUser) | **POST** /users | 
-*UserApi* | [**deleteUserById**](docs/UserApi.md#deleteUserById) | **DELETE** /users/{id} | 
-*UserApi* | [**findUserById**](docs/UserApi.md#findUserById) | **GET** /users/{id} | 
-*UserApi* | [**findUsers**](docs/UserApi.md#findUsers) | **GET** /users | 
-*UserApi* | [**updateUserById**](docs/UserApi.md#updateUserById) | **PATCH** /users/{id} | 
+*ClustersApi* | [**createCluster**](docs/ClustersApi.md#createCluster) | **POST** /clusters | 
+*ClustersApi* | [**deleteCluster**](docs/ClustersApi.md#deleteCluster) | **DELETE** /clusters/{id_or_name} | 
+*ClustersApi* | [**getCluster**](docs/ClustersApi.md#getCluster) | **GET** /clusters/{id_or_name} | 
+*ClustersApi* | [**listClusters**](docs/ClustersApi.md#listClusters) | **GET** /clusters | 
+*ClustersApi* | [**updateCluster**](docs/ClustersApi.md#updateCluster) | **PATCH** /clusters/{id_or_name} | 
+*JobsApi* | [**createOrUpdateJob**](docs/JobsApi.md#createOrUpdateJob) | **PATCH** /jobs | 
+*JobsApi* | [**deleteJob**](docs/JobsApi.md#deleteJob) | **DELETE** /jobs/{id_or_uri} | 
+*JobsApi* | [**getJob**](docs/JobsApi.md#getJob) | **GET** /jobs/{id_or_uri} | 
+*JobsApi* | [**listJobs**](docs/JobsApi.md#listJobs) | **GET** /jobs | 
+*MessagesApi* | [**fetchMessages**](docs/MessagesApi.md#fetchMessages) | **GET** /messages | 
+*MessagesApi* | [**sendMessage**](docs/MessagesApi.md#sendMessage) | **POST** /messages | 
+*ResourcesApi* | [**createResource**](docs/ResourcesApi.md#createResource) | **POST** /resources | 
+*ResourcesApi* | [**deleteResource**](docs/ResourcesApi.md#deleteResource) | **DELETE** /resources/{id_or_uri} | 
+*ResourcesApi* | [**getResource**](docs/ResourcesApi.md#getResource) | **GET** /resources/{id_or_uri} | 
+*ResourcesApi* | [**listResources**](docs/ResourcesApi.md#listResources) | **GET** /resources | 
+*ResourcesApi* | [**updateResource**](docs/ResourcesApi.md#updateResource) | **PATCH** /resources/{id_or_uri} | 
+*UsersApi* | [**createUser**](docs/UsersApi.md#createUser) | **POST** /users | 
+*UsersApi* | [**deleteUser**](docs/UsersApi.md#deleteUser) | **DELETE** /users/{id} | 
+*UsersApi* | [**getUser**](docs/UsersApi.md#getUser) | **GET** /users/{id} | 
+*UsersApi* | [**listUsers**](docs/UsersApi.md#listUsers) | **GET** /users | 
+*UsersApi* | [**updateUser**](docs/UsersApi.md#updateUser) | **PATCH** /users/{id} | 
 
 
 ## Documentation for Models
 
- - [AccessToken](docs/AccessToken.md)
- - [AuthInput](docs/AuthInput.md)
+ - [AccessTokenStruct](docs/AccessTokenStruct.md)
  - [Cluster](docs/Cluster.md)
  - [ClusterEach](docs/ClusterEach.md)
  - [ClusterInput](docs/ClusterInput.md)
+ - [Credential](docs/Credential.md)
  - [ErrorModel](docs/ErrorModel.md)
  - [Job](docs/Job.md)
  - [JobEach](docs/JobEach.md)

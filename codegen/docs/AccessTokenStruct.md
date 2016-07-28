@@ -1,5 +1,5 @@
 
-# AccessToken
+# AccessTokenStruct
 
 ## Properties
 Name | Type | Description | Notes

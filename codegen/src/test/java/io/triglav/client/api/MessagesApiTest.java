@@ -26,10 +26,10 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.Job;
-import io.triglav.client.JobInput;
+import io.triglav.client.MessageEach;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.JobEach;
+import io.triglav.client.Message;
+import io.triglav.client.MessageInput;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -38,25 +38,27 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for JobApi
+ * API tests for MessagesApi
  */
-public class JobApiTest {
+public class MessagesApiTest {
 
-    private final JobApi api = new JobApi();
+    private final MessagesApi api = new MessagesApi();
 
     
     /**
      * 
      *
-     * Creates or Updates a single job
+     * Fetches messages
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void createOrUpdateJobTest() throws ApiException {
-        JobInput job = null;
-        // Job response = api.createOrUpdateJob(job);
+    public void fetchMessagesTest() throws ApiException {
+        String resourceUri = null;
+        Integer offset = null;
+        String datetime = null;
+        // List<MessageEach> response = api.fetchMessages(resourceUri, offset, datetime);
 
         // TODO: test validations
     }
@@ -64,46 +66,17 @@ public class JobApiTest {
     /**
      * 
      *
-     * Deletes single job
+     * Enqueues a new message
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void deleteJobByIdOrUriTest() throws ApiException {
-        String idOrUri = null;
-        // api.deleteJobByIdOrUri(idOrUri);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Returns a single job
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void findJobByIdOrUriTest() throws ApiException {
-        String idOrUri = null;
-        // Job response = api.findJobByIdOrUri(idOrUri);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Returns all jobs
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void findJobsTest() throws ApiException {
-        // List<JobEach> response = api.findJobs();
+    public void sendMessageTest() throws ApiException {
+        String resourceUri = null;
+        String datetime = null;
+        MessageInput message = null;
+        // Message response = api.sendMessage(resourceUri, datetime, message);
 
         // TODO: test validations
     }

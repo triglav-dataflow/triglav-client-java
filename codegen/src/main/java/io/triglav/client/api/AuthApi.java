@@ -38,8 +38,8 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import io.triglav.client.AuthInput;
-import io.triglav.client.AccessToken;
+import io.triglav.client.Credential;
+import io.triglav.client.AccessTokenStruct;
 import io.triglav.client.ErrorModel;
 import io.triglav.client.User;
 
@@ -69,12 +69,12 @@ public class AuthApi {
     }
 
     /* Build call for createToken */
-    private com.squareup.okhttp.Call createTokenCall(AuthInput auth, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = auth;
+    private com.squareup.okhttp.Call createTokenCall(Credential credential, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = credential;
         
-        // verify the required parameter 'auth' is set
-        if (auth == null) {
-            throw new ApiException("Missing the required parameter 'auth' when calling createToken(Async)");
+        // verify the required parameter 'credential' is set
+        if (credential == null) {
+            throw new ApiException("Missing the required parameter 'credential' when calling createToken(Async)");
         }
         
 
@@ -118,37 +118,37 @@ public class AuthApi {
     /**
      * 
      * Creates a new token
-     * @param auth  (required)
-     * @return AccessToken
+     * @param credential  (required)
+     * @return AccessTokenStruct
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccessToken createToken(AuthInput auth) throws ApiException {
-        ApiResponse<AccessToken> resp = createTokenWithHttpInfo(auth);
+    public AccessTokenStruct createToken(Credential credential) throws ApiException {
+        ApiResponse<AccessTokenStruct> resp = createTokenWithHttpInfo(credential);
         return resp.getData();
     }
 
     /**
      * 
      * Creates a new token
-     * @param auth  (required)
-     * @return ApiResponse&lt;AccessToken&gt;
+     * @param credential  (required)
+     * @return ApiResponse&lt;AccessTokenStruct&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccessToken> createTokenWithHttpInfo(AuthInput auth) throws ApiException {
-        com.squareup.okhttp.Call call = createTokenCall(auth, null, null);
-        Type localVarReturnType = new TypeToken<AccessToken>(){}.getType();
+    public ApiResponse<AccessTokenStruct> createTokenWithHttpInfo(Credential credential) throws ApiException {
+        com.squareup.okhttp.Call call = createTokenCall(credential, null, null);
+        Type localVarReturnType = new TypeToken<AccessTokenStruct>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
      * Creates a new token
-     * @param auth  (required)
+     * @param credential  (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createTokenAsync(AuthInput auth, final ApiCallback<AccessToken> callback) throws ApiException {
+    public com.squareup.okhttp.Call createTokenAsync(Credential credential, final ApiCallback<AccessTokenStruct> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,19 +169,14 @@ public class AuthApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createTokenCall(auth, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<AccessToken>(){}.getType();
+        com.squareup.okhttp.Call call = createTokenCall(credential, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<AccessTokenStruct>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for deleteToken */
-    private com.squareup.okhttp.Call deleteTokenCall(String authorization, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deleteTokenCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
-        // verify the required parameter 'authorization' is set
-        if (authorization == null) {
-            throw new ApiException("Missing the required parameter 'authorization' when calling deleteToken(Async)");
-        }
         
 
         // create path and map variables
@@ -190,8 +185,6 @@ public class AuthApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -219,41 +212,38 @@ public class AuthApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "api_key" };
         return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     /**
      * 
-     * Deletes (Expires) a token
-     * @param authorization token #{access_token} (required)
+     * Deletes (Expires) a token of header
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteToken(String authorization) throws ApiException {
-        deleteTokenWithHttpInfo(authorization);
+    public void deleteToken() throws ApiException {
+        deleteTokenWithHttpInfo();
     }
 
     /**
      * 
-     * Deletes (Expires) a token
-     * @param authorization token #{access_token} (required)
+     * Deletes (Expires) a token of header
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteTokenWithHttpInfo(String authorization) throws ApiException {
-        com.squareup.okhttp.Call call = deleteTokenCall(authorization, null, null);
+    public ApiResponse<Void> deleteTokenWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = deleteTokenCall(null, null);
         return apiClient.execute(call);
     }
 
     /**
      *  (asynchronously)
-     * Deletes (Expires) a token
-     * @param authorization token #{access_token} (required)
+     * Deletes (Expires) a token of header
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteTokenAsync(String authorization, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteTokenAsync(final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -274,7 +264,7 @@ public class AuthApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteTokenCall(authorization, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteTokenCall(progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -316,7 +306,7 @@ public class AuthApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "api_key" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 

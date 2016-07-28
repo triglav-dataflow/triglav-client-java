@@ -38,10 +38,10 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import io.triglav.client.Job;
-import io.triglav.client.JobInput;
+import io.triglav.client.User;
+import io.triglav.client.UserInput;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.JobEach;
+import io.triglav.client.UserEach;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -49,14 +49,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JobApi {
+public class UsersApi {
     private ApiClient apiClient;
 
-    public JobApi() {
+    public UsersApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public JobApi(ApiClient apiClient) {
+    public UsersApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -68,18 +68,18 @@ public class JobApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for createOrUpdateJob */
-    private com.squareup.okhttp.Call createOrUpdateJobCall(JobInput job, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = job;
+    /* Build call for createUser */
+    private com.squareup.okhttp.Call createUserCall(UserInput user, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = user;
         
-        // verify the required parameter 'job' is set
-        if (job == null) {
-            throw new ApiException("Missing the required parameter 'job' when calling createOrUpdateJob(Async)");
+        // verify the required parameter 'user' is set
+        if (user == null) {
+            throw new ApiException("Missing the required parameter 'user' when calling createUser(Async)");
         }
         
 
         // create path and map variables
-        String localVarPath = "/jobs".replaceAll("\\{format\\}","json");
+        String localVarPath = "/users".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -111,44 +111,44 @@ public class JobApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     /**
      * 
-     * Creates or Updates a single job
-     * @param job Job parameters (required)
-     * @return Job
+     * Creates a new user in the store
+     * @param user User to add to the store (required)
+     * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Job createOrUpdateJob(JobInput job) throws ApiException {
-        ApiResponse<Job> resp = createOrUpdateJobWithHttpInfo(job);
+    public User createUser(UserInput user) throws ApiException {
+        ApiResponse<User> resp = createUserWithHttpInfo(user);
         return resp.getData();
     }
 
     /**
      * 
-     * Creates or Updates a single job
-     * @param job Job parameters (required)
-     * @return ApiResponse&lt;Job&gt;
+     * Creates a new user in the store
+     * @param user User to add to the store (required)
+     * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Job> createOrUpdateJobWithHttpInfo(JobInput job) throws ApiException {
-        com.squareup.okhttp.Call call = createOrUpdateJobCall(job, null, null);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+    public ApiResponse<User> createUserWithHttpInfo(UserInput user) throws ApiException {
+        com.squareup.okhttp.Call call = createUserCall(user, null, null);
+        Type localVarReturnType = new TypeToken<User>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
-     * Creates or Updates a single job
-     * @param job Job parameters (required)
+     * Creates a new user in the store
+     * @param user User to add to the store (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createOrUpdateJobAsync(JobInput job, final ApiCallback<Job> callback) throws ApiException {
+    public com.squareup.okhttp.Call createUserAsync(UserInput user, final ApiCallback<User> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -169,24 +169,24 @@ public class JobApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createOrUpdateJobCall(job, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+        com.squareup.okhttp.Call call = createUserCall(user, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<User>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for deleteJobByIdOrUri */
-    private com.squareup.okhttp.Call deleteJobByIdOrUriCall(String idOrUri, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for deleteUser */
+    private com.squareup.okhttp.Call deleteUserCall(Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
-        // verify the required parameter 'idOrUri' is set
-        if (idOrUri == null) {
-            throw new ApiException("Missing the required parameter 'idOrUri' when calling deleteJobByIdOrUri(Async)");
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling deleteUser(Async)");
         }
         
 
         // create path and map variables
-        String localVarPath = "/jobs/{id_or_uri}".replaceAll("\\{format\\}","json")
-        .replaceAll("\\{" + "id_or_uri" + "\\}", apiClient.escapeString(idOrUri.toString()));
+        String localVarPath = "/users/{id}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -218,41 +218,41 @@ public class JobApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "api_key" };
         return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     /**
      * 
-     * Deletes single job
-     * @param idOrUri ID or URI of job to fetch (required)
+     * Deletes single user
+     * @param id ID of user to fetch (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void deleteJobByIdOrUri(String idOrUri) throws ApiException {
-        deleteJobByIdOrUriWithHttpInfo(idOrUri);
+    public void deleteUser(Long id) throws ApiException {
+        deleteUserWithHttpInfo(id);
     }
 
     /**
      * 
-     * Deletes single job
-     * @param idOrUri ID or URI of job to fetch (required)
+     * Deletes single user
+     * @param id ID of user to fetch (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> deleteJobByIdOrUriWithHttpInfo(String idOrUri) throws ApiException {
-        com.squareup.okhttp.Call call = deleteJobByIdOrUriCall(idOrUri, null, null);
+    public ApiResponse<Void> deleteUserWithHttpInfo(Long id) throws ApiException {
+        com.squareup.okhttp.Call call = deleteUserCall(id, null, null);
         return apiClient.execute(call);
     }
 
     /**
      *  (asynchronously)
-     * Deletes single job
-     * @param idOrUri ID or URI of job to fetch (required)
+     * Deletes single user
+     * @param id ID of user to fetch (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteJobByIdOrUriAsync(String idOrUri, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteUserAsync(Long id, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -273,23 +273,23 @@ public class JobApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteJobByIdOrUriCall(idOrUri, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteUserCall(id, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
-    /* Build call for findJobByIdOrUri */
-    private com.squareup.okhttp.Call findJobByIdOrUriCall(String idOrUri, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for getUser */
+    private com.squareup.okhttp.Call getUserCall(Long id, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
-        // verify the required parameter 'idOrUri' is set
-        if (idOrUri == null) {
-            throw new ApiException("Missing the required parameter 'idOrUri' when calling findJobByIdOrUri(Async)");
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling getUser(Async)");
         }
         
 
         // create path and map variables
-        String localVarPath = "/jobs/{id_or_uri}".replaceAll("\\{format\\}","json")
-        .replaceAll("\\{" + "id_or_uri" + "\\}", apiClient.escapeString(idOrUri.toString()));
+        String localVarPath = "/users/{id}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -321,44 +321,44 @@ public class JobApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "api_key" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     /**
      * 
-     * Returns a single job
-     * @param idOrUri ID or URI of job to fetch (required)
-     * @return Job
+     * Returns a single user
+     * @param id ID of user to fetch (required)
+     * @return User
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Job findJobByIdOrUri(String idOrUri) throws ApiException {
-        ApiResponse<Job> resp = findJobByIdOrUriWithHttpInfo(idOrUri);
+    public User getUser(Long id) throws ApiException {
+        ApiResponse<User> resp = getUserWithHttpInfo(id);
         return resp.getData();
     }
 
     /**
      * 
-     * Returns a single job
-     * @param idOrUri ID or URI of job to fetch (required)
-     * @return ApiResponse&lt;Job&gt;
+     * Returns a single user
+     * @param id ID of user to fetch (required)
+     * @return ApiResponse&lt;User&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Job> findJobByIdOrUriWithHttpInfo(String idOrUri) throws ApiException {
-        com.squareup.okhttp.Call call = findJobByIdOrUriCall(idOrUri, null, null);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+    public ApiResponse<User> getUserWithHttpInfo(Long id) throws ApiException {
+        com.squareup.okhttp.Call call = getUserCall(id, null, null);
+        Type localVarReturnType = new TypeToken<User>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
-     * Returns a single job
-     * @param idOrUri ID or URI of job to fetch (required)
+     * Returns a single user
+     * @param id ID of user to fetch (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findJobByIdOrUriAsync(String idOrUri, final ApiCallback<Job> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserAsync(Long id, final ApiCallback<User> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -379,18 +379,18 @@ public class JobApi {
             };
         }
 
-        com.squareup.okhttp.Call call = findJobByIdOrUriCall(idOrUri, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+        com.squareup.okhttp.Call call = getUserCall(id, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<User>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for findJobs */
-    private com.squareup.okhttp.Call findJobsCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for listUsers */
+    private com.squareup.okhttp.Call listUsersCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
 
         // create path and map variables
-        String localVarPath = "/jobs".replaceAll("\\{format\\}","json");
+        String localVarPath = "/users".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -422,41 +422,41 @@ public class JobApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "api_key" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     /**
      * 
-     * Returns all jobs
-     * @return List&lt;JobEach&gt;
+     * Returns all users from the system that the user has access to
+     * @return List&lt;UserEach&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<JobEach> findJobs() throws ApiException {
-        ApiResponse<List<JobEach>> resp = findJobsWithHttpInfo();
+    public List<UserEach> listUsers() throws ApiException {
+        ApiResponse<List<UserEach>> resp = listUsersWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
-     * Returns all jobs
-     * @return ApiResponse&lt;List&lt;JobEach&gt;&gt;
+     * Returns all users from the system that the user has access to
+     * @return ApiResponse&lt;List&lt;UserEach&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<JobEach>> findJobsWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = findJobsCall(null, null);
-        Type localVarReturnType = new TypeToken<List<JobEach>>(){}.getType();
+    public ApiResponse<List<UserEach>> listUsersWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = listUsersCall(null, null);
+        Type localVarReturnType = new TypeToken<List<UserEach>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
-     * Returns all jobs
+     * Returns all users from the system that the user has access to
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findJobsAsync(final ApiCallback<List<JobEach>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listUsersAsync(final ApiCallback<List<UserEach>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -477,8 +477,123 @@ public class JobApi {
             };
         }
 
-        com.squareup.okhttp.Call call = findJobsCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<JobEach>>(){}.getType();
+        com.squareup.okhttp.Call call = listUsersCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<UserEach>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for updateUser */
+    private com.squareup.okhttp.Call updateUserCall(Long id, UserInput user, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = user;
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling updateUser(Async)");
+        }
+        
+        // verify the required parameter 'user' is set
+        if (user == null) {
+            throw new ApiException("Missing the required parameter 'user' when calling updateUser(Async)");
+        }
+        
+
+        // create path and map variables
+        String localVarPath = "/users/{id}".replaceAll("\\{format\\}","json")
+        .replaceAll("\\{" + "id" + "\\}", apiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    /**
+     * 
+     * Updates a single user
+     * @param id ID of user to fetch (required)
+     * @param user User parameters to update (required)
+     * @return User
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public User updateUser(Long id, UserInput user) throws ApiException {
+        ApiResponse<User> resp = updateUserWithHttpInfo(id, user);
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * Updates a single user
+     * @param id ID of user to fetch (required)
+     * @param user User parameters to update (required)
+     * @return ApiResponse&lt;User&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<User> updateUserWithHttpInfo(Long id, UserInput user) throws ApiException {
+        com.squareup.okhttp.Call call = updateUserCall(id, user, null, null);
+        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * Updates a single user
+     * @param id ID of user to fetch (required)
+     * @param user User parameters to update (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call updateUserAsync(Long id, UserInput user, final ApiCallback<User> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = updateUserCall(id, user, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<User>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

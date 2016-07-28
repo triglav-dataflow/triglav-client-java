@@ -26,8 +26,8 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.AuthInput;
-import io.triglav.client.AccessToken;
+import io.triglav.client.Credential;
+import io.triglav.client.AccessTokenStruct;
 import io.triglav.client.ErrorModel;
 import io.triglav.client.User;
 import org.junit.Test;
@@ -55,8 +55,8 @@ public class AuthApiTest {
      */
     @Test
     public void createTokenTest() throws ApiException {
-        AuthInput auth = null;
-        // AccessToken response = api.createToken(auth);
+        Credential credential = null;
+        // AccessTokenStruct response = api.createToken(credential);
 
         // TODO: test validations
     }
@@ -64,15 +64,14 @@ public class AuthApiTest {
     /**
      * 
      *
-     * Deletes (Expires) a token
+     * Deletes (Expires) a token of header
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void deleteTokenTest() throws ApiException {
-        String authorization = null;
-        // api.deleteToken(authorization);
+        // api.deleteToken();
 
         // TODO: test validations
     }

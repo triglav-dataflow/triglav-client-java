@@ -32,17 +32,17 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 /**
- * AccessToken
+ * AccessTokenStruct
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-28T19:01:01.009+09:00")
-public class AccessToken   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-28T23:23:46.567+09:00")
+public class AccessTokenStruct   {
   @SerializedName("access_token")
   private String accessToken = null;
 
   @SerializedName("expires_at")
   private Integer expiresAt = null;
 
-  public AccessToken accessToken(String accessToken) {
+  public AccessTokenStruct accessToken(String accessToken) {
     this.accessToken = accessToken;
     return this;
   }
@@ -60,7 +60,7 @@ public class AccessToken   {
     this.accessToken = accessToken;
   }
 
-  public AccessToken expiresAt(Integer expiresAt) {
+  public AccessTokenStruct expiresAt(Integer expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -87,9 +87,9 @@ public class AccessToken   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AccessToken accessToken = (AccessToken) o;
-    return Objects.equals(this.accessToken, accessToken.accessToken) &&
-        Objects.equals(this.expiresAt, accessToken.expiresAt);
+    AccessTokenStruct accessTokenStruct = (AccessTokenStruct) o;
+    return Objects.equals(this.accessToken, accessTokenStruct.accessToken) &&
+        Objects.equals(this.expiresAt, accessTokenStruct.expiresAt);
   }
 
   @Override
@@ -100,7 +100,7 @@ public class AccessToken   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AccessToken {\n");
+    sb.append("class AccessTokenStruct {\n");
     
     sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");

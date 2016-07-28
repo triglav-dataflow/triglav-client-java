@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createToken"></a>
 # **createToken**
-> AccessToken createToken(auth)
+> AccessTokenStruct createToken(credential)
 
 
 
@@ -25,9 +25,9 @@ Creates a new token
 
 
 AuthApi apiInstance = new AuthApi();
-AuthInput auth = new AuthInput(); // AuthInput | 
+Credential credential = new Credential(); // Credential | 
 try {
-    AccessToken result = apiInstance.createToken(auth);
+    AccessTokenStruct result = apiInstance.createToken(credential);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthApi#createToken");
@@ -39,11 +39,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auth** | [**AuthInput**](AuthInput.md)|  |
+ **credential** | [**Credential**](Credential.md)|  |
 
 ### Return type
 
-[**AccessToken**](AccessToken.md)
+[**AccessTokenStruct**](AccessTokenStruct.md)
 
 ### Authorization
 
@@ -56,23 +56,32 @@ No authorization required
 
 <a name="deleteToken"></a>
 # **deleteToken**
-> deleteToken(authorization)
+> deleteToken()
 
 
 
-Deletes (Expires) a token
+Deletes (Expires) a token of header
 
 ### Example
 ```java
 // Import classes:
+//import io.triglav.client.ApiClient;
 //import io.triglav.client.ApiException;
+//import io.triglav.client.Configuration;
+//import io.triglav.client.auth.*;
 //import io.triglav.client.api.AuthApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
 
 AuthApi apiInstance = new AuthApi();
-String authorization = "authorization_example"; // String | token #{access_token}
 try {
-    apiInstance.deleteToken(authorization);
+    apiInstance.deleteToken();
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthApi#deleteToken");
     e.printStackTrace();
@@ -80,10 +89,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **String**| token #{access_token} |
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -91,7 +97,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 
@@ -109,9 +115,19 @@ Returns a user property of the access_token
 ### Example
 ```java
 // Import classes:
+//import io.triglav.client.ApiClient;
 //import io.triglav.client.ApiException;
+//import io.triglav.client.Configuration;
+//import io.triglav.client.auth.*;
 //import io.triglav.client.api.AuthApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
 
 AuthApi apiInstance = new AuthApi();
 try {
@@ -132,7 +148,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

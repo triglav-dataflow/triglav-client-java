@@ -38,11 +38,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for ResourceApi
+ * API tests for ResourcesApi
  */
-public class ResourceApiTest {
+public class ResourcesApiTest {
 
-    private final ResourceApi api = new ResourceApi();
+    private final ResourcesApi api = new ResourcesApi();
 
     
     /**
@@ -54,9 +54,9 @@ public class ResourceApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addResourceTest() throws ApiException {
+    public void createResourceTest() throws ApiException {
         ResourceInput resource = null;
-        // Resource response = api.addResource(resource);
+        // Resource response = api.createResource(resource);
 
         // TODO: test validations
     }
@@ -70,9 +70,9 @@ public class ResourceApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteResourceByIdOrUriTest() throws ApiException {
+    public void deleteResourceTest() throws ApiException {
         String idOrUri = null;
-        // api.deleteResourceByIdOrUri(idOrUri);
+        // api.deleteResource(idOrUri);
 
         // TODO: test validations
     }
@@ -86,9 +86,9 @@ public class ResourceApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findResourceByIdOrUriTest() throws ApiException {
+    public void getResourceTest() throws ApiException {
         String idOrUri = null;
-        // Resource response = api.findResourceByIdOrUri(idOrUri);
+        // Resource response = api.getResource(idOrUri);
 
         // TODO: test validations
     }
@@ -102,11 +102,11 @@ public class ResourceApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findResourcesTest() throws ApiException {
+    public void listResourcesTest() throws ApiException {
         Integer clusterId = null;
         Boolean consumable = null;
         Boolean notifiable = null;
-        // List<ResourceEach> response = api.findResources(clusterId, consumable, notifiable);
+        // List<ResourceEach> response = api.listResources(clusterId, consumable, notifiable);
 
         // TODO: test validations
     }
@@ -120,10 +120,10 @@ public class ResourceApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateResourceByIdOrUriTest() throws ApiException {
+    public void updateResourceTest() throws ApiException {
         String idOrUri = null;
         ResourceInput resource = null;
-        // Resource response = api.updateResourceByIdOrUri(idOrUri, resource);
+        // Resource response = api.updateResource(idOrUri, resource);
 
         // TODO: test validations
     }

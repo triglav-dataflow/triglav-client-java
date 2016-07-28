@@ -38,11 +38,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for ClusterApi
+ * API tests for ClustersApi
  */
-public class ClusterApiTest {
+public class ClustersApiTest {
 
-    private final ClusterApi api = new ClusterApi();
+    private final ClustersApi api = new ClustersApi();
 
     
     /**
@@ -54,9 +54,9 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addClusterTest() throws ApiException {
+    public void createClusterTest() throws ApiException {
         ClusterInput cluster = null;
-        // Cluster response = api.addCluster(cluster);
+        // Cluster response = api.createCluster(cluster);
 
         // TODO: test validations
     }
@@ -70,9 +70,9 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void deleteClusterByIdOrNameTest() throws ApiException {
+    public void deleteClusterTest() throws ApiException {
         String idOrName = null;
-        // api.deleteClusterByIdOrName(idOrName);
+        // api.deleteCluster(idOrName);
 
         // TODO: test validations
     }
@@ -86,9 +86,9 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findClusterByIdOrNameTest() throws ApiException {
+    public void getClusterTest() throws ApiException {
         String idOrName = null;
-        // Cluster response = api.findClusterByIdOrName(idOrName);
+        // Cluster response = api.getCluster(idOrName);
 
         // TODO: test validations
     }
@@ -102,8 +102,8 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void findClustersTest() throws ApiException {
-        // List<ClusterEach> response = api.findClusters();
+    public void listClustersTest() throws ApiException {
+        // List<ClusterEach> response = api.listClusters();
 
         // TODO: test validations
     }
@@ -117,10 +117,10 @@ public class ClusterApiTest {
      *          if the Api call fails
      */
     @Test
-    public void updateClusterByIdOrNameTest() throws ApiException {
+    public void updateClusterTest() throws ApiException {
         String idOrName = null;
         ClusterInput cluster = null;
-        // Cluster response = api.updateClusterByIdOrName(idOrName, cluster);
+        // Cluster response = api.updateCluster(idOrName, cluster);
 
         // TODO: test validations
     }

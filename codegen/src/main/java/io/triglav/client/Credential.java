@@ -32,10 +32,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 /**
- * AuthInput
+ * Credential
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-28T19:01:01.009+09:00")
-public class AuthInput   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-28T23:23:46.567+09:00")
+public class Credential   {
   @SerializedName("name")
   private String name = null;
 
@@ -67,7 +67,7 @@ public class AuthInput   {
   @SerializedName("authenticator")
   private AuthenticatorEnum authenticator = null;
 
-  public AuthInput name(String name) {
+  public Credential name(String name) {
     this.name = name;
     return this;
   }
@@ -85,7 +85,7 @@ public class AuthInput   {
     this.name = name;
   }
 
-  public AuthInput password(String password) {
+  public Credential password(String password) {
     this.password = password;
     return this;
   }
@@ -103,7 +103,7 @@ public class AuthInput   {
     this.password = password;
   }
 
-  public AuthInput authenticator(AuthenticatorEnum authenticator) {
+  public Credential authenticator(AuthenticatorEnum authenticator) {
     this.authenticator = authenticator;
     return this;
   }
@@ -130,10 +130,10 @@ public class AuthInput   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AuthInput authInput = (AuthInput) o;
-    return Objects.equals(this.name, authInput.name) &&
-        Objects.equals(this.password, authInput.password) &&
-        Objects.equals(this.authenticator, authInput.authenticator);
+    Credential credential = (Credential) o;
+    return Objects.equals(this.name, credential.name) &&
+        Objects.equals(this.password, credential.password) &&
+        Objects.equals(this.authenticator, credential.authenticator);
   }
 
   @Override
@@ -144,7 +144,7 @@ public class AuthInput   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AuthInput {\n");
+    sb.append("class Credential {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");

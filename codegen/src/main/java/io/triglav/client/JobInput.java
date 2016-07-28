@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * JobInput
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-28T19:01:01.009+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-28T23:23:46.567+09:00")
 public class JobInput   {
   @SerializedName("uri")
   private String uri = null;

@@ -49,14 +49,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MessageApi {
+public class MessagesApi {
     private ApiClient apiClient;
 
-    public MessageApi() {
+    public MessagesApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public MessageApi(ApiClient apiClient) {
+    public MessagesApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -122,7 +122,7 @@ public class MessageApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "api_key" };
         return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
@@ -248,7 +248,7 @@ public class MessageApi {
             });
         }
 
-        String[] localVarAuthNames = new String[] {  };
+        String[] localVarAuthNames = new String[] { "api_key" };
         return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 

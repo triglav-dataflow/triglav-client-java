@@ -29,28 +29,19 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.triglav.client.ResourceInput;
+import io.triglav.client.ClusterInput;
 
 
 /**
- * Resource
+ * Cluster
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-07-28T19:01:01.009+09:00")
-public class Resource   {
-  @SerializedName("uri")
-  private String uri = null;
+public class Cluster   {
+  @SerializedName("name")
+  private String name = null;
 
   @SerializedName("description")
   private String description = null;
-
-  @SerializedName("cluster_id")
-  private Integer clusterId = null;
-
-  @SerializedName("consumable")
-  private Boolean consumable = null;
-
-  @SerializedName("notifiable")
-  private Boolean notifiable = null;
 
   @SerializedName("id")
   private Long id = null;
@@ -61,25 +52,25 @@ public class Resource   {
   @SerializedName("updated_at")
   private Integer updatedAt = null;
 
-  public Resource uri(String uri) {
-    this.uri = uri;
+  public Cluster name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * Get uri
-   * @return uri
+   * Get name
+   * @return name
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getUri() {
-    return uri;
+  @ApiModelProperty(example = "null", value = "")
+  public String getName() {
+    return name;
   }
 
-  public void setUri(String uri) {
-    this.uri = uri;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public Resource description(String description) {
+  public Cluster description(String description) {
     this.description = description;
     return this;
   }
@@ -97,61 +88,7 @@ public class Resource   {
     this.description = description;
   }
 
-  public Resource clusterId(Integer clusterId) {
-    this.clusterId = clusterId;
-    return this;
-  }
-
-   /**
-   * Get clusterId
-   * @return clusterId
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public Integer getClusterId() {
-    return clusterId;
-  }
-
-  public void setClusterId(Integer clusterId) {
-    this.clusterId = clusterId;
-  }
-
-  public Resource consumable(Boolean consumable) {
-    this.consumable = consumable;
-    return this;
-  }
-
-   /**
-   * Get consumable
-   * @return consumable
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Boolean getConsumable() {
-    return consumable;
-  }
-
-  public void setConsumable(Boolean consumable) {
-    this.consumable = consumable;
-  }
-
-  public Resource notifiable(Boolean notifiable) {
-    this.notifiable = notifiable;
-    return this;
-  }
-
-   /**
-   * Get notifiable
-   * @return notifiable
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Boolean getNotifiable() {
-    return notifiable;
-  }
-
-  public void setNotifiable(Boolean notifiable) {
-    this.notifiable = notifiable;
-  }
-
-  public Resource id(Long id) {
+  public Cluster id(Long id) {
     this.id = id;
     return this;
   }
@@ -169,7 +106,7 @@ public class Resource   {
     this.id = id;
   }
 
-  public Resource createdAt(Integer createdAt) {
+  public Cluster createdAt(Integer createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -187,7 +124,7 @@ public class Resource   {
     this.createdAt = createdAt;
   }
 
-  public Resource updatedAt(Integer updatedAt) {
+  public Cluster updatedAt(Integer updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -214,32 +151,26 @@ public class Resource   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Resource resource = (Resource) o;
-    return Objects.equals(this.uri, resource.uri) &&
-        Objects.equals(this.description, resource.description) &&
-        Objects.equals(this.clusterId, resource.clusterId) &&
-        Objects.equals(this.consumable, resource.consumable) &&
-        Objects.equals(this.notifiable, resource.notifiable) &&
-        Objects.equals(this.id, resource.id) &&
-        Objects.equals(this.createdAt, resource.createdAt) &&
-        Objects.equals(this.updatedAt, resource.updatedAt);
+    Cluster cluster = (Cluster) o;
+    return Objects.equals(this.name, cluster.name) &&
+        Objects.equals(this.description, cluster.description) &&
+        Objects.equals(this.id, cluster.id) &&
+        Objects.equals(this.createdAt, cluster.createdAt) &&
+        Objects.equals(this.updatedAt, cluster.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri, description, clusterId, consumable, notifiable, id, createdAt, updatedAt);
+    return Objects.hash(name, description, id, createdAt, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Resource {\n");
+    sb.append("class Cluster {\n");
     
-    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    clusterId: ").append(toIndentedString(clusterId)).append("\n");
-    sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
-    sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");

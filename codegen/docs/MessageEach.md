@@ -1,15 +1,14 @@
 
-# Resource
+# MessageEach
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uri** | **String** |  | 
-**description** | **String** |  |  [optional]
-**clusterId** | **Integer** |  | 
-**consumable** | **Boolean** |  |  [optional]
-**notifiable** | **Boolean** |  |  [optional]
 **id** | **Long** |  |  [optional]
+**resourceUri** | **String** |  |  [optional]
+**datetime** | **String** | Datetime formatted by ISO 8601 |  [optional]
+**params** | **String** |  |  [optional]
+**payload** | **String** |  |  [optional]
 **createdAt** | **Integer** |  |  [optional]
 **updatedAt** | **Integer** |  |  [optional]
 

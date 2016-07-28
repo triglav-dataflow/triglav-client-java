@@ -1,15 +1,12 @@
 
-# Resource
+# JobEach
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uri** | **String** |  | 
-**description** | **String** |  |  [optional]
-**clusterId** | **Integer** |  | 
-**consumable** | **Boolean** |  |  [optional]
-**notifiable** | **Boolean** |  |  [optional]
 **id** | **Long** |  |  [optional]
+**uri** | **String** |  |  [optional]
+**contactId** | **Integer** |  |  [optional]
 **createdAt** | **Integer** |  |  [optional]
 **updatedAt** | **Integer** |  |  [optional]
 

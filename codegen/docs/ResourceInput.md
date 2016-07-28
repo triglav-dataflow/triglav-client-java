@@ -1,5 +1,5 @@
 
-# Resource
+# ResourceInput
 
 ## Properties
 Name | Type | Description | Notes
@@ -9,9 +9,6 @@ Name | Type | Description | Notes
 **clusterId** | **Integer** |  | 
 **consumable** | **Boolean** |  |  [optional]
 **notifiable** | **Boolean** |  |  [optional]
-**id** | **Long** |  |  [optional]
-**createdAt** | **Integer** |  |  [optional]
-**updatedAt** | **Integer** |  |  [optional]
 
 
 

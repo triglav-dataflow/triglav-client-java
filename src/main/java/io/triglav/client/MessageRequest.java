@@ -34,30 +34,30 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MessageRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T17:51:55.550+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T18:51:26.698+09:00")
 public class MessageRequest   {
-  @SerializedName("params")
-  private String params = null;
+  @SerializedName("conditions")
+  private String conditions = null;
 
   @SerializedName("payload")
   private String payload = null;
 
-  public MessageRequest params(String params) {
-    this.params = params;
+  public MessageRequest conditions(String conditions) {
+    this.conditions = conditions;
     return this;
   }
 
    /**
    * Any json string
-   * @return params
+   * @return conditions
   **/
   @ApiModelProperty(example = "null", value = "Any json string")
-  public String getParams() {
-    return params;
+  public String getConditions() {
+    return conditions;
   }
 
-  public void setParams(String params) {
-    this.params = params;
+  public void setConditions(String conditions) {
+    this.conditions = conditions;
   }
 
   public MessageRequest payload(String payload) {
@@ -88,13 +88,13 @@ public class MessageRequest   {
       return false;
     }
     MessageRequest messageRequest = (MessageRequest) o;
-    return Objects.equals(this.params, messageRequest.params) &&
+    return Objects.equals(this.conditions, messageRequest.conditions) &&
         Objects.equals(this.payload, messageRequest.payload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(params, payload);
+    return Objects.hash(conditions, payload);
   }
 
   @Override
@@ -102,7 +102,7 @@ public class MessageRequest   {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageRequest {\n");
     
-    sb.append("    params: ").append(toIndentedString(params)).append("\n");
+    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();

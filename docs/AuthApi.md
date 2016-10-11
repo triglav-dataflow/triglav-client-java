@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createToken"></a>
 # **createToken**
-> AccessTokenStruct createToken(credential)
+> TokenResponse createToken(credential)
 
 
 
@@ -27,7 +27,7 @@ Creates a new token
 AuthApi apiInstance = new AuthApi();
 Credential credential = new Credential(); // Credential | 
 try {
-    AccessTokenStruct result = apiInstance.createToken(credential);
+    TokenResponse result = apiInstance.createToken(credential);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthApi#createToken");
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccessTokenStruct**](AccessTokenStruct.md)
+[**TokenResponse**](TokenResponse.md)
 
 ### Authorization
 

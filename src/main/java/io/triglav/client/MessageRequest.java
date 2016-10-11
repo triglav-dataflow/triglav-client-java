@@ -29,55 +29,53 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
- * ErrorModel
+ * MessageRequest
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T17:51:55.550+09:00")
-public class ErrorModel   {
-  @SerializedName("error")
-  private String error = null;
+public class MessageRequest   {
+  @SerializedName("params")
+  private String params = null;
 
-  @SerializedName("backtrace")
-  private List<String> backtrace = new ArrayList<String>();
+  @SerializedName("payload")
+  private String payload = null;
 
-  public ErrorModel error(String error) {
-    this.error = error;
+  public MessageRequest params(String params) {
+    this.params = params;
     return this;
   }
 
    /**
-   * Get error
-   * @return error
+   * Any json string
+   * @return params
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getError() {
-    return error;
+  @ApiModelProperty(example = "null", value = "Any json string")
+  public String getParams() {
+    return params;
   }
 
-  public void setError(String error) {
-    this.error = error;
+  public void setParams(String params) {
+    this.params = params;
   }
 
-  public ErrorModel backtrace(List<String> backtrace) {
-    this.backtrace = backtrace;
+  public MessageRequest payload(String payload) {
+    this.payload = payload;
     return this;
   }
 
    /**
-   * Get backtrace
-   * @return backtrace
+   * Any json string
+   * @return payload
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public List<String> getBacktrace() {
-    return backtrace;
+  @ApiModelProperty(example = "null", value = "Any json string")
+  public String getPayload() {
+    return payload;
   }
 
-  public void setBacktrace(List<String> backtrace) {
-    this.backtrace = backtrace;
+  public void setPayload(String payload) {
+    this.payload = payload;
   }
 
 
@@ -89,23 +87,23 @@ public class ErrorModel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorModel errorModel = (ErrorModel) o;
-    return Objects.equals(this.error, errorModel.error) &&
-        Objects.equals(this.backtrace, errorModel.backtrace);
+    MessageRequest messageRequest = (MessageRequest) o;
+    return Objects.equals(this.params, messageRequest.params) &&
+        Objects.equals(this.payload, messageRequest.payload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error, backtrace);
+    return Objects.hash(params, payload);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorModel {\n");
+    sb.append("class MessageRequest {\n");
     
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    backtrace: ").append(toIndentedString(backtrace)).append("\n");
+    sb.append("    params: ").append(toIndentedString(params)).append("\n");
+    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();
   }

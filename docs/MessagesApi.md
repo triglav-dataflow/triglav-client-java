@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="fetchMessages"></a>
 # **fetchMessages**
-> List&lt;MessageEach&gt; fetchMessages(resourceUri, offset, datetime)
+> List&lt;MessageEachResponse&gt; fetchMessages(resourceUri, offset, datetime)
 
 
 
@@ -38,7 +38,7 @@ String resourceUri = "resourceUri_example"; // String | URI of Resource
 Integer offset = 56; // Integer | Offset ID for Messages to fetch from
 String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601
 try {
-    List<MessageEach> result = apiInstance.fetchMessages(resourceUri, offset, datetime);
+    List<MessageEachResponse> result = apiInstance.fetchMessages(resourceUri, offset, datetime);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#fetchMessages");
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;MessageEach&gt;**](MessageEach.md)
+[**List&lt;MessageEachResponse&gt;**](MessageEachResponse.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 <a name="sendMessage"></a>
 # **sendMessage**
-> Message sendMessage(resourceUri, datetime, message)
+> MessageResponse sendMessage(resourceUri, datetime, message)
 
 
 
@@ -95,9 +95,9 @@ api_key.setApiKey("YOUR API KEY");
 MessagesApi apiInstance = new MessagesApi();
 String resourceUri = "resourceUri_example"; // String | URI of Resource
 String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601
-MessageInput message = new MessageInput(); // MessageInput | Message to add
+MessageRequest message = new MessageRequest(); // MessageRequest | Message to add
 try {
-    Message result = apiInstance.sendMessage(resourceUri, datetime, message);
+    MessageResponse result = apiInstance.sendMessage(resourceUri, datetime, message);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#sendMessage");
@@ -111,11 +111,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resourceUri** | **String**| URI of Resource |
  **datetime** | **String**| Datetime formatted by ISO 8601 |
- **message** | [**MessageInput**](MessageInput.md)| Message to add |
+ **message** | [**MessageRequest**](MessageRequest.md)| Message to add |
 
 ### Return type
 
-[**Message**](Message.md)
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

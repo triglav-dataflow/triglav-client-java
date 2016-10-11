@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createUser"></a>
 # **createUser**
-> User createUser(user)
+> UserResponse createUser(user)
 
 
 
@@ -37,9 +37,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 UsersApi apiInstance = new UsersApi();
-UserInput user = new UserInput(); // UserInput | User to add to the store
+UserRequest user = new UserRequest(); // UserRequest | User to add to the store
 try {
-    User result = apiInstance.createUser(user);
+    UserResponse result = apiInstance.createUser(user);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#createUser");
@@ -51,11 +51,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user** | [**UserInput**](UserInput.md)| User to add to the store |
+ **user** | [**UserRequest**](UserRequest.md)| User to add to the store |
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ null (empty response body)
 
 <a name="getUser"></a>
 # **getUser**
-> User getUser(id)
+> UserResponse getUser(id)
 
 
 
@@ -148,7 +148,7 @@ api_key.setApiKey("YOUR API KEY");
 UsersApi apiInstance = new UsersApi();
 Long id = 789L; // Long | ID of user to fetch
 try {
-    User result = apiInstance.getUser(id);
+    UserResponse result = apiInstance.getUser(id);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#getUser");
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="listUsers"></a>
 # **listUsers**
-> List&lt;UserEach&gt; listUsers()
+> List&lt;UserEachResponse&gt; listUsers()
 
 
 
@@ -202,7 +202,7 @@ api_key.setApiKey("YOUR API KEY");
 
 UsersApi apiInstance = new UsersApi();
 try {
-    List<UserEach> result = apiInstance.listUsers();
+    List<UserEachResponse> result = apiInstance.listUsers();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#listUsers");
@@ -215,7 +215,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;UserEach&gt;**](UserEach.md)
+[**List&lt;UserEachResponse&gt;**](UserEachResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ This endpoint does not need any parameter.
 
 <a name="updateUser"></a>
 # **updateUser**
-> User updateUser(id, user)
+> UserResponse updateUser(id, user)
 
 
 
@@ -253,9 +253,9 @@ api_key.setApiKey("YOUR API KEY");
 
 UsersApi apiInstance = new UsersApi();
 Long id = 789L; // Long | ID of user to fetch
-UserInput user = new UserInput(); // UserInput | User parameters to update
+UserRequest user = new UserRequest(); // UserRequest | User parameters to update
 try {
-    User result = apiInstance.updateUser(id, user);
+    UserResponse result = apiInstance.updateUser(id, user);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#updateUser");
@@ -268,11 +268,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **Long**| ID of user to fetch |
- **user** | [**UserInput**](UserInput.md)| User parameters to update |
+ **user** | [**UserRequest**](UserRequest.md)| User parameters to update |
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 

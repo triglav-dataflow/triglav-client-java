@@ -32,42 +32,17 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 /**
- * Credential
+ * ClusterRequest
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T17:51:55.550+09:00")
-public class Credential   {
+public class ClusterRequest   {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("password")
-  private String password = null;
+  @SerializedName("description")
+  private String description = null;
 
-  /**
-   * Gets or Sets authenticator
-   */
-  public enum AuthenticatorEnum {
-    @SerializedName("local")
-    LOCAL("local"),
-    
-    @SerializedName("ldap")
-    LDAP("ldap");
-
-    private String value;
-
-    AuthenticatorEnum(String value) {
-      this.value = value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-  }
-
-  @SerializedName("authenticator")
-  private AuthenticatorEnum authenticator = null;
-
-  public Credential name(String name) {
+  public ClusterRequest name(String name) {
     this.name = name;
     return this;
   }
@@ -76,7 +51,7 @@ public class Credential   {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "")
   public String getName() {
     return name;
   }
@@ -85,40 +60,22 @@ public class Credential   {
     this.name = name;
   }
 
-  public Credential password(String password) {
-    this.password = password;
+  public ClusterRequest description(String description) {
+    this.description = description;
     return this;
   }
 
    /**
-   * Get password
-   * @return password
+   * Get description
+   * @return description
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getPassword() {
-    return password;
+  @ApiModelProperty(example = "null", value = "")
+  public String getDescription() {
+    return description;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public Credential authenticator(AuthenticatorEnum authenticator) {
-    this.authenticator = authenticator;
-    return this;
-  }
-
-   /**
-   * Get authenticator
-   * @return authenticator
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public AuthenticatorEnum getAuthenticator() {
-    return authenticator;
-  }
-
-  public void setAuthenticator(AuthenticatorEnum authenticator) {
-    this.authenticator = authenticator;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -130,25 +87,23 @@ public class Credential   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Credential credential = (Credential) o;
-    return Objects.equals(this.name, credential.name) &&
-        Objects.equals(this.password, credential.password) &&
-        Objects.equals(this.authenticator, credential.authenticator);
+    ClusterRequest clusterRequest = (ClusterRequest) o;
+    return Objects.equals(this.name, clusterRequest.name) &&
+        Objects.equals(this.description, clusterRequest.description);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, password, authenticator);
+    return Objects.hash(name, description);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Credential {\n");
+    sb.append("class ClusterRequest {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    authenticator: ").append(toIndentedString(authenticator)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("}");
     return sb.toString();
   }

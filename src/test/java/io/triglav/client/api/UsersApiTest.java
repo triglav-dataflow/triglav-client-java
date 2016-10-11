@@ -26,10 +26,10 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.User;
-import io.triglav.client.UserInput;
+import io.triglav.client.UserResponse;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.UserEach;
+import io.triglav.client.UserRequest;
+import io.triglav.client.UserEachResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -55,8 +55,8 @@ public class UsersApiTest {
      */
     @Test
     public void createUserTest() throws ApiException {
-        UserInput user = null;
-        // User response = api.createUser(user);
+        UserRequest user = null;
+        // UserResponse response = api.createUser(user);
 
         // TODO: test validations
     }
@@ -88,7 +88,7 @@ public class UsersApiTest {
     @Test
     public void getUserTest() throws ApiException {
         Long id = null;
-        // User response = api.getUser(id);
+        // UserResponse response = api.getUser(id);
 
         // TODO: test validations
     }
@@ -103,7 +103,7 @@ public class UsersApiTest {
      */
     @Test
     public void listUsersTest() throws ApiException {
-        // List<UserEach> response = api.listUsers();
+        // List<UserEachResponse> response = api.listUsers();
 
         // TODO: test validations
     }
@@ -119,8 +119,8 @@ public class UsersApiTest {
     @Test
     public void updateUserTest() throws ApiException {
         Long id = null;
-        UserInput user = null;
-        // User response = api.updateUser(id, user);
+        UserRequest user = null;
+        // UserResponse response = api.updateUser(id, user);
 
         // TODO: test validations
     }

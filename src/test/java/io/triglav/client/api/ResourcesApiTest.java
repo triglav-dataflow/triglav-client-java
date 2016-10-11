@@ -26,10 +26,10 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.Resource;
+import io.triglav.client.ResourceRequest;
+import io.triglav.client.ResourceResponse;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.ResourceInput;
-import io.triglav.client.ResourceEach;
+import io.triglav.client.ResourceEachResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -55,8 +55,8 @@ public class ResourcesApiTest {
      */
     @Test
     public void createResourceTest() throws ApiException {
-        ResourceInput resource = null;
-        // Resource response = api.createResource(resource);
+        ResourceRequest resource = null;
+        // ResourceResponse response = api.createResource(resource);
 
         // TODO: test validations
     }
@@ -88,7 +88,7 @@ public class ResourcesApiTest {
     @Test
     public void getResourceTest() throws ApiException {
         String idOrUri = null;
-        // Resource response = api.getResource(idOrUri);
+        // ResourceResponse response = api.getResource(idOrUri);
 
         // TODO: test validations
     }
@@ -103,10 +103,10 @@ public class ResourcesApiTest {
      */
     @Test
     public void listResourcesTest() throws ApiException {
-        Integer clusterId = null;
+        String clusterName = null;
         Boolean consumable = null;
         Boolean notifiable = null;
-        // List<ResourceEach> response = api.listResources(clusterId, consumable, notifiable);
+        // List<ResourceEachResponse> response = api.listResources(clusterName, consumable, notifiable);
 
         // TODO: test validations
     }
@@ -122,8 +122,8 @@ public class ResourcesApiTest {
     @Test
     public void updateResourceTest() throws ApiException {
         String idOrUri = null;
-        ResourceInput resource = null;
-        // Resource response = api.updateResource(idOrUri, resource);
+        ResourceRequest resource = null;
+        // ResourceResponse response = api.updateResource(idOrUri, resource);
 
         // TODO: test validations
     }

@@ -29,55 +29,53 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
- * ErrorModel
+ * TokenResponse
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T17:51:55.550+09:00")
-public class ErrorModel   {
-  @SerializedName("error")
-  private String error = null;
+public class TokenResponse   {
+  @SerializedName("access_token")
+  private String accessToken = null;
 
-  @SerializedName("backtrace")
-  private List<String> backtrace = new ArrayList<String>();
+  @SerializedName("expires_at")
+  private Integer expiresAt = null;
 
-  public ErrorModel error(String error) {
-    this.error = error;
+  public TokenResponse accessToken(String accessToken) {
+    this.accessToken = accessToken;
     return this;
   }
 
    /**
-   * Get error
-   * @return error
+   * Get accessToken
+   * @return accessToken
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getError() {
-    return error;
+  @ApiModelProperty(example = "null", value = "")
+  public String getAccessToken() {
+    return accessToken;
   }
 
-  public void setError(String error) {
-    this.error = error;
+  public void setAccessToken(String accessToken) {
+    this.accessToken = accessToken;
   }
 
-  public ErrorModel backtrace(List<String> backtrace) {
-    this.backtrace = backtrace;
+  public TokenResponse expiresAt(Integer expiresAt) {
+    this.expiresAt = expiresAt;
     return this;
   }
 
    /**
-   * Get backtrace
-   * @return backtrace
+   * unix timestamp
+   * @return expiresAt
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public List<String> getBacktrace() {
-    return backtrace;
+  @ApiModelProperty(example = "null", value = "unix timestamp")
+  public Integer getExpiresAt() {
+    return expiresAt;
   }
 
-  public void setBacktrace(List<String> backtrace) {
-    this.backtrace = backtrace;
+  public void setExpiresAt(Integer expiresAt) {
+    this.expiresAt = expiresAt;
   }
 
 
@@ -89,23 +87,23 @@ public class ErrorModel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorModel errorModel = (ErrorModel) o;
-    return Objects.equals(this.error, errorModel.error) &&
-        Objects.equals(this.backtrace, errorModel.backtrace);
+    TokenResponse tokenResponse = (TokenResponse) o;
+    return Objects.equals(this.accessToken, tokenResponse.accessToken) &&
+        Objects.equals(this.expiresAt, tokenResponse.expiresAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error, backtrace);
+    return Objects.hash(accessToken, expiresAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorModel {\n");
+    sb.append("class TokenResponse {\n");
     
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    backtrace: ").append(toIndentedString(backtrace)).append("\n");
+    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

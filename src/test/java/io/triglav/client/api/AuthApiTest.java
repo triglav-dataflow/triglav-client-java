@@ -27,7 +27,7 @@ package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
 import io.triglav.client.Credential;
-import io.triglav.client.AccessTokenStruct;
+import io.triglav.client.TokenResponse;
 import io.triglav.client.ErrorModel;
 import io.triglav.client.User;
 import org.junit.Test;
@@ -56,7 +56,7 @@ public class AuthApiTest {
     @Test
     public void createTokenTest() throws ApiException {
         Credential credential = null;
-        // AccessTokenStruct response = api.createToken(credential);
+        // TokenResponse response = api.createToken(credential);
 
         // TODO: test validations
     }

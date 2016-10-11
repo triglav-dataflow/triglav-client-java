@@ -38,10 +38,10 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import io.triglav.client.MessageEach;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.Message;
-import io.triglav.client.MessageInput;
+import io.triglav.client.MessageEachResponse;
+import io.triglav.client.MessageRequest;
+import io.triglav.client.MessageResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -132,11 +132,11 @@ public class MessagesApi {
      * @param resourceUri URI of Resource (required)
      * @param offset Offset ID for Messages to fetch from (required)
      * @param datetime Datetime formatted by ISO 8601 (optional)
-     * @return List&lt;MessageEach&gt;
+     * @return List&lt;MessageEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MessageEach> fetchMessages(String resourceUri, Integer offset, String datetime) throws ApiException {
-        ApiResponse<List<MessageEach>> resp = fetchMessagesWithHttpInfo(resourceUri, offset, datetime);
+    public List<MessageEachResponse> fetchMessages(String resourceUri, Integer offset, String datetime) throws ApiException {
+        ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(resourceUri, offset, datetime);
         return resp.getData();
     }
 
@@ -146,12 +146,12 @@ public class MessagesApi {
      * @param resourceUri URI of Resource (required)
      * @param offset Offset ID for Messages to fetch from (required)
      * @param datetime Datetime formatted by ISO 8601 (optional)
-     * @return ApiResponse&lt;List&lt;MessageEach&gt;&gt;
+     * @return ApiResponse&lt;List&lt;MessageEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MessageEach>> fetchMessagesWithHttpInfo(String resourceUri, Integer offset, String datetime) throws ApiException {
+    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(String resourceUri, Integer offset, String datetime) throws ApiException {
         com.squareup.okhttp.Call call = fetchMessagesCall(resourceUri, offset, datetime, null, null);
-        Type localVarReturnType = new TypeToken<List<MessageEach>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -165,7 +165,7 @@ public class MessagesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call fetchMessagesAsync(String resourceUri, Integer offset, String datetime, final ApiCallback<List<MessageEach>> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchMessagesAsync(String resourceUri, Integer offset, String datetime, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -187,12 +187,12 @@ public class MessagesApi {
         }
 
         com.squareup.okhttp.Call call = fetchMessagesCall(resourceUri, offset, datetime, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<MessageEach>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for sendMessage */
-    private com.squareup.okhttp.Call sendMessageCall(String resourceUri, String datetime, MessageInput message, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call sendMessageCall(String resourceUri, String datetime, MessageRequest message, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = message;
         
         // verify the required parameter 'resourceUri' is set
@@ -258,11 +258,11 @@ public class MessagesApi {
      * @param resourceUri URI of Resource (required)
      * @param datetime Datetime formatted by ISO 8601 (required)
      * @param message Message to add (required)
-     * @return Message
+     * @return MessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Message sendMessage(String resourceUri, String datetime, MessageInput message) throws ApiException {
-        ApiResponse<Message> resp = sendMessageWithHttpInfo(resourceUri, datetime, message);
+    public MessageResponse sendMessage(String resourceUri, String datetime, MessageRequest message) throws ApiException {
+        ApiResponse<MessageResponse> resp = sendMessageWithHttpInfo(resourceUri, datetime, message);
         return resp.getData();
     }
 
@@ -272,12 +272,12 @@ public class MessagesApi {
      * @param resourceUri URI of Resource (required)
      * @param datetime Datetime formatted by ISO 8601 (required)
      * @param message Message to add (required)
-     * @return ApiResponse&lt;Message&gt;
+     * @return ApiResponse&lt;MessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Message> sendMessageWithHttpInfo(String resourceUri, String datetime, MessageInput message) throws ApiException {
+    public ApiResponse<MessageResponse> sendMessageWithHttpInfo(String resourceUri, String datetime, MessageRequest message) throws ApiException {
         com.squareup.okhttp.Call call = sendMessageCall(resourceUri, datetime, message, null, null);
-        Type localVarReturnType = new TypeToken<Message>(){}.getType();
+        Type localVarReturnType = new TypeToken<MessageResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -291,7 +291,7 @@ public class MessagesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendMessageAsync(String resourceUri, String datetime, MessageInput message, final ApiCallback<Message> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendMessageAsync(String resourceUri, String datetime, MessageRequest message, final ApiCallback<MessageResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -313,7 +313,7 @@ public class MessagesApi {
         }
 
         com.squareup.okhttp.Call call = sendMessageCall(resourceUri, datetime, message, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Message>(){}.getType();
+        Type localVarReturnType = new TypeToken<MessageResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

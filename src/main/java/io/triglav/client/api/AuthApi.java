@@ -39,7 +39,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 import io.triglav.client.Credential;
-import io.triglav.client.AccessTokenStruct;
+import io.triglav.client.TokenResponse;
 import io.triglav.client.ErrorModel;
 import io.triglav.client.User;
 
@@ -119,11 +119,11 @@ public class AuthApi {
      * 
      * Creates a new token
      * @param credential  (required)
-     * @return AccessTokenStruct
+     * @return TokenResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AccessTokenStruct createToken(Credential credential) throws ApiException {
-        ApiResponse<AccessTokenStruct> resp = createTokenWithHttpInfo(credential);
+    public TokenResponse createToken(Credential credential) throws ApiException {
+        ApiResponse<TokenResponse> resp = createTokenWithHttpInfo(credential);
         return resp.getData();
     }
 
@@ -131,12 +131,12 @@ public class AuthApi {
      * 
      * Creates a new token
      * @param credential  (required)
-     * @return ApiResponse&lt;AccessTokenStruct&gt;
+     * @return ApiResponse&lt;TokenResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AccessTokenStruct> createTokenWithHttpInfo(Credential credential) throws ApiException {
+    public ApiResponse<TokenResponse> createTokenWithHttpInfo(Credential credential) throws ApiException {
         com.squareup.okhttp.Call call = createTokenCall(credential, null, null);
-        Type localVarReturnType = new TypeToken<AccessTokenStruct>(){}.getType();
+        Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -148,7 +148,7 @@ public class AuthApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createTokenAsync(Credential credential, final ApiCallback<AccessTokenStruct> callback) throws ApiException {
+    public com.squareup.okhttp.Call createTokenAsync(Credential credential, final ApiCallback<TokenResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -170,7 +170,7 @@ public class AuthApi {
         }
 
         com.squareup.okhttp.Call call = createTokenCall(credential, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<AccessTokenStruct>(){}.getType();
+        Type localVarReturnType = new TypeToken<TokenResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

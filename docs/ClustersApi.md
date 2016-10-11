@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createCluster"></a>
 # **createCluster**
-> Cluster createCluster(cluster)
+> ClusterResponse createCluster(cluster)
 
 
 
@@ -37,9 +37,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 ClustersApi apiInstance = new ClustersApi();
-ClusterInput cluster = new ClusterInput(); // ClusterInput | Cluster to add
+ClusterRequest cluster = new ClusterRequest(); // ClusterRequest | Cluster to add
 try {
-    Cluster result = apiInstance.createCluster(cluster);
+    ClusterResponse result = apiInstance.createCluster(cluster);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClustersApi#createCluster");
@@ -51,11 +51,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cluster** | [**ClusterInput**](ClusterInput.md)| Cluster to add |
+ **cluster** | [**ClusterRequest**](ClusterRequest.md)| Cluster to add |
 
 ### Return type
 
-[**Cluster**](Cluster.md)
+[**ClusterResponse**](ClusterResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ null (empty response body)
 
 <a name="getCluster"></a>
 # **getCluster**
-> Cluster getCluster(idOrName)
+> ClusterResponse getCluster(idOrName)
 
 
 
@@ -148,7 +148,7 @@ api_key.setApiKey("YOUR API KEY");
 ClustersApi apiInstance = new ClustersApi();
 String idOrName = "idOrName_example"; // String | ID or Name of cluster to fetch
 try {
-    Cluster result = apiInstance.getCluster(idOrName);
+    ClusterResponse result = apiInstance.getCluster(idOrName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClustersApi#getCluster");
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Cluster**](Cluster.md)
+[**ClusterResponse**](ClusterResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="listClusters"></a>
 # **listClusters**
-> List&lt;ClusterEach&gt; listClusters()
+> List&lt;ClusterEachResponse&gt; listClusters()
 
 
 
@@ -202,7 +202,7 @@ api_key.setApiKey("YOUR API KEY");
 
 ClustersApi apiInstance = new ClustersApi();
 try {
-    List<ClusterEach> result = apiInstance.listClusters();
+    List<ClusterEachResponse> result = apiInstance.listClusters();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClustersApi#listClusters");
@@ -215,7 +215,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;ClusterEach&gt;**](ClusterEach.md)
+[**List&lt;ClusterEachResponse&gt;**](ClusterEachResponse.md)
 
 ### Authorization
 
@@ -228,7 +228,7 @@ This endpoint does not need any parameter.
 
 <a name="updateCluster"></a>
 # **updateCluster**
-> Cluster updateCluster(idOrName, cluster)
+> ClusterResponse updateCluster(idOrName, cluster)
 
 
 
@@ -253,9 +253,9 @@ api_key.setApiKey("YOUR API KEY");
 
 ClustersApi apiInstance = new ClustersApi();
 String idOrName = "idOrName_example"; // String | ID or Name of cluster to fetch
-ClusterInput cluster = new ClusterInput(); // ClusterInput | Cluster parameters to update
+ClusterRequest cluster = new ClusterRequest(); // ClusterRequest | Cluster parameters to update
 try {
-    Cluster result = apiInstance.updateCluster(idOrName, cluster);
+    ClusterResponse result = apiInstance.updateCluster(idOrName, cluster);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ClustersApi#updateCluster");
@@ -268,11 +268,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idOrName** | **String**| ID or Name of cluster to fetch |
- **cluster** | [**ClusterInput**](ClusterInput.md)| Cluster parameters to update |
+ **cluster** | [**ClusterRequest**](ClusterRequest.md)| Cluster parameters to update |
 
 ### Return type
 
-[**Cluster**](Cluster.md)
+[**ClusterResponse**](ClusterResponse.md)
 
 ### Authorization
 

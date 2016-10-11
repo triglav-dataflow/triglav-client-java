@@ -26,10 +26,10 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.ClusterInput;
-import io.triglav.client.Cluster;
+import io.triglav.client.ClusterRequest;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.ClusterEach;
+import io.triglav.client.ClusterResponse;
+import io.triglav.client.ClusterEachResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -55,8 +55,8 @@ public class ClustersApiTest {
      */
     @Test
     public void createClusterTest() throws ApiException {
-        ClusterInput cluster = null;
-        // Cluster response = api.createCluster(cluster);
+        ClusterRequest cluster = null;
+        // ClusterResponse response = api.createCluster(cluster);
 
         // TODO: test validations
     }
@@ -88,7 +88,7 @@ public class ClustersApiTest {
     @Test
     public void getClusterTest() throws ApiException {
         String idOrName = null;
-        // Cluster response = api.getCluster(idOrName);
+        // ClusterResponse response = api.getCluster(idOrName);
 
         // TODO: test validations
     }
@@ -103,7 +103,7 @@ public class ClustersApiTest {
      */
     @Test
     public void listClustersTest() throws ApiException {
-        // List<ClusterEach> response = api.listClusters();
+        // List<ClusterEachResponse> response = api.listClusters();
 
         // TODO: test validations
     }
@@ -119,8 +119,8 @@ public class ClustersApiTest {
     @Test
     public void updateClusterTest() throws ApiException {
         String idOrName = null;
-        ClusterInput cluster = null;
-        // Cluster response = api.updateCluster(idOrName, cluster);
+        ClusterRequest cluster = null;
+        // ClusterResponse response = api.updateCluster(idOrName, cluster);
 
         // TODO: test validations
     }

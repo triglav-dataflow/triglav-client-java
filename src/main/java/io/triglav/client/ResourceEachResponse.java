@@ -29,55 +29,53 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
- * ErrorModel
+ * ResourceEachResponse
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T17:51:55.550+09:00")
-public class ErrorModel   {
-  @SerializedName("error")
-  private String error = null;
+public class ResourceEachResponse   {
+  @SerializedName("id")
+  private Integer id = null;
 
-  @SerializedName("backtrace")
-  private List<String> backtrace = new ArrayList<String>();
+  @SerializedName("uri")
+  private String uri = null;
 
-  public ErrorModel error(String error) {
-    this.error = error;
+  public ResourceEachResponse id(Integer id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get error
-   * @return error
+   * Get id
+   * @return id
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getError() {
-    return error;
+  @ApiModelProperty(example = "null", value = "")
+  public Integer getId() {
+    return id;
   }
 
-  public void setError(String error) {
-    this.error = error;
+  public void setId(Integer id) {
+    this.id = id;
   }
 
-  public ErrorModel backtrace(List<String> backtrace) {
-    this.backtrace = backtrace;
+  public ResourceEachResponse uri(String uri) {
+    this.uri = uri;
     return this;
   }
 
    /**
-   * Get backtrace
-   * @return backtrace
+   * Get uri
+   * @return uri
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public List<String> getBacktrace() {
-    return backtrace;
+  @ApiModelProperty(example = "null", value = "")
+  public String getUri() {
+    return uri;
   }
 
-  public void setBacktrace(List<String> backtrace) {
-    this.backtrace = backtrace;
+  public void setUri(String uri) {
+    this.uri = uri;
   }
 
 
@@ -89,23 +87,23 @@ public class ErrorModel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorModel errorModel = (ErrorModel) o;
-    return Objects.equals(this.error, errorModel.error) &&
-        Objects.equals(this.backtrace, errorModel.backtrace);
+    ResourceEachResponse resourceEachResponse = (ResourceEachResponse) o;
+    return Objects.equals(this.id, resourceEachResponse.id) &&
+        Objects.equals(this.uri, resourceEachResponse.uri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error, backtrace);
+    return Objects.hash(id, uri);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorModel {\n");
+    sb.append("class ResourceEachResponse {\n");
     
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    backtrace: ").append(toIndentedString(backtrace)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

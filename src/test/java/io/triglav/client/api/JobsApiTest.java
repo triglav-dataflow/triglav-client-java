@@ -26,10 +26,10 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.Job;
-import io.triglav.client.JobInput;
+import io.triglav.client.JobRequest;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.JobEach;
+import io.triglav.client.JobResponse;
+import io.triglav.client.JobEachResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -55,8 +55,8 @@ public class JobsApiTest {
      */
     @Test
     public void createOrUpdateJobTest() throws ApiException {
-        JobInput job = null;
-        // Job response = api.createOrUpdateJob(job);
+        JobRequest job = null;
+        // JobResponse response = api.createOrUpdateJob(job);
 
         // TODO: test validations
     }
@@ -88,7 +88,7 @@ public class JobsApiTest {
     @Test
     public void getJobTest() throws ApiException {
         String idOrUri = null;
-        // Job response = api.getJob(idOrUri);
+        // JobResponse response = api.getJob(idOrUri);
 
         // TODO: test validations
     }
@@ -103,7 +103,7 @@ public class JobsApiTest {
      */
     @Test
     public void listJobsTest() throws ApiException {
-        // List<JobEach> response = api.listJobs();
+        // List<JobEachResponse> response = api.listJobs();
 
         // TODO: test validations
     }

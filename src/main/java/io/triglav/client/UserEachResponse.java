@@ -32,18 +32,18 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 /**
- * Credential
+ * UserEachResponse
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T17:51:55.550+09:00")
-public class Credential   {
+public class UserEachResponse   {
+  @SerializedName("id")
+  private Long id = null;
+
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("password")
-  private String password = null;
-
   /**
-   * Gets or Sets authenticator
+   * local or ldap
    */
   public enum AuthenticatorEnum {
     @SerializedName("local")
@@ -67,7 +67,28 @@ public class Credential   {
   @SerializedName("authenticator")
   private AuthenticatorEnum authenticator = null;
 
-  public Credential name(String name) {
+  @SerializedName("email")
+  private String email = null;
+
+  public UserEachResponse id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public UserEachResponse name(String name) {
     this.name = name;
     return this;
   }
@@ -85,40 +106,40 @@ public class Credential   {
     this.name = name;
   }
 
-  public Credential password(String password) {
-    this.password = password;
-    return this;
-  }
-
-   /**
-   * Get password
-   * @return password
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public Credential authenticator(AuthenticatorEnum authenticator) {
+  public UserEachResponse authenticator(AuthenticatorEnum authenticator) {
     this.authenticator = authenticator;
     return this;
   }
 
    /**
-   * Get authenticator
+   * local or ldap
    * @return authenticator
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "local or ldap")
   public AuthenticatorEnum getAuthenticator() {
     return authenticator;
   }
 
   public void setAuthenticator(AuthenticatorEnum authenticator) {
     this.authenticator = authenticator;
+  }
+
+  public UserEachResponse email(String email) {
+    this.email = email;
+    return this;
+  }
+
+   /**
+   * Get email
+   * @return email
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
   }
 
 
@@ -130,25 +151,27 @@ public class Credential   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Credential credential = (Credential) o;
-    return Objects.equals(this.name, credential.name) &&
-        Objects.equals(this.password, credential.password) &&
-        Objects.equals(this.authenticator, credential.authenticator);
+    UserEachResponse userEachResponse = (UserEachResponse) o;
+    return Objects.equals(this.id, userEachResponse.id) &&
+        Objects.equals(this.name, userEachResponse.name) &&
+        Objects.equals(this.authenticator, userEachResponse.authenticator) &&
+        Objects.equals(this.email, userEachResponse.email);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, password, authenticator);
+    return Objects.hash(id, name, authenticator, email);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Credential {\n");
+    sb.append("class UserEachResponse {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    authenticator: ").append(toIndentedString(authenticator)).append("\n");
+    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("}");
     return sb.toString();
   }

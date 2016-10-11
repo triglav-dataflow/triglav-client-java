@@ -38,10 +38,10 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import io.triglav.client.ClusterInput;
-import io.triglav.client.Cluster;
+import io.triglav.client.ClusterRequest;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.ClusterEach;
+import io.triglav.client.ClusterResponse;
+import io.triglav.client.ClusterEachResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class ClustersApi {
     }
 
     /* Build call for createCluster */
-    private com.squareup.okhttp.Call createClusterCall(ClusterInput cluster, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createClusterCall(ClusterRequest cluster, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = cluster;
         
         // verify the required parameter 'cluster' is set
@@ -119,11 +119,11 @@ public class ClustersApi {
      * 
      * Creates a new cluster
      * @param cluster Cluster to add (required)
-     * @return Cluster
+     * @return ClusterResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Cluster createCluster(ClusterInput cluster) throws ApiException {
-        ApiResponse<Cluster> resp = createClusterWithHttpInfo(cluster);
+    public ClusterResponse createCluster(ClusterRequest cluster) throws ApiException {
+        ApiResponse<ClusterResponse> resp = createClusterWithHttpInfo(cluster);
         return resp.getData();
     }
 
@@ -131,12 +131,12 @@ public class ClustersApi {
      * 
      * Creates a new cluster
      * @param cluster Cluster to add (required)
-     * @return ApiResponse&lt;Cluster&gt;
+     * @return ApiResponse&lt;ClusterResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Cluster> createClusterWithHttpInfo(ClusterInput cluster) throws ApiException {
+    public ApiResponse<ClusterResponse> createClusterWithHttpInfo(ClusterRequest cluster) throws ApiException {
         com.squareup.okhttp.Call call = createClusterCall(cluster, null, null);
-        Type localVarReturnType = new TypeToken<Cluster>(){}.getType();
+        Type localVarReturnType = new TypeToken<ClusterResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -148,7 +148,7 @@ public class ClustersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createClusterAsync(ClusterInput cluster, final ApiCallback<Cluster> callback) throws ApiException {
+    public com.squareup.okhttp.Call createClusterAsync(ClusterRequest cluster, final ApiCallback<ClusterResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -170,7 +170,7 @@ public class ClustersApi {
         }
 
         com.squareup.okhttp.Call call = createClusterCall(cluster, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Cluster>(){}.getType();
+        Type localVarReturnType = new TypeToken<ClusterResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -329,11 +329,11 @@ public class ClustersApi {
      * 
      * Returns a single cluster
      * @param idOrName ID or Name of cluster to fetch (required)
-     * @return Cluster
+     * @return ClusterResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Cluster getCluster(String idOrName) throws ApiException {
-        ApiResponse<Cluster> resp = getClusterWithHttpInfo(idOrName);
+    public ClusterResponse getCluster(String idOrName) throws ApiException {
+        ApiResponse<ClusterResponse> resp = getClusterWithHttpInfo(idOrName);
         return resp.getData();
     }
 
@@ -341,12 +341,12 @@ public class ClustersApi {
      * 
      * Returns a single cluster
      * @param idOrName ID or Name of cluster to fetch (required)
-     * @return ApiResponse&lt;Cluster&gt;
+     * @return ApiResponse&lt;ClusterResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Cluster> getClusterWithHttpInfo(String idOrName) throws ApiException {
+    public ApiResponse<ClusterResponse> getClusterWithHttpInfo(String idOrName) throws ApiException {
         com.squareup.okhttp.Call call = getClusterCall(idOrName, null, null);
-        Type localVarReturnType = new TypeToken<Cluster>(){}.getType();
+        Type localVarReturnType = new TypeToken<ClusterResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -358,7 +358,7 @@ public class ClustersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getClusterAsync(String idOrName, final ApiCallback<Cluster> callback) throws ApiException {
+    public com.squareup.okhttp.Call getClusterAsync(String idOrName, final ApiCallback<ClusterResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -380,7 +380,7 @@ public class ClustersApi {
         }
 
         com.squareup.okhttp.Call call = getClusterCall(idOrName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Cluster>(){}.getType();
+        Type localVarReturnType = new TypeToken<ClusterResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -429,23 +429,23 @@ public class ClustersApi {
     /**
      * 
      * Returns all clusters from the system
-     * @return List&lt;ClusterEach&gt;
+     * @return List&lt;ClusterEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<ClusterEach> listClusters() throws ApiException {
-        ApiResponse<List<ClusterEach>> resp = listClustersWithHttpInfo();
+    public List<ClusterEachResponse> listClusters() throws ApiException {
+        ApiResponse<List<ClusterEachResponse>> resp = listClustersWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
      * Returns all clusters from the system
-     * @return ApiResponse&lt;List&lt;ClusterEach&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ClusterEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<ClusterEach>> listClustersWithHttpInfo() throws ApiException {
+    public ApiResponse<List<ClusterEachResponse>> listClustersWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = listClustersCall(null, null);
-        Type localVarReturnType = new TypeToken<List<ClusterEach>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ClusterEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -456,7 +456,7 @@ public class ClustersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listClustersAsync(final ApiCallback<List<ClusterEach>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listClustersAsync(final ApiCallback<List<ClusterEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -478,12 +478,12 @@ public class ClustersApi {
         }
 
         com.squareup.okhttp.Call call = listClustersCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<ClusterEach>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<ClusterEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for updateCluster */
-    private com.squareup.okhttp.Call updateClusterCall(String idOrName, ClusterInput cluster, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateClusterCall(String idOrName, ClusterRequest cluster, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = cluster;
         
         // verify the required parameter 'idOrName' is set
@@ -540,11 +540,11 @@ public class ClustersApi {
      * Updates a single cluster
      * @param idOrName ID or Name of cluster to fetch (required)
      * @param cluster Cluster parameters to update (required)
-     * @return Cluster
+     * @return ClusterResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Cluster updateCluster(String idOrName, ClusterInput cluster) throws ApiException {
-        ApiResponse<Cluster> resp = updateClusterWithHttpInfo(idOrName, cluster);
+    public ClusterResponse updateCluster(String idOrName, ClusterRequest cluster) throws ApiException {
+        ApiResponse<ClusterResponse> resp = updateClusterWithHttpInfo(idOrName, cluster);
         return resp.getData();
     }
 
@@ -553,12 +553,12 @@ public class ClustersApi {
      * Updates a single cluster
      * @param idOrName ID or Name of cluster to fetch (required)
      * @param cluster Cluster parameters to update (required)
-     * @return ApiResponse&lt;Cluster&gt;
+     * @return ApiResponse&lt;ClusterResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Cluster> updateClusterWithHttpInfo(String idOrName, ClusterInput cluster) throws ApiException {
+    public ApiResponse<ClusterResponse> updateClusterWithHttpInfo(String idOrName, ClusterRequest cluster) throws ApiException {
         com.squareup.okhttp.Call call = updateClusterCall(idOrName, cluster, null, null);
-        Type localVarReturnType = new TypeToken<Cluster>(){}.getType();
+        Type localVarReturnType = new TypeToken<ClusterResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -571,7 +571,7 @@ public class ClustersApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateClusterAsync(String idOrName, ClusterInput cluster, final ApiCallback<Cluster> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateClusterAsync(String idOrName, ClusterRequest cluster, final ApiCallback<ClusterResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -593,7 +593,7 @@ public class ClustersApi {
         }
 
         com.squareup.okhttp.Call call = updateClusterCall(idOrName, cluster, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Cluster>(){}.getType();
+        Type localVarReturnType = new TypeToken<ClusterResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

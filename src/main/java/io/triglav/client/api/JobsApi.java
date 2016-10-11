@@ -38,10 +38,10 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import io.triglav.client.Job;
-import io.triglav.client.JobInput;
+import io.triglav.client.JobRequest;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.JobEach;
+import io.triglav.client.JobResponse;
+import io.triglav.client.JobEachResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class JobsApi {
     }
 
     /* Build call for createOrUpdateJob */
-    private com.squareup.okhttp.Call createOrUpdateJobCall(JobInput job, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createOrUpdateJobCall(JobRequest job, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = job;
         
         // verify the required parameter 'job' is set
@@ -119,11 +119,11 @@ public class JobsApi {
      * 
      * Creates or Updates a single job
      * @param job Job parameters (required)
-     * @return Job
+     * @return JobResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Job createOrUpdateJob(JobInput job) throws ApiException {
-        ApiResponse<Job> resp = createOrUpdateJobWithHttpInfo(job);
+    public JobResponse createOrUpdateJob(JobRequest job) throws ApiException {
+        ApiResponse<JobResponse> resp = createOrUpdateJobWithHttpInfo(job);
         return resp.getData();
     }
 
@@ -131,12 +131,12 @@ public class JobsApi {
      * 
      * Creates or Updates a single job
      * @param job Job parameters (required)
-     * @return ApiResponse&lt;Job&gt;
+     * @return ApiResponse&lt;JobResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Job> createOrUpdateJobWithHttpInfo(JobInput job) throws ApiException {
+    public ApiResponse<JobResponse> createOrUpdateJobWithHttpInfo(JobRequest job) throws ApiException {
         com.squareup.okhttp.Call call = createOrUpdateJobCall(job, null, null);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -148,7 +148,7 @@ public class JobsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createOrUpdateJobAsync(JobInput job, final ApiCallback<Job> callback) throws ApiException {
+    public com.squareup.okhttp.Call createOrUpdateJobAsync(JobRequest job, final ApiCallback<JobResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -170,7 +170,7 @@ public class JobsApi {
         }
 
         com.squareup.okhttp.Call call = createOrUpdateJobCall(job, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -329,11 +329,11 @@ public class JobsApi {
      * 
      * Returns a single job
      * @param idOrUri ID or URI of job to fetch (required)
-     * @return Job
+     * @return JobResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Job getJob(String idOrUri) throws ApiException {
-        ApiResponse<Job> resp = getJobWithHttpInfo(idOrUri);
+    public JobResponse getJob(String idOrUri) throws ApiException {
+        ApiResponse<JobResponse> resp = getJobWithHttpInfo(idOrUri);
         return resp.getData();
     }
 
@@ -341,12 +341,12 @@ public class JobsApi {
      * 
      * Returns a single job
      * @param idOrUri ID or URI of job to fetch (required)
-     * @return ApiResponse&lt;Job&gt;
+     * @return ApiResponse&lt;JobResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Job> getJobWithHttpInfo(String idOrUri) throws ApiException {
+    public ApiResponse<JobResponse> getJobWithHttpInfo(String idOrUri) throws ApiException {
         com.squareup.okhttp.Call call = getJobCall(idOrUri, null, null);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -358,7 +358,7 @@ public class JobsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getJobAsync(String idOrUri, final ApiCallback<Job> callback) throws ApiException {
+    public com.squareup.okhttp.Call getJobAsync(String idOrUri, final ApiCallback<JobResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -380,7 +380,7 @@ public class JobsApi {
         }
 
         com.squareup.okhttp.Call call = getJobCall(idOrUri, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Job>(){}.getType();
+        Type localVarReturnType = new TypeToken<JobResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -429,23 +429,23 @@ public class JobsApi {
     /**
      * 
      * Returns all jobs
-     * @return List&lt;JobEach&gt;
+     * @return List&lt;JobEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<JobEach> listJobs() throws ApiException {
-        ApiResponse<List<JobEach>> resp = listJobsWithHttpInfo();
+    public List<JobEachResponse> listJobs() throws ApiException {
+        ApiResponse<List<JobEachResponse>> resp = listJobsWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
      * Returns all jobs
-     * @return ApiResponse&lt;List&lt;JobEach&gt;&gt;
+     * @return ApiResponse&lt;List&lt;JobEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<JobEach>> listJobsWithHttpInfo() throws ApiException {
+    public ApiResponse<List<JobEachResponse>> listJobsWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = listJobsCall(null, null);
-        Type localVarReturnType = new TypeToken<List<JobEach>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<JobEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -456,7 +456,7 @@ public class JobsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listJobsAsync(final ApiCallback<List<JobEach>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listJobsAsync(final ApiCallback<List<JobEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -478,7 +478,7 @@ public class JobsApi {
         }
 
         com.squareup.okhttp.Call call = listJobsCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<JobEach>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<JobEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

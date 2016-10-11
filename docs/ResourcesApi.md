@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="createResource"></a>
 # **createResource**
-> Resource createResource(resource)
+> ResourceResponse createResource(resource)
 
 
 
@@ -37,9 +37,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 ResourcesApi apiInstance = new ResourcesApi();
-ResourceInput resource = new ResourceInput(); // ResourceInput | Resource to add
+ResourceRequest resource = new ResourceRequest(); // ResourceRequest | Resource to add
 try {
-    Resource result = apiInstance.createResource(resource);
+    ResourceResponse result = apiInstance.createResource(resource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#createResource");
@@ -51,11 +51,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resource** | [**ResourceInput**](ResourceInput.md)| Resource to add |
+ **resource** | [**ResourceRequest**](ResourceRequest.md)| Resource to add |
 
 ### Return type
 
-[**Resource**](Resource.md)
+[**ResourceResponse**](ResourceResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ null (empty response body)
 
 <a name="getResource"></a>
 # **getResource**
-> Resource getResource(idOrUri)
+> ResourceResponse getResource(idOrUri)
 
 
 
@@ -148,7 +148,7 @@ api_key.setApiKey("YOUR API KEY");
 ResourcesApi apiInstance = new ResourcesApi();
 String idOrUri = "idOrUri_example"; // String | ID or URI of resource to fetch
 try {
-    Resource result = apiInstance.getResource(idOrUri);
+    ResourceResponse result = apiInstance.getResource(idOrUri);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#getResource");
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Resource**](Resource.md)
+[**ResourceResponse**](ResourceResponse.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="listResources"></a>
 # **listResources**
-> List&lt;ResourceEach&gt; listResources(clusterId, consumable, notifiable)
+> List&lt;ResourceEachResponse&gt; listResources(clusterName, consumable, notifiable)
 
 
 
@@ -201,11 +201,11 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 ResourcesApi apiInstance = new ResourcesApi();
-Integer clusterId = 56; // Integer | ID of Cluster
+String clusterName = "clusterName_example"; // String | Name of Cluster
 Boolean consumable = true; // Boolean | Consuamble
 Boolean notifiable = true; // Boolean | Notifiable
 try {
-    List<ResourceEach> result = apiInstance.listResources(clusterId, consumable, notifiable);
+    List<ResourceEachResponse> result = apiInstance.listResources(clusterName, consumable, notifiable);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#listResources");
@@ -217,13 +217,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clusterId** | **Integer**| ID of Cluster |
+ **clusterName** | **String**| Name of Cluster |
  **consumable** | **Boolean**| Consuamble |
  **notifiable** | **Boolean**| Notifiable |
 
 ### Return type
 
-[**List&lt;ResourceEach&gt;**](ResourceEach.md)
+[**List&lt;ResourceEachResponse&gt;**](ResourceEachResponse.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 <a name="updateResource"></a>
 # **updateResource**
-> Resource updateResource(idOrUri, resource)
+> ResourceResponse updateResource(idOrUri, resource)
 
 
 
@@ -261,9 +261,9 @@ api_key.setApiKey("YOUR API KEY");
 
 ResourcesApi apiInstance = new ResourcesApi();
 String idOrUri = "idOrUri_example"; // String | ID or URI of resource to fetch
-ResourceInput resource = new ResourceInput(); // ResourceInput | Resource parameters to update
+ResourceRequest resource = new ResourceRequest(); // ResourceRequest | Resource parameters to update
 try {
-    Resource result = apiInstance.updateResource(idOrUri, resource);
+    ResourceResponse result = apiInstance.updateResource(idOrUri, resource);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#updateResource");
@@ -276,11 +276,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **idOrUri** | **String**| ID or URI of resource to fetch |
- **resource** | [**ResourceInput**](ResourceInput.md)| Resource parameters to update |
+ **resource** | [**ResourceRequest**](ResourceRequest.md)| Resource parameters to update |
 
 ### Return type
 
-[**Resource**](Resource.md)
+[**ResourceResponse**](ResourceResponse.md)
 
 ### Authorization
 

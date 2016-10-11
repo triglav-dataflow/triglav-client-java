@@ -26,10 +26,10 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.MessageEach;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.Message;
-import io.triglav.client.MessageInput;
+import io.triglav.client.MessageEachResponse;
+import io.triglav.client.MessageRequest;
+import io.triglav.client.MessageResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class MessagesApiTest {
         String resourceUri = null;
         Integer offset = null;
         String datetime = null;
-        // List<MessageEach> response = api.fetchMessages(resourceUri, offset, datetime);
+        // List<MessageEachResponse> response = api.fetchMessages(resourceUri, offset, datetime);
 
         // TODO: test validations
     }
@@ -75,8 +75,8 @@ public class MessagesApiTest {
     public void sendMessageTest() throws ApiException {
         String resourceUri = null;
         String datetime = null;
-        MessageInput message = null;
-        // Message response = api.sendMessage(resourceUri, datetime, message);
+        MessageRequest message = null;
+        // MessageResponse response = api.sendMessage(resourceUri, datetime, message);
 
         // TODO: test validations
     }

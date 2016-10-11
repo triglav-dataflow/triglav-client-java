@@ -38,10 +38,10 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import io.triglav.client.Resource;
+import io.triglav.client.ResourceRequest;
+import io.triglav.client.ResourceResponse;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.ResourceInput;
-import io.triglav.client.ResourceEach;
+import io.triglav.client.ResourceEachResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class ResourcesApi {
     }
 
     /* Build call for createResource */
-    private com.squareup.okhttp.Call createResourceCall(ResourceInput resource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call createResourceCall(ResourceRequest resource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = resource;
         
         // verify the required parameter 'resource' is set
@@ -119,11 +119,11 @@ public class ResourcesApi {
      * 
      * Creates a new resource
      * @param resource Resource to add (required)
-     * @return Resource
+     * @return ResourceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Resource createResource(ResourceInput resource) throws ApiException {
-        ApiResponse<Resource> resp = createResourceWithHttpInfo(resource);
+    public ResourceResponse createResource(ResourceRequest resource) throws ApiException {
+        ApiResponse<ResourceResponse> resp = createResourceWithHttpInfo(resource);
         return resp.getData();
     }
 
@@ -131,12 +131,12 @@ public class ResourcesApi {
      * 
      * Creates a new resource
      * @param resource Resource to add (required)
-     * @return ApiResponse&lt;Resource&gt;
+     * @return ApiResponse&lt;ResourceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Resource> createResourceWithHttpInfo(ResourceInput resource) throws ApiException {
+    public ApiResponse<ResourceResponse> createResourceWithHttpInfo(ResourceRequest resource) throws ApiException {
         com.squareup.okhttp.Call call = createResourceCall(resource, null, null);
-        Type localVarReturnType = new TypeToken<Resource>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResourceResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -148,7 +148,7 @@ public class ResourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createResourceAsync(ResourceInput resource, final ApiCallback<Resource> callback) throws ApiException {
+    public com.squareup.okhttp.Call createResourceAsync(ResourceRequest resource, final ApiCallback<ResourceResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -170,7 +170,7 @@ public class ResourcesApi {
         }
 
         com.squareup.okhttp.Call call = createResourceCall(resource, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Resource>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResourceResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -329,11 +329,11 @@ public class ResourcesApi {
      * 
      * Returns a single resource
      * @param idOrUri ID or URI of resource to fetch (required)
-     * @return Resource
+     * @return ResourceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Resource getResource(String idOrUri) throws ApiException {
-        ApiResponse<Resource> resp = getResourceWithHttpInfo(idOrUri);
+    public ResourceResponse getResource(String idOrUri) throws ApiException {
+        ApiResponse<ResourceResponse> resp = getResourceWithHttpInfo(idOrUri);
         return resp.getData();
     }
 
@@ -341,12 +341,12 @@ public class ResourcesApi {
      * 
      * Returns a single resource
      * @param idOrUri ID or URI of resource to fetch (required)
-     * @return ApiResponse&lt;Resource&gt;
+     * @return ApiResponse&lt;ResourceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Resource> getResourceWithHttpInfo(String idOrUri) throws ApiException {
+    public ApiResponse<ResourceResponse> getResourceWithHttpInfo(String idOrUri) throws ApiException {
         com.squareup.okhttp.Call call = getResourceCall(idOrUri, null, null);
-        Type localVarReturnType = new TypeToken<Resource>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResourceResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -358,7 +358,7 @@ public class ResourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getResourceAsync(String idOrUri, final ApiCallback<Resource> callback) throws ApiException {
+    public com.squareup.okhttp.Call getResourceAsync(String idOrUri, final ApiCallback<ResourceResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -380,17 +380,17 @@ public class ResourcesApi {
         }
 
         com.squareup.okhttp.Call call = getResourceCall(idOrUri, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Resource>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResourceResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for listResources */
-    private com.squareup.okhttp.Call listResourcesCall(Integer clusterId, Boolean consumable, Boolean notifiable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listResourcesCall(String clusterName, Boolean consumable, Boolean notifiable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
-        // verify the required parameter 'clusterId' is set
-        if (clusterId == null) {
-            throw new ApiException("Missing the required parameter 'clusterId' when calling listResources(Async)");
+        // verify the required parameter 'clusterName' is set
+        if (clusterName == null) {
+            throw new ApiException("Missing the required parameter 'clusterName' when calling listResources(Async)");
         }
         
         // verify the required parameter 'consumable' is set
@@ -408,8 +408,8 @@ public class ResourcesApi {
         String localVarPath = "/resources".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (clusterId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "cluster_id", clusterId));
+        if (clusterName != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "cluster_name", clusterName));
         if (consumable != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "consumable", consumable));
         if (notifiable != null)
@@ -450,43 +450,43 @@ public class ResourcesApi {
     /**
      * 
      * Returns all resources from the system
-     * @param clusterId ID of Cluster (required)
+     * @param clusterName Name of Cluster (required)
      * @param consumable Consuamble (required)
      * @param notifiable Notifiable (required)
-     * @return List&lt;ResourceEach&gt;
+     * @return List&lt;ResourceEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<ResourceEach> listResources(Integer clusterId, Boolean consumable, Boolean notifiable) throws ApiException {
-        ApiResponse<List<ResourceEach>> resp = listResourcesWithHttpInfo(clusterId, consumable, notifiable);
+    public List<ResourceEachResponse> listResources(String clusterName, Boolean consumable, Boolean notifiable) throws ApiException {
+        ApiResponse<List<ResourceEachResponse>> resp = listResourcesWithHttpInfo(clusterName, consumable, notifiable);
         return resp.getData();
     }
 
     /**
      * 
      * Returns all resources from the system
-     * @param clusterId ID of Cluster (required)
+     * @param clusterName Name of Cluster (required)
      * @param consumable Consuamble (required)
      * @param notifiable Notifiable (required)
-     * @return ApiResponse&lt;List&lt;ResourceEach&gt;&gt;
+     * @return ApiResponse&lt;List&lt;ResourceEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<ResourceEach>> listResourcesWithHttpInfo(Integer clusterId, Boolean consumable, Boolean notifiable) throws ApiException {
-        com.squareup.okhttp.Call call = listResourcesCall(clusterId, consumable, notifiable, null, null);
-        Type localVarReturnType = new TypeToken<List<ResourceEach>>(){}.getType();
+    public ApiResponse<List<ResourceEachResponse>> listResourcesWithHttpInfo(String clusterName, Boolean consumable, Boolean notifiable) throws ApiException {
+        com.squareup.okhttp.Call call = listResourcesCall(clusterName, consumable, notifiable, null, null);
+        Type localVarReturnType = new TypeToken<List<ResourceEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
      * Returns all resources from the system
-     * @param clusterId ID of Cluster (required)
+     * @param clusterName Name of Cluster (required)
      * @param consumable Consuamble (required)
      * @param notifiable Notifiable (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listResourcesAsync(Integer clusterId, Boolean consumable, Boolean notifiable, final ApiCallback<List<ResourceEach>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listResourcesAsync(String clusterName, Boolean consumable, Boolean notifiable, final ApiCallback<List<ResourceEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -507,13 +507,13 @@ public class ResourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listResourcesCall(clusterId, consumable, notifiable, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<ResourceEach>>(){}.getType();
+        com.squareup.okhttp.Call call = listResourcesCall(clusterName, consumable, notifiable, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<ResourceEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for updateResource */
-    private com.squareup.okhttp.Call updateResourceCall(String idOrUri, ResourceInput resource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateResourceCall(String idOrUri, ResourceRequest resource, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = resource;
         
         // verify the required parameter 'idOrUri' is set
@@ -570,11 +570,11 @@ public class ResourcesApi {
      * Updates a single resource
      * @param idOrUri ID or URI of resource to fetch (required)
      * @param resource Resource parameters to update (required)
-     * @return Resource
+     * @return ResourceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Resource updateResource(String idOrUri, ResourceInput resource) throws ApiException {
-        ApiResponse<Resource> resp = updateResourceWithHttpInfo(idOrUri, resource);
+    public ResourceResponse updateResource(String idOrUri, ResourceRequest resource) throws ApiException {
+        ApiResponse<ResourceResponse> resp = updateResourceWithHttpInfo(idOrUri, resource);
         return resp.getData();
     }
 
@@ -583,12 +583,12 @@ public class ResourcesApi {
      * Updates a single resource
      * @param idOrUri ID or URI of resource to fetch (required)
      * @param resource Resource parameters to update (required)
-     * @return ApiResponse&lt;Resource&gt;
+     * @return ApiResponse&lt;ResourceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Resource> updateResourceWithHttpInfo(String idOrUri, ResourceInput resource) throws ApiException {
+    public ApiResponse<ResourceResponse> updateResourceWithHttpInfo(String idOrUri, ResourceRequest resource) throws ApiException {
         com.squareup.okhttp.Call call = updateResourceCall(idOrUri, resource, null, null);
-        Type localVarReturnType = new TypeToken<Resource>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResourceResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -601,7 +601,7 @@ public class ResourcesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateResourceAsync(String idOrUri, ResourceInput resource, final ApiCallback<Resource> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateResourceAsync(String idOrUri, ResourceRequest resource, final ApiCallback<ResourceResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -623,7 +623,7 @@ public class ResourcesApi {
         }
 
         com.squareup.okhttp.Call call = updateResourceCall(idOrUri, resource, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Resource>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResourceResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

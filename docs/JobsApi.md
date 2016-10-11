@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="createOrUpdateJob"></a>
 # **createOrUpdateJob**
-> Job createOrUpdateJob(job)
+> JobResponse createOrUpdateJob(job)
 
 
 
@@ -36,9 +36,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 JobsApi apiInstance = new JobsApi();
-JobInput job = new JobInput(); // JobInput | Job parameters
+JobRequest job = new JobRequest(); // JobRequest | Job parameters
 try {
-    Job result = apiInstance.createOrUpdateJob(job);
+    JobResponse result = apiInstance.createOrUpdateJob(job);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JobsApi#createOrUpdateJob");
@@ -50,11 +50,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job** | [**JobInput**](JobInput.md)| Job parameters |
+ **job** | [**JobRequest**](JobRequest.md)| Job parameters |
 
 ### Return type
 
-[**Job**](Job.md)
+[**JobResponse**](JobResponse.md)
 
 ### Authorization
 
@@ -121,7 +121,7 @@ null (empty response body)
 
 <a name="getJob"></a>
 # **getJob**
-> Job getJob(idOrUri)
+> JobResponse getJob(idOrUri)
 
 
 
@@ -147,7 +147,7 @@ api_key.setApiKey("YOUR API KEY");
 JobsApi apiInstance = new JobsApi();
 String idOrUri = "idOrUri_example"; // String | ID or URI of job to fetch
 try {
-    Job result = apiInstance.getJob(idOrUri);
+    JobResponse result = apiInstance.getJob(idOrUri);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JobsApi#getJob");
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Job**](Job.md)
+[**JobResponse**](JobResponse.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 <a name="listJobs"></a>
 # **listJobs**
-> List&lt;JobEach&gt; listJobs()
+> List&lt;JobEachResponse&gt; listJobs()
 
 
 
@@ -201,7 +201,7 @@ api_key.setApiKey("YOUR API KEY");
 
 JobsApi apiInstance = new JobsApi();
 try {
-    List<JobEach> result = apiInstance.listJobs();
+    List<JobEachResponse> result = apiInstance.listJobs();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JobsApi#listJobs");
@@ -214,7 +214,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;JobEach&gt;**](JobEach.md)
+[**List&lt;JobEachResponse&gt;**](JobEachResponse.md)
 
 ### Authorization
 

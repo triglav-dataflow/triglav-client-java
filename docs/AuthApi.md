@@ -106,7 +106,7 @@ null (empty response body)
 
 <a name="me"></a>
 # **me**
-> User me()
+> UserResponse me()
 
 
 
@@ -131,7 +131,7 @@ api_key.setApiKey("YOUR API KEY");
 
 AuthApi apiInstance = new AuthApi();
 try {
-    User result = apiInstance.me();
+    UserResponse result = apiInstance.me();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthApi#me");
@@ -144,7 +144,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**User**](User.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 

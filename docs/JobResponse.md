@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **contactId** | **Integer** |  |  [optional]
 **createdAt** | **Integer** |  |  [optional]
 **updatedAt** | **Integer** |  |  [optional]
-**inputResources** | [**List&lt;Resource&gt;**](Resource.md) | New resources are created if it does not exit. Need to use Resource API to update |  [optional]
-**outputResources** | [**List&lt;Resource&gt;**](Resource.md) | New resources are created if it does not exit. Need to use Resource API to update |  [optional]
+**inputResources** | [**List&lt;ResourceResponse&gt;**](ResourceResponse.md) | New resources are created if it does not exit. Need to use Resource API to update |  [optional]
+**outputResources** | [**List&lt;ResourceResponse&gt;**](ResourceResponse.md) | New resources are created if it does not exit. Need to use Resource API to update |  [optional]
 
 
 

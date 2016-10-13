@@ -41,7 +41,7 @@ import java.io.IOException;
 import io.triglav.client.Credential;
 import io.triglav.client.TokenResponse;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.User;
+import io.triglav.client.UserResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -313,23 +313,23 @@ public class AuthApi {
     /**
      * 
      * Returns a user property of the access_token
-     * @return User
+     * @return UserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public User me() throws ApiException {
-        ApiResponse<User> resp = meWithHttpInfo();
+    public UserResponse me() throws ApiException {
+        ApiResponse<UserResponse> resp = meWithHttpInfo();
         return resp.getData();
     }
 
     /**
      * 
      * Returns a user property of the access_token
-     * @return ApiResponse&lt;User&gt;
+     * @return ApiResponse&lt;UserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<User> meWithHttpInfo() throws ApiException {
+    public ApiResponse<UserResponse> meWithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = meCall(null, null);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -340,7 +340,7 @@ public class AuthApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call meAsync(final ApiCallback<User> callback) throws ApiException {
+    public com.squareup.okhttp.Call meAsync(final ApiCallback<UserResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -362,7 +362,7 @@ public class AuthApi {
         }
 
         com.squareup.okhttp.Call call = meCall(progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<User>(){}.getType();
+        Type localVarReturnType = new TypeToken<UserResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

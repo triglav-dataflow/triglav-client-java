@@ -29,7 +29,7 @@ import io.triglav.client.ApiException;
 import io.triglav.client.Credential;
 import io.triglav.client.TokenResponse;
 import io.triglav.client.ErrorModel;
-import io.triglav.client.User;
+import io.triglav.client.UserResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -86,7 +86,7 @@ public class AuthApiTest {
      */
     @Test
     public void meTest() throws ApiException {
-        // User response = api.me();
+        // UserResponse response = api.me();
 
         // TODO: test validations
     }

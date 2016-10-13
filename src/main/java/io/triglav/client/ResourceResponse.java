@@ -35,7 +35,7 @@ import io.triglav.client.ResourceRequest;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T18:51:26.698+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-13T12:22:07.411+09:00")
 public class ResourceResponse   {
   @SerializedName("uri")
   private String uri = null;
@@ -44,7 +44,7 @@ public class ResourceResponse   {
   private String description = null;
 
   @SerializedName("cluster_name")
-  private Integer clusterName = null;
+  private String clusterName = null;
 
   @SerializedName("consumable")
   private Boolean consumable = null;
@@ -97,7 +97,7 @@ public class ResourceResponse   {
     this.description = description;
   }
 
-  public ResourceResponse clusterName(Integer clusterName) {
+  public ResourceResponse clusterName(String clusterName) {
     this.clusterName = clusterName;
     return this;
   }
@@ -107,11 +107,11 @@ public class ResourceResponse   {
    * @return clusterName
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public Integer getClusterName() {
+  public String getClusterName() {
     return clusterName;
   }
 
-  public void setClusterName(Integer clusterName) {
+  public void setClusterName(String clusterName) {
     this.clusterName = clusterName;
   }
 

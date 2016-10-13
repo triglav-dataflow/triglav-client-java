@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **uri** | **String** |  | 
 **description** | **String** |  |  [optional]
-**clusterName** | **Integer** |  | 
+**clusterName** | **String** |  | 
 **consumable** | **Boolean** |  |  [optional]
 **notifiable** | **Boolean** |  |  [optional]
 **id** | **Long** |  |  [optional]

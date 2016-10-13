@@ -29,7 +29,7 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.triglav.client.Resource;
+import io.triglav.client.ResourceResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * JobResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-11T18:51:26.698+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-13T12:22:07.411+09:00")
 public class JobResponse   {
   @SerializedName("id")
   private Long id = null;
@@ -55,10 +55,10 @@ public class JobResponse   {
   private Integer updatedAt = null;
 
   @SerializedName("input_resources")
-  private List<Resource> inputResources = new ArrayList<Resource>();
+  private List<ResourceResponse> inputResources = new ArrayList<ResourceResponse>();
 
   @SerializedName("output_resources")
-  private List<Resource> outputResources = new ArrayList<Resource>();
+  private List<ResourceResponse> outputResources = new ArrayList<ResourceResponse>();
 
   public JobResponse id(Long id) {
     this.id = id;
@@ -150,7 +150,7 @@ public class JobResponse   {
     this.updatedAt = updatedAt;
   }
 
-  public JobResponse inputResources(List<Resource> inputResources) {
+  public JobResponse inputResources(List<ResourceResponse> inputResources) {
     this.inputResources = inputResources;
     return this;
   }
@@ -160,15 +160,15 @@ public class JobResponse   {
    * @return inputResources
   **/
   @ApiModelProperty(example = "null", value = "New resources are created if it does not exit. Need to use Resource API to update")
-  public List<Resource> getInputResources() {
+  public List<ResourceResponse> getInputResources() {
     return inputResources;
   }
 
-  public void setInputResources(List<Resource> inputResources) {
+  public void setInputResources(List<ResourceResponse> inputResources) {
     this.inputResources = inputResources;
   }
 
-  public JobResponse outputResources(List<Resource> outputResources) {
+  public JobResponse outputResources(List<ResourceResponse> outputResources) {
     this.outputResources = outputResources;
     return this;
   }
@@ -178,11 +178,11 @@ public class JobResponse   {
    * @return outputResources
   **/
   @ApiModelProperty(example = "null", value = "New resources are created if it does not exit. Need to use Resource API to update")
-  public List<Resource> getOutputResources() {
+  public List<ResourceResponse> getOutputResources() {
     return outputResources;
   }
 
-  public void setOutputResources(List<Resource> outputResources) {
+  public void setOutputResources(List<ResourceResponse> outputResources) {
     this.outputResources = outputResources;
   }
 

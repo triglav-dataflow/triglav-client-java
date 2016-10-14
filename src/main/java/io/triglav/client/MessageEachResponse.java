@@ -35,7 +35,7 @@ import org.joda.time.DateTime;
 /**
  * MessageEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T00:55:58.464+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T01:47:58.977+09:00")
 public class MessageEachResponse   {
   @SerializedName("id")
   private Long id = null;

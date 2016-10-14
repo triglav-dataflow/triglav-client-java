@@ -29,18 +29,19 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 
 
 /**
  * TokenResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T00:55:58.464+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T01:47:58.977+09:00")
 public class TokenResponse   {
   @SerializedName("access_token")
   private String accessToken = null;
 
   @SerializedName("expires_at")
-  private Integer expiresAt = null;
+  private DateTime expiresAt = null;
 
   public TokenResponse accessToken(String accessToken) {
     this.accessToken = accessToken;
@@ -60,21 +61,21 @@ public class TokenResponse   {
     this.accessToken = accessToken;
   }
 
-  public TokenResponse expiresAt(Integer expiresAt) {
+  public TokenResponse expiresAt(DateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
 
    /**
-   * unix timestamp
+   * Get expiresAt
    * @return expiresAt
   **/
-  @ApiModelProperty(example = "null", value = "unix timestamp")
-  public Integer getExpiresAt() {
+  @ApiModelProperty(example = "null", value = "")
+  public DateTime getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(Integer expiresAt) {
+  public void setExpiresAt(DateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
 

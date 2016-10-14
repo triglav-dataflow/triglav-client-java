@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **name** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
 **id** | **Long** |  |  [optional]
-**createdAt** | **Integer** |  |  [optional]
-**updatedAt** | **Integer** |  |  [optional]
+**createdAt** | [**DateTime**](DateTime.md) |  |  [optional]
+**updatedAt** | [**DateTime**](DateTime.md) |  |  [optional]
 
 
 

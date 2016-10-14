@@ -30,12 +30,13 @@ import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import io.triglav.client.ClusterRequest;
+import org.joda.time.DateTime;
 
 
 /**
  * ClusterResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-13T12:22:07.411+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T00:55:58.464+09:00")
 public class ClusterResponse   {
   @SerializedName("name")
   private String name = null;
@@ -47,10 +48,10 @@ public class ClusterResponse   {
   private Long id = null;
 
   @SerializedName("created_at")
-  private Integer createdAt = null;
+  private DateTime createdAt = null;
 
   @SerializedName("updated_at")
-  private Integer updatedAt = null;
+  private DateTime updatedAt = null;
 
   public ClusterResponse name(String name) {
     this.name = name;
@@ -106,7 +107,7 @@ public class ClusterResponse   {
     this.id = id;
   }
 
-  public ClusterResponse createdAt(Integer createdAt) {
+  public ClusterResponse createdAt(DateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -116,15 +117,15 @@ public class ClusterResponse   {
    * @return createdAt
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Integer getCreatedAt() {
+  public DateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Integer createdAt) {
+  public void setCreatedAt(DateTime createdAt) {
     this.createdAt = createdAt;
   }
 
-  public ClusterResponse updatedAt(Integer updatedAt) {
+  public ClusterResponse updatedAt(DateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -134,11 +135,11 @@ public class ClusterResponse   {
    * @return updatedAt
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Integer getUpdatedAt() {
+  public DateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Integer updatedAt) {
+  public void setUpdatedAt(DateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

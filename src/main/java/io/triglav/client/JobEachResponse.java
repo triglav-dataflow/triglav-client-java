@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-13T12:22:07.411+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T00:55:58.464+09:00")
 public class JobEachResponse   {
   @SerializedName("id")
   private Long id = null;

@@ -30,7 +30,7 @@ import io.triglav.client.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-13T12:22:07.411+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T00:55:58.464+09:00")
 public class OAuth implements Authentication {
   private String accessToken;
 

@@ -32,12 +32,13 @@ import io.swagger.annotations.ApiModelProperty;
 import io.triglav.client.ResourceResponse;
 import java.util.ArrayList;
 import java.util.List;
+import org.joda.time.DateTime;
 
 
 /**
  * JobResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-13T12:22:07.411+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T00:55:58.464+09:00")
 public class JobResponse   {
   @SerializedName("id")
   private Long id = null;
@@ -49,10 +50,10 @@ public class JobResponse   {
   private Integer contactId = null;
 
   @SerializedName("created_at")
-  private Integer createdAt = null;
+  private DateTime createdAt = null;
 
   @SerializedName("updated_at")
-  private Integer updatedAt = null;
+  private DateTime updatedAt = null;
 
   @SerializedName("input_resources")
   private List<ResourceResponse> inputResources = new ArrayList<ResourceResponse>();
@@ -114,7 +115,7 @@ public class JobResponse   {
     this.contactId = contactId;
   }
 
-  public JobResponse createdAt(Integer createdAt) {
+  public JobResponse createdAt(DateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -124,15 +125,15 @@ public class JobResponse   {
    * @return createdAt
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Integer getCreatedAt() {
+  public DateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(Integer createdAt) {
+  public void setCreatedAt(DateTime createdAt) {
     this.createdAt = createdAt;
   }
 
-  public JobResponse updatedAt(Integer updatedAt) {
+  public JobResponse updatedAt(DateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -142,11 +143,11 @@ public class JobResponse   {
    * @return updatedAt
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Integer getUpdatedAt() {
+  public DateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(Integer updatedAt) {
+  public void setUpdatedAt(DateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 

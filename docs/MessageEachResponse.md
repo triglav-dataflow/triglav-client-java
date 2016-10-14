@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **datetime** | **String** | Datetime formatted by ISO 8601 |  [optional]
 **conditions** | **String** |  |  [optional]
 **payload** | **String** |  |  [optional]
-**createdAt** | **Integer** |  |  [optional]
-**updatedAt** | **Integer** |  |  [optional]
+**createdAt** | [**DateTime**](DateTime.md) |  |  [optional]
+**updatedAt** | [**DateTime**](DateTime.md) |  |  [optional]
 
 
 

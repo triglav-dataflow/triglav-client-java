@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **authenticator** | [**AuthenticatorEnum**](#AuthenticatorEnum) | local or ldap |  [optional]
 **groups** | **List&lt;String&gt;** |  |  [optional]
 **email** | **String** |  |  [optional]
-**createdAt** | **Integer** |  |  [optional]
-**updatedAt** | **Integer** |  |  [optional]
+**createdAt** | [**DateTime**](DateTime.md) |  |  [optional]
+**updatedAt** | [**DateTime**](DateTime.md) |  |  [optional]
 
 
 <a name="AuthenticatorEnum"></a>

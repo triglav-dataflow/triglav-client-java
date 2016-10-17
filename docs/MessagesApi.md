@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="fetchMessages"></a>
 # **fetchMessages**
-> List&lt;MessageEachResponse&gt; fetchMessages(resourceUri, offset, datetime)
+> List&lt;MessageEachResponse&gt; fetchMessages(offset, resourceUri, datetime)
 
 
 
@@ -34,11 +34,11 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 MessagesApi apiInstance = new MessagesApi();
+Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to fetch from
 String resourceUri = "resourceUri_example"; // String | URI of Resource
-Integer offset = 56; // Integer | Offset ID for Messages to fetch from
-String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601
+String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601. LIKE search is used.
 try {
-    List<MessageEachResponse> result = apiInstance.fetchMessages(resourceUri, offset, datetime);
+    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, resourceUri, datetime);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#fetchMessages");
@@ -50,9 +50,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to fetch from |
  **resourceUri** | **String**| URI of Resource |
- **offset** | **Integer**| Offset ID for Messages to fetch from |
- **datetime** | **String**| Datetime formatted by ISO 8601 | [optional]
+ **datetime** | **String**| Datetime formatted by ISO 8601. LIKE search is used. | [optional]
 
 ### Return type
 

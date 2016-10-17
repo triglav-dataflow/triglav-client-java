@@ -69,17 +69,17 @@ public class MessagesApi {
     }
 
     /* Build call for fetchMessages */
-    private com.squareup.okhttp.Call fetchMessagesCall(String resourceUri, Integer offset, String datetime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call fetchMessagesCall(Integer offset, String resourceUri, String datetime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
-        
-        // verify the required parameter 'resourceUri' is set
-        if (resourceUri == null) {
-            throw new ApiException("Missing the required parameter 'resourceUri' when calling fetchMessages(Async)");
-        }
         
         // verify the required parameter 'offset' is set
         if (offset == null) {
             throw new ApiException("Missing the required parameter 'offset' when calling fetchMessages(Async)");
+        }
+        
+        // verify the required parameter 'resourceUri' is set
+        if (resourceUri == null) {
+            throw new ApiException("Missing the required parameter 'resourceUri' when calling fetchMessages(Async)");
         }
         
 
@@ -87,12 +87,12 @@ public class MessagesApi {
         String localVarPath = "/messages".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
         if (resourceUri != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_uri", resourceUri));
         if (datetime != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "datetime", datetime));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -129,28 +129,28 @@ public class MessagesApi {
     /**
      * 
      * Fetches messages
+     * @param offset Offset (Greater than or equal to) ID for Messages to fetch from (required)
      * @param resourceUri URI of Resource (required)
-     * @param offset Offset ID for Messages to fetch from (required)
-     * @param datetime Datetime formatted by ISO 8601 (optional)
+     * @param datetime Datetime formatted by ISO 8601. LIKE search is used. (optional)
      * @return List&lt;MessageEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MessageEachResponse> fetchMessages(String resourceUri, Integer offset, String datetime) throws ApiException {
-        ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(resourceUri, offset, datetime);
+    public List<MessageEachResponse> fetchMessages(Integer offset, String resourceUri, String datetime) throws ApiException {
+        ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(offset, resourceUri, datetime);
         return resp.getData();
     }
 
     /**
      * 
      * Fetches messages
+     * @param offset Offset (Greater than or equal to) ID for Messages to fetch from (required)
      * @param resourceUri URI of Resource (required)
-     * @param offset Offset ID for Messages to fetch from (required)
-     * @param datetime Datetime formatted by ISO 8601 (optional)
+     * @param datetime Datetime formatted by ISO 8601. LIKE search is used. (optional)
      * @return ApiResponse&lt;List&lt;MessageEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(String resourceUri, Integer offset, String datetime) throws ApiException {
-        com.squareup.okhttp.Call call = fetchMessagesCall(resourceUri, offset, datetime, null, null);
+    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(Integer offset, String resourceUri, String datetime) throws ApiException {
+        com.squareup.okhttp.Call call = fetchMessagesCall(offset, resourceUri, datetime, null, null);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -158,14 +158,14 @@ public class MessagesApi {
     /**
      *  (asynchronously)
      * Fetches messages
+     * @param offset Offset (Greater than or equal to) ID for Messages to fetch from (required)
      * @param resourceUri URI of Resource (required)
-     * @param offset Offset ID for Messages to fetch from (required)
-     * @param datetime Datetime formatted by ISO 8601 (optional)
+     * @param datetime Datetime formatted by ISO 8601. LIKE search is used. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call fetchMessagesAsync(String resourceUri, Integer offset, String datetime, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchMessagesAsync(Integer offset, String resourceUri, String datetime, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -186,7 +186,7 @@ public class MessagesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = fetchMessagesCall(resourceUri, offset, datetime, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = fetchMessagesCall(offset, resourceUri, datetime, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

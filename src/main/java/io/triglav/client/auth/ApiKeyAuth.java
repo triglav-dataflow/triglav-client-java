@@ -30,7 +30,7 @@ import io.triglav.client.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T01:47:58.977+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T12:34:07.994+09:00")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;

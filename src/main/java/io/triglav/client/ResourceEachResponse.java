@@ -34,13 +34,19 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T01:47:58.977+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T12:34:07.994+09:00")
 public class ResourceEachResponse   {
   @SerializedName("id")
   private Integer id = null;
 
   @SerializedName("uri")
   private String uri = null;
+
+  @SerializedName("unit")
+  private String unit = null;
+
+  @SerializedName("day_span")
+  private Integer daySpan = null;
 
   public ResourceEachResponse id(Integer id) {
     this.id = id;
@@ -78,6 +84,42 @@ public class ResourceEachResponse   {
     this.uri = uri;
   }
 
+  public ResourceEachResponse unit(String unit) {
+    this.unit = unit;
+    return this;
+  }
+
+   /**
+   * Get unit
+   * @return unit
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getUnit() {
+    return unit;
+  }
+
+  public void setUnit(String unit) {
+    this.unit = unit;
+  }
+
+  public ResourceEachResponse daySpan(Integer daySpan) {
+    this.daySpan = daySpan;
+    return this;
+  }
+
+   /**
+   * Get daySpan
+   * @return daySpan
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Integer getDaySpan() {
+    return daySpan;
+  }
+
+  public void setDaySpan(Integer daySpan) {
+    this.daySpan = daySpan;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -89,12 +131,14 @@ public class ResourceEachResponse   {
     }
     ResourceEachResponse resourceEachResponse = (ResourceEachResponse) o;
     return Objects.equals(this.id, resourceEachResponse.id) &&
-        Objects.equals(this.uri, resourceEachResponse.uri);
+        Objects.equals(this.uri, resourceEachResponse.uri) &&
+        Objects.equals(this.unit, resourceEachResponse.unit) &&
+        Objects.equals(this.daySpan, resourceEachResponse.daySpan);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri);
+    return Objects.hash(id, uri, unit, daySpan);
   }
 
   @Override
@@ -104,6 +148,8 @@ public class ResourceEachResponse   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    daySpan: ").append(toIndentedString(daySpan)).append("\n");
     sb.append("}");
     return sb.toString();
   }

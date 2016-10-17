@@ -36,16 +36,22 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-15T01:47:58.977+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T12:34:07.994+09:00")
 public class ResourceResponse   {
-  @SerializedName("uri")
-  private String uri = null;
-
   @SerializedName("description")
   private String description = null;
 
+  @SerializedName("uri")
+  private String uri = null;
+
   @SerializedName("cluster_name")
   private String clusterName = null;
+
+  @SerializedName("unit")
+  private String unit = null;
+
+  @SerializedName("day_span")
+  private Integer daySpan = null;
 
   @SerializedName("consumable")
   private Boolean consumable = null;
@@ -61,24 +67,6 @@ public class ResourceResponse   {
 
   @SerializedName("updated_at")
   private DateTime updatedAt = null;
-
-  public ResourceResponse uri(String uri) {
-    this.uri = uri;
-    return this;
-  }
-
-   /**
-   * Get uri
-   * @return uri
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getUri() {
-    return uri;
-  }
-
-  public void setUri(String uri) {
-    this.uri = uri;
-  }
 
   public ResourceResponse description(String description) {
     this.description = description;
@@ -98,6 +86,24 @@ public class ResourceResponse   {
     this.description = description;
   }
 
+  public ResourceResponse uri(String uri) {
+    this.uri = uri;
+    return this;
+  }
+
+   /**
+   * Get uri
+   * @return uri
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public String getUri() {
+    return uri;
+  }
+
+  public void setUri(String uri) {
+    this.uri = uri;
+  }
+
   public ResourceResponse clusterName(String clusterName) {
     this.clusterName = clusterName;
     return this;
@@ -114,6 +120,42 @@ public class ResourceResponse   {
 
   public void setClusterName(String clusterName) {
     this.clusterName = clusterName;
+  }
+
+  public ResourceResponse unit(String unit) {
+    this.unit = unit;
+    return this;
+  }
+
+   /**
+   * Get unit
+   * @return unit
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public String getUnit() {
+    return unit;
+  }
+
+  public void setUnit(String unit) {
+    this.unit = unit;
+  }
+
+  public ResourceResponse daySpan(Integer daySpan) {
+    this.daySpan = daySpan;
+    return this;
+  }
+
+   /**
+   * Get daySpan
+   * @return daySpan
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Integer getDaySpan() {
+    return daySpan;
+  }
+
+  public void setDaySpan(Integer daySpan) {
+    this.daySpan = daySpan;
   }
 
   public ResourceResponse consumable(Boolean consumable) {
@@ -216,9 +258,11 @@ public class ResourceResponse   {
       return false;
     }
     ResourceResponse resourceResponse = (ResourceResponse) o;
-    return Objects.equals(this.uri, resourceResponse.uri) &&
-        Objects.equals(this.description, resourceResponse.description) &&
+    return Objects.equals(this.description, resourceResponse.description) &&
+        Objects.equals(this.uri, resourceResponse.uri) &&
         Objects.equals(this.clusterName, resourceResponse.clusterName) &&
+        Objects.equals(this.unit, resourceResponse.unit) &&
+        Objects.equals(this.daySpan, resourceResponse.daySpan) &&
         Objects.equals(this.consumable, resourceResponse.consumable) &&
         Objects.equals(this.notifiable, resourceResponse.notifiable) &&
         Objects.equals(this.id, resourceResponse.id) &&
@@ -228,7 +272,7 @@ public class ResourceResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri, description, clusterName, consumable, notifiable, id, createdAt, updatedAt);
+    return Objects.hash(description, uri, clusterName, unit, daySpan, consumable, notifiable, id, createdAt, updatedAt);
   }
 
   @Override
@@ -236,9 +280,11 @@ public class ResourceResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResourceResponse {\n");
     
-    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
+    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    daySpan: ").append(toIndentedString(daySpan)).append("\n");
     sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
     sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

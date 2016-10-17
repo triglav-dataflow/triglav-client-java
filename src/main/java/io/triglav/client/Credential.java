@@ -34,10 +34,10 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Credential
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T12:34:07.994+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T12:57:41.849+09:00")
 public class Credential   {
-  @SerializedName("name")
-  private String name = null;
+  @SerializedName("username")
+  private String username = null;
 
   @SerializedName("password")
   private String password = null;
@@ -67,22 +67,22 @@ public class Credential   {
   @SerializedName("authenticator")
   private AuthenticatorEnum authenticator = null;
 
-  public Credential name(String name) {
-    this.name = name;
+  public Credential username(String username) {
+    this.username = username;
     return this;
   }
 
    /**
-   * Get name
-   * @return name
+   * Get username
+   * @return username
   **/
   @ApiModelProperty(example = "null", required = true, value = "")
-  public String getName() {
-    return name;
+  public String getUsername() {
+    return username;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setUsername(String username) {
+    this.username = username;
   }
 
   public Credential password(String password) {
@@ -131,14 +131,14 @@ public class Credential   {
       return false;
     }
     Credential credential = (Credential) o;
-    return Objects.equals(this.name, credential.name) &&
+    return Objects.equals(this.username, credential.username) &&
         Objects.equals(this.password, credential.password) &&
         Objects.equals(this.authenticator, credential.authenticator);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, password, authenticator);
+    return Objects.hash(username, password, authenticator);
   }
 
   @Override
@@ -146,7 +146,7 @@ public class Credential   {
     StringBuilder sb = new StringBuilder();
     sb.append("class Credential {\n");
     
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    authenticator: ").append(toIndentedString(authenticator)).append("\n");
     sb.append("}");

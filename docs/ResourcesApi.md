@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="listResources"></a>
 # **listResources**
-> List&lt;ResourceEachResponse&gt; listResources(clusterName, consumable, notifiable)
+> List&lt;ResourceEachResponse&gt; listResources(uriPrefix, consumable, notifiable)
 
 
 
@@ -201,11 +201,11 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 ResourcesApi apiInstance = new ResourcesApi();
-String clusterName = "clusterName_example"; // String | Name of Cluster
+String uriPrefix = "uriPrefix_example"; // String | Prefix of Resource URI
 Boolean consumable = true; // Boolean | Consuamble
 Boolean notifiable = true; // Boolean | Notifiable
 try {
-    List<ResourceEachResponse> result = apiInstance.listResources(clusterName, consumable, notifiable);
+    List<ResourceEachResponse> result = apiInstance.listResources(uriPrefix, consumable, notifiable);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#listResources");
@@ -217,7 +217,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clusterName** | **String**| Name of Cluster |
+ **uriPrefix** | **String**| Prefix of Resource URI |
  **consumable** | **Boolean**| Consuamble |
  **notifiable** | **Boolean**| Notifiable |
 

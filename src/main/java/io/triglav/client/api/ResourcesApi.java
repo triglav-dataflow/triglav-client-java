@@ -385,12 +385,12 @@ public class ResourcesApi {
         return call;
     }
     /* Build call for listResources */
-    private com.squareup.okhttp.Call listResourcesCall(String clusterName, Boolean consumable, Boolean notifiable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listResourcesCall(String uriPrefix, Boolean consumable, Boolean notifiable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
-        // verify the required parameter 'clusterName' is set
-        if (clusterName == null) {
-            throw new ApiException("Missing the required parameter 'clusterName' when calling listResources(Async)");
+        // verify the required parameter 'uriPrefix' is set
+        if (uriPrefix == null) {
+            throw new ApiException("Missing the required parameter 'uriPrefix' when calling listResources(Async)");
         }
         
         // verify the required parameter 'consumable' is set
@@ -408,8 +408,8 @@ public class ResourcesApi {
         String localVarPath = "/resources".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (clusterName != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "cluster_name", clusterName));
+        if (uriPrefix != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "uri_prefix", uriPrefix));
         if (consumable != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "consumable", consumable));
         if (notifiable != null)
@@ -450,28 +450,28 @@ public class ResourcesApi {
     /**
      * 
      * Returns all resources from the system
-     * @param clusterName Name of Cluster (required)
+     * @param uriPrefix Prefix of Resource URI (required)
      * @param consumable Consuamble (required)
      * @param notifiable Notifiable (required)
      * @return List&lt;ResourceEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<ResourceEachResponse> listResources(String clusterName, Boolean consumable, Boolean notifiable) throws ApiException {
-        ApiResponse<List<ResourceEachResponse>> resp = listResourcesWithHttpInfo(clusterName, consumable, notifiable);
+    public List<ResourceEachResponse> listResources(String uriPrefix, Boolean consumable, Boolean notifiable) throws ApiException {
+        ApiResponse<List<ResourceEachResponse>> resp = listResourcesWithHttpInfo(uriPrefix, consumable, notifiable);
         return resp.getData();
     }
 
     /**
      * 
      * Returns all resources from the system
-     * @param clusterName Name of Cluster (required)
+     * @param uriPrefix Prefix of Resource URI (required)
      * @param consumable Consuamble (required)
      * @param notifiable Notifiable (required)
      * @return ApiResponse&lt;List&lt;ResourceEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<ResourceEachResponse>> listResourcesWithHttpInfo(String clusterName, Boolean consumable, Boolean notifiable) throws ApiException {
-        com.squareup.okhttp.Call call = listResourcesCall(clusterName, consumable, notifiable, null, null);
+    public ApiResponse<List<ResourceEachResponse>> listResourcesWithHttpInfo(String uriPrefix, Boolean consumable, Boolean notifiable) throws ApiException {
+        com.squareup.okhttp.Call call = listResourcesCall(uriPrefix, consumable, notifiable, null, null);
         Type localVarReturnType = new TypeToken<List<ResourceEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -479,14 +479,14 @@ public class ResourcesApi {
     /**
      *  (asynchronously)
      * Returns all resources from the system
-     * @param clusterName Name of Cluster (required)
+     * @param uriPrefix Prefix of Resource URI (required)
      * @param consumable Consuamble (required)
      * @param notifiable Notifiable (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listResourcesAsync(String clusterName, Boolean consumable, Boolean notifiable, final ApiCallback<List<ResourceEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listResourcesAsync(String uriPrefix, Boolean consumable, Boolean notifiable, final ApiCallback<List<ResourceEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -507,7 +507,7 @@ public class ResourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listResourcesCall(clusterName, consumable, notifiable, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listResourcesCall(uriPrefix, consumable, notifiable, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<ResourceEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

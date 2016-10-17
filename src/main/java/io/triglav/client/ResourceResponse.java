@@ -36,16 +36,13 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T12:57:41.849+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T13:54:43.541+09:00")
 public class ResourceResponse   {
   @SerializedName("description")
   private String description = null;
 
   @SerializedName("uri")
   private String uri = null;
-
-  @SerializedName("cluster_name")
-  private String clusterName = null;
 
   @SerializedName("unit")
   private String unit = null;
@@ -102,24 +99,6 @@ public class ResourceResponse   {
 
   public void setUri(String uri) {
     this.uri = uri;
-  }
-
-  public ResourceResponse clusterName(String clusterName) {
-    this.clusterName = clusterName;
-    return this;
-  }
-
-   /**
-   * Get clusterName
-   * @return clusterName
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getClusterName() {
-    return clusterName;
-  }
-
-  public void setClusterName(String clusterName) {
-    this.clusterName = clusterName;
   }
 
   public ResourceResponse unit(String unit) {
@@ -260,7 +239,6 @@ public class ResourceResponse   {
     ResourceResponse resourceResponse = (ResourceResponse) o;
     return Objects.equals(this.description, resourceResponse.description) &&
         Objects.equals(this.uri, resourceResponse.uri) &&
-        Objects.equals(this.clusterName, resourceResponse.clusterName) &&
         Objects.equals(this.unit, resourceResponse.unit) &&
         Objects.equals(this.daySpan, resourceResponse.daySpan) &&
         Objects.equals(this.consumable, resourceResponse.consumable) &&
@@ -272,7 +250,7 @@ public class ResourceResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, uri, clusterName, unit, daySpan, consumable, notifiable, id, createdAt, updatedAt);
+    return Objects.hash(description, uri, unit, daySpan, consumable, notifiable, id, createdAt, updatedAt);
   }
 
   @Override
@@ -282,7 +260,6 @@ public class ResourceResponse   {
     
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
-    sb.append("    clusterName: ").append(toIndentedString(clusterName)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    daySpan: ").append(toIndentedString(daySpan)).append("\n");
     sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");

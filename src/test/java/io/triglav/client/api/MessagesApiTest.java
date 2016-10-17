@@ -55,10 +55,10 @@ public class MessagesApiTest {
      */
     @Test
     public void fetchMessagesTest() throws ApiException {
-        String resourceUri = null;
         Integer offset = null;
+        String resourceUri = null;
         String datetime = null;
-        // List<MessageEachResponse> response = api.fetchMessages(resourceUri, offset, datetime);
+        // List<MessageEachResponse> response = api.fetchMessages(offset, resourceUri, datetime);
 
         // TODO: test validations
     }

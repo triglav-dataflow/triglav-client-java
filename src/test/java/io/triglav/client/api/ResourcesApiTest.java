@@ -103,10 +103,10 @@ public class ResourcesApiTest {
      */
     @Test
     public void listResourcesTest() throws ApiException {
-        String clusterName = null;
+        String uriPrefix = null;
         Boolean consumable = null;
         Boolean notifiable = null;
-        // List<ResourceEachResponse> response = api.listResources(clusterName, consumable, notifiable);
+        // List<ResourceEachResponse> response = api.listResources(uriPrefix, consumable, notifiable);
 
         // TODO: test validations
     }

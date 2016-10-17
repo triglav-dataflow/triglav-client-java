@@ -34,30 +34,93 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MessageRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T16:38:23.765+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T02:34:58.059+09:00")
 public class MessageRequest   {
-  @SerializedName("conditions")
-  private String conditions = null;
+  @SerializedName("resource_uri")
+  private String resourceUri = null;
+
+  @SerializedName("resource_unit")
+  private String resourceUnit = null;
+
+  @SerializedName("resource_time")
+  private Integer resourceTime = null;
+
+  @SerializedName("resource_timezone")
+  private String resourceTimezone = null;
 
   @SerializedName("payload")
   private String payload = null;
 
-  public MessageRequest conditions(String conditions) {
-    this.conditions = conditions;
+  public MessageRequest resourceUri(String resourceUri) {
+    this.resourceUri = resourceUri;
     return this;
   }
 
    /**
-   * Any json string
-   * @return conditions
+   * Get resourceUri
+   * @return resourceUri
   **/
-  @ApiModelProperty(example = "null", value = "Any json string")
-  public String getConditions() {
-    return conditions;
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public String getResourceUri() {
+    return resourceUri;
   }
 
-  public void setConditions(String conditions) {
-    this.conditions = conditions;
+  public void setResourceUri(String resourceUri) {
+    this.resourceUri = resourceUri;
+  }
+
+  public MessageRequest resourceUnit(String resourceUnit) {
+    this.resourceUnit = resourceUnit;
+    return this;
+  }
+
+   /**
+   * Get resourceUnit
+   * @return resourceUnit
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public String getResourceUnit() {
+    return resourceUnit;
+  }
+
+  public void setResourceUnit(String resourceUnit) {
+    this.resourceUnit = resourceUnit;
+  }
+
+  public MessageRequest resourceTime(Integer resourceTime) {
+    this.resourceTime = resourceTime;
+    return this;
+  }
+
+   /**
+   * Get resourceTime
+   * @return resourceTime
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public Integer getResourceTime() {
+    return resourceTime;
+  }
+
+  public void setResourceTime(Integer resourceTime) {
+    this.resourceTime = resourceTime;
+  }
+
+  public MessageRequest resourceTimezone(String resourceTimezone) {
+    this.resourceTimezone = resourceTimezone;
+    return this;
+  }
+
+   /**
+   * Get resourceTimezone
+   * @return resourceTimezone
+  **/
+  @ApiModelProperty(example = "null", required = true, value = "")
+  public String getResourceTimezone() {
+    return resourceTimezone;
+  }
+
+  public void setResourceTimezone(String resourceTimezone) {
+    this.resourceTimezone = resourceTimezone;
   }
 
   public MessageRequest payload(String payload) {
@@ -66,10 +129,10 @@ public class MessageRequest   {
   }
 
    /**
-   * Any json string
+   * Get payload
    * @return payload
   **/
-  @ApiModelProperty(example = "null", value = "Any json string")
+  @ApiModelProperty(example = "null", value = "")
   public String getPayload() {
     return payload;
   }
@@ -88,13 +151,16 @@ public class MessageRequest   {
       return false;
     }
     MessageRequest messageRequest = (MessageRequest) o;
-    return Objects.equals(this.conditions, messageRequest.conditions) &&
+    return Objects.equals(this.resourceUri, messageRequest.resourceUri) &&
+        Objects.equals(this.resourceUnit, messageRequest.resourceUnit) &&
+        Objects.equals(this.resourceTime, messageRequest.resourceTime) &&
+        Objects.equals(this.resourceTimezone, messageRequest.resourceTimezone) &&
         Objects.equals(this.payload, messageRequest.payload);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, payload);
+    return Objects.hash(resourceUri, resourceUnit, resourceTime, resourceTimezone, payload);
   }
 
   @Override
@@ -102,7 +168,10 @@ public class MessageRequest   {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageRequest {\n");
     
-    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    resourceUri: ").append(toIndentedString(resourceUri)).append("\n");
+    sb.append("    resourceUnit: ").append(toIndentedString(resourceUnit)).append("\n");
+    sb.append("    resourceTime: ").append(toIndentedString(resourceTime)).append("\n");
+    sb.append("    resourceTimezone: ").append(toIndentedString(resourceTimezone)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();

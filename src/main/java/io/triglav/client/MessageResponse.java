@@ -29,17 +29,15 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.triglav.client.MessageRequest;
 import org.joda.time.DateTime;
 
 
 /**
  * MessageResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T16:38:23.765+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T02:34:58.059+09:00")
 public class MessageResponse   {
-  @SerializedName("id")
-  private Long id = null;
-
   @SerializedName("resource_uri")
   private String resourceUri = null;
 
@@ -52,35 +50,17 @@ public class MessageResponse   {
   @SerializedName("resource_timezone")
   private String resourceTimezone = null;
 
-  @SerializedName("conditions")
-  private String conditions = null;
-
   @SerializedName("payload")
   private String payload = null;
+
+  @SerializedName("id")
+  private Long id = null;
 
   @SerializedName("created_at")
   private DateTime createdAt = null;
 
   @SerializedName("updated_at")
   private DateTime updatedAt = null;
-
-  public MessageResponse id(Long id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
 
   public MessageResponse resourceUri(String resourceUri) {
     this.resourceUri = resourceUri;
@@ -91,7 +71,7 @@ public class MessageResponse   {
    * Get resourceUri
    * @return resourceUri
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getResourceUri() {
     return resourceUri;
   }
@@ -109,7 +89,7 @@ public class MessageResponse   {
    * Get resourceUnit
    * @return resourceUnit
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getResourceUnit() {
     return resourceUnit;
   }
@@ -127,7 +107,7 @@ public class MessageResponse   {
    * Get resourceTime
    * @return resourceTime
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public Integer getResourceTime() {
     return resourceTime;
   }
@@ -145,31 +125,13 @@ public class MessageResponse   {
    * Get resourceTimezone
    * @return resourceTimezone
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", required = true, value = "")
   public String getResourceTimezone() {
     return resourceTimezone;
   }
 
   public void setResourceTimezone(String resourceTimezone) {
     this.resourceTimezone = resourceTimezone;
-  }
-
-  public MessageResponse conditions(String conditions) {
-    this.conditions = conditions;
-    return this;
-  }
-
-   /**
-   * Get conditions
-   * @return conditions
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getConditions() {
-    return conditions;
-  }
-
-  public void setConditions(String conditions) {
-    this.conditions = conditions;
   }
 
   public MessageResponse payload(String payload) {
@@ -188,6 +150,24 @@ public class MessageResponse   {
 
   public void setPayload(String payload) {
     this.payload = payload;
+  }
+
+  public MessageResponse id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public MessageResponse createdAt(DateTime createdAt) {
@@ -236,20 +216,19 @@ public class MessageResponse   {
       return false;
     }
     MessageResponse messageResponse = (MessageResponse) o;
-    return Objects.equals(this.id, messageResponse.id) &&
-        Objects.equals(this.resourceUri, messageResponse.resourceUri) &&
+    return Objects.equals(this.resourceUri, messageResponse.resourceUri) &&
         Objects.equals(this.resourceUnit, messageResponse.resourceUnit) &&
         Objects.equals(this.resourceTime, messageResponse.resourceTime) &&
         Objects.equals(this.resourceTimezone, messageResponse.resourceTimezone) &&
-        Objects.equals(this.conditions, messageResponse.conditions) &&
         Objects.equals(this.payload, messageResponse.payload) &&
+        Objects.equals(this.id, messageResponse.id) &&
         Objects.equals(this.createdAt, messageResponse.createdAt) &&
         Objects.equals(this.updatedAt, messageResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, resourceUri, resourceUnit, resourceTime, resourceTimezone, conditions, payload, createdAt, updatedAt);
+    return Objects.hash(resourceUri, resourceUnit, resourceTime, resourceTimezone, payload, id, createdAt, updatedAt);
   }
 
   @Override
@@ -257,13 +236,12 @@ public class MessageResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageResponse {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    resourceUri: ").append(toIndentedString(resourceUri)).append("\n");
     sb.append("    resourceUnit: ").append(toIndentedString(resourceUnit)).append("\n");
     sb.append("    resourceTime: ").append(toIndentedString(resourceTime)).append("\n");
     sb.append("    resourceTimezone: ").append(toIndentedString(resourceTimezone)).append("\n");
-    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

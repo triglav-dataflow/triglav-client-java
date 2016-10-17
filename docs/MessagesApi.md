@@ -5,12 +5,12 @@ All URIs are relative to *http://localhost/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**fetchMessages**](MessagesApi.md#fetchMessages) | **GET** /messages | 
-[**sendMessage**](MessagesApi.md#sendMessage) | **POST** /messages | 
+[**sendMessages**](MessagesApi.md#sendMessages) | **POST** /messages | 
 
 
 <a name="fetchMessages"></a>
 # **fetchMessages**
-> List&lt;MessageEachResponse&gt; fetchMessages(offset, resourceUri)
+> List&lt;MessageEachResponse&gt; fetchMessages(offset, resourceUris)
 
 
 
@@ -35,9 +35,9 @@ api_key.setApiKey("YOUR API KEY");
 
 MessagesApi apiInstance = new MessagesApi();
 Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to fetch from
-String resourceUri = "resourceUri_example"; // String | URI of Resource
+String resourceUris = "resourceUris_example"; // String | URIs of Resource
 try {
-    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, resourceUri);
+    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, resourceUris);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#fetchMessages");
@@ -50,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to fetch from |
- **resourceUri** | **String**| URI of Resource |
+ **resourceUris** | **String**| URIs of Resource |
 
 ### Return type
 
@@ -65,13 +65,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="sendMessage"></a>
-# **sendMessage**
-> MessageResponse sendMessage(resourceUri, resourceUnit, resourceTime, resourceTimezone, message)
+<a name="sendMessages"></a>
+# **sendMessages**
+> BulkinsertResponse sendMessages(messages)
 
 
 
-Enqueues a new message
+Enqueues new messages
 
 ### Example
 ```java
@@ -91,16 +91,12 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 MessagesApi apiInstance = new MessagesApi();
-String resourceUri = "resourceUri_example"; // String | URI of Resource
-String resourceUnit = "resourceUnit_example"; // String | Unit of Resource
-Integer resourceTime = 56; // Integer | Resource Time
-String resourceTimezone = "resourceTimezone_example"; // String | Timezone of Resource Time
-MessageRequest message = new MessageRequest(); // MessageRequest | Message to add
+List<MessageRequest> messages = Arrays.asList(new MessageRequest()); // List<MessageRequest> | Messages to enqueue
 try {
-    MessageResponse result = apiInstance.sendMessage(resourceUri, resourceUnit, resourceTime, resourceTimezone, message);
+    BulkinsertResponse result = apiInstance.sendMessages(messages);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling MessagesApi#sendMessage");
+    System.err.println("Exception when calling MessagesApi#sendMessages");
     e.printStackTrace();
 }
 ```
@@ -109,15 +105,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceUri** | **String**| URI of Resource |
- **resourceUnit** | **String**| Unit of Resource |
- **resourceTime** | **Integer**| Resource Time |
- **resourceTimezone** | **String**| Timezone of Resource Time |
- **message** | [**MessageRequest**](MessageRequest.md)| Message to add |
+ **messages** | [**List&lt;MessageRequest&gt;**](MessageRequest.md)| Messages to enqueue |
 
 ### Return type
 
-[**MessageResponse**](MessageResponse.md)
+[**BulkinsertResponse**](BulkinsertResponse.md)
 
 ### Authorization
 

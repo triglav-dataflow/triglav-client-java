@@ -29,54 +29,32 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.DateTime;
 
 
 /**
- * TokenResponse
+ * BulkinsertResponse
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T02:34:58.059+09:00")
-public class TokenResponse   {
+public class BulkinsertResponse   {
   @SerializedName("access_token")
-  private String accessToken = null;
+  private Integer accessToken = null;
 
-  @SerializedName("expires_at")
-  private DateTime expiresAt = null;
-
-  public TokenResponse accessToken(String accessToken) {
+  public BulkinsertResponse accessToken(Integer accessToken) {
     this.accessToken = accessToken;
     return this;
   }
 
    /**
-   * Get accessToken
+   * Number of imserts
    * @return accessToken
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getAccessToken() {
+  @ApiModelProperty(example = "null", value = "Number of imserts")
+  public Integer getAccessToken() {
     return accessToken;
   }
 
-  public void setAccessToken(String accessToken) {
+  public void setAccessToken(Integer accessToken) {
     this.accessToken = accessToken;
-  }
-
-  public TokenResponse expiresAt(DateTime expiresAt) {
-    this.expiresAt = expiresAt;
-    return this;
-  }
-
-   /**
-   * Get expiresAt
-   * @return expiresAt
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public DateTime getExpiresAt() {
-    return expiresAt;
-  }
-
-  public void setExpiresAt(DateTime expiresAt) {
-    this.expiresAt = expiresAt;
   }
 
 
@@ -88,23 +66,21 @@ public class TokenResponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TokenResponse tokenResponse = (TokenResponse) o;
-    return Objects.equals(this.accessToken, tokenResponse.accessToken) &&
-        Objects.equals(this.expiresAt, tokenResponse.expiresAt);
+    BulkinsertResponse bulkinsertResponse = (BulkinsertResponse) o;
+    return Objects.equals(this.accessToken, bulkinsertResponse.accessToken);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, expiresAt);
+    return Objects.hash(accessToken);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TokenResponse {\n");
+    sb.append("class BulkinsertResponse {\n");
     
     sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
-    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

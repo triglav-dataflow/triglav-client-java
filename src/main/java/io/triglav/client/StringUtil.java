@@ -25,7 +25,7 @@
 
 package io.triglav.client;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T16:38:23.765+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T02:34:58.059+09:00")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

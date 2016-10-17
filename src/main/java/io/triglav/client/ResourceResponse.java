@@ -36,7 +36,7 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T16:38:23.765+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T02:34:58.059+09:00")
 public class ResourceResponse   {
   @SerializedName("description")
   private String description = null;

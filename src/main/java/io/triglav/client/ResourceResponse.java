@@ -36,7 +36,7 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T13:54:43.541+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T16:38:23.765+09:00")
 public class ResourceResponse   {
   @SerializedName("description")
   private String description = null;
@@ -46,6 +46,9 @@ public class ResourceResponse   {
 
   @SerializedName("unit")
   private String unit = null;
+
+  @SerializedName("timezone")
+  private String timezone = null;
 
   @SerializedName("day_span")
   private Integer daySpan = null;
@@ -117,6 +120,24 @@ public class ResourceResponse   {
 
   public void setUnit(String unit) {
     this.unit = unit;
+  }
+
+  public ResourceResponse timezone(String timezone) {
+    this.timezone = timezone;
+    return this;
+  }
+
+   /**
+   * Get timezone
+   * @return timezone
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getTimezone() {
+    return timezone;
+  }
+
+  public void setTimezone(String timezone) {
+    this.timezone = timezone;
   }
 
   public ResourceResponse daySpan(Integer daySpan) {
@@ -240,6 +261,7 @@ public class ResourceResponse   {
     return Objects.equals(this.description, resourceResponse.description) &&
         Objects.equals(this.uri, resourceResponse.uri) &&
         Objects.equals(this.unit, resourceResponse.unit) &&
+        Objects.equals(this.timezone, resourceResponse.timezone) &&
         Objects.equals(this.daySpan, resourceResponse.daySpan) &&
         Objects.equals(this.consumable, resourceResponse.consumable) &&
         Objects.equals(this.notifiable, resourceResponse.notifiable) &&
@@ -250,7 +272,7 @@ public class ResourceResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, uri, unit, daySpan, consumable, notifiable, id, createdAt, updatedAt);
+    return Objects.hash(description, uri, unit, timezone, daySpan, consumable, notifiable, id, createdAt, updatedAt);
   }
 
   @Override
@@ -261,6 +283,7 @@ public class ResourceResponse   {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    daySpan: ").append(toIndentedString(daySpan)).append("\n");
     sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
     sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="fetchMessages"></a>
 # **fetchMessages**
-> List&lt;MessageEachResponse&gt; fetchMessages(offset, resourceUri, datetime)
+> List&lt;MessageEachResponse&gt; fetchMessages(offset, resourceUri)
 
 
 
@@ -36,9 +36,8 @@ api_key.setApiKey("YOUR API KEY");
 MessagesApi apiInstance = new MessagesApi();
 Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to fetch from
 String resourceUri = "resourceUri_example"; // String | URI of Resource
-String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601. LIKE search is used.
 try {
-    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, resourceUri, datetime);
+    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, resourceUri);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#fetchMessages");
@@ -52,7 +51,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to fetch from |
  **resourceUri** | **String**| URI of Resource |
- **datetime** | **String**| Datetime formatted by ISO 8601. LIKE search is used. | [optional]
 
 ### Return type
 
@@ -69,7 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="sendMessage"></a>
 # **sendMessage**
-> MessageResponse sendMessage(resourceUri, datetime, message)
+> MessageResponse sendMessage(resourceUri, resourceUnit, resourceTime, resourceTimezone, message)
 
 
 
@@ -94,10 +92,12 @@ api_key.setApiKey("YOUR API KEY");
 
 MessagesApi apiInstance = new MessagesApi();
 String resourceUri = "resourceUri_example"; // String | URI of Resource
-String datetime = "datetime_example"; // String | Datetime formatted by ISO 8601
+String resourceUnit = "resourceUnit_example"; // String | Unit of Resource
+Integer resourceTime = 56; // Integer | Resource Time
+String resourceTimezone = "resourceTimezone_example"; // String | Timezone of Resource Time
 MessageRequest message = new MessageRequest(); // MessageRequest | Message to add
 try {
-    MessageResponse result = apiInstance.sendMessage(resourceUri, datetime, message);
+    MessageResponse result = apiInstance.sendMessage(resourceUri, resourceUnit, resourceTime, resourceTimezone, message);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#sendMessage");
@@ -110,7 +110,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resourceUri** | **String**| URI of Resource |
- **datetime** | **String**| Datetime formatted by ISO 8601 |
+ **resourceUnit** | **String**| Unit of Resource |
+ **resourceTime** | **Integer**| Resource Time |
+ **resourceTimezone** | **String**| Timezone of Resource Time |
  **message** | [**MessageRequest**](MessageRequest.md)| Message to add |
 
 ### Return type

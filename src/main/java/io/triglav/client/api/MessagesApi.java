@@ -69,7 +69,7 @@ public class MessagesApi {
     }
 
     /* Build call for fetchMessages */
-    private com.squareup.okhttp.Call fetchMessagesCall(Integer offset, String resourceUri, String datetime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call fetchMessagesCall(Integer offset, String resourceUri, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'offset' is set
@@ -91,8 +91,6 @@ public class MessagesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
         if (resourceUri != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_uri", resourceUri));
-        if (datetime != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "datetime", datetime));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -131,12 +129,11 @@ public class MessagesApi {
      * Fetches messages
      * @param offset Offset (Greater than or equal to) ID for Messages to fetch from (required)
      * @param resourceUri URI of Resource (required)
-     * @param datetime Datetime formatted by ISO 8601. LIKE search is used. (optional)
      * @return List&lt;MessageEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MessageEachResponse> fetchMessages(Integer offset, String resourceUri, String datetime) throws ApiException {
-        ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(offset, resourceUri, datetime);
+    public List<MessageEachResponse> fetchMessages(Integer offset, String resourceUri) throws ApiException {
+        ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(offset, resourceUri);
         return resp.getData();
     }
 
@@ -145,12 +142,11 @@ public class MessagesApi {
      * Fetches messages
      * @param offset Offset (Greater than or equal to) ID for Messages to fetch from (required)
      * @param resourceUri URI of Resource (required)
-     * @param datetime Datetime formatted by ISO 8601. LIKE search is used. (optional)
      * @return ApiResponse&lt;List&lt;MessageEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(Integer offset, String resourceUri, String datetime) throws ApiException {
-        com.squareup.okhttp.Call call = fetchMessagesCall(offset, resourceUri, datetime, null, null);
+    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(Integer offset, String resourceUri) throws ApiException {
+        com.squareup.okhttp.Call call = fetchMessagesCall(offset, resourceUri, null, null);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -160,12 +156,11 @@ public class MessagesApi {
      * Fetches messages
      * @param offset Offset (Greater than or equal to) ID for Messages to fetch from (required)
      * @param resourceUri URI of Resource (required)
-     * @param datetime Datetime formatted by ISO 8601. LIKE search is used. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call fetchMessagesAsync(Integer offset, String resourceUri, String datetime, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchMessagesAsync(Integer offset, String resourceUri, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -186,13 +181,13 @@ public class MessagesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = fetchMessagesCall(offset, resourceUri, datetime, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = fetchMessagesCall(offset, resourceUri, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for sendMessage */
-    private com.squareup.okhttp.Call sendMessageCall(String resourceUri, String datetime, MessageRequest message, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call sendMessageCall(String resourceUri, String resourceUnit, Integer resourceTime, String resourceTimezone, MessageRequest message, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = message;
         
         // verify the required parameter 'resourceUri' is set
@@ -200,9 +195,19 @@ public class MessagesApi {
             throw new ApiException("Missing the required parameter 'resourceUri' when calling sendMessage(Async)");
         }
         
-        // verify the required parameter 'datetime' is set
-        if (datetime == null) {
-            throw new ApiException("Missing the required parameter 'datetime' when calling sendMessage(Async)");
+        // verify the required parameter 'resourceUnit' is set
+        if (resourceUnit == null) {
+            throw new ApiException("Missing the required parameter 'resourceUnit' when calling sendMessage(Async)");
+        }
+        
+        // verify the required parameter 'resourceTime' is set
+        if (resourceTime == null) {
+            throw new ApiException("Missing the required parameter 'resourceTime' when calling sendMessage(Async)");
+        }
+        
+        // verify the required parameter 'resourceTimezone' is set
+        if (resourceTimezone == null) {
+            throw new ApiException("Missing the required parameter 'resourceTimezone' when calling sendMessage(Async)");
         }
         
         // verify the required parameter 'message' is set
@@ -217,8 +222,12 @@ public class MessagesApi {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (resourceUri != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_uri", resourceUri));
-        if (datetime != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "datetime", datetime));
+        if (resourceUnit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_unit", resourceUnit));
+        if (resourceTime != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_time", resourceTime));
+        if (resourceTimezone != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_timezone", resourceTimezone));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -256,13 +265,15 @@ public class MessagesApi {
      * 
      * Enqueues a new message
      * @param resourceUri URI of Resource (required)
-     * @param datetime Datetime formatted by ISO 8601 (required)
+     * @param resourceUnit Unit of Resource (required)
+     * @param resourceTime Resource Time (required)
+     * @param resourceTimezone Timezone of Resource Time (required)
      * @param message Message to add (required)
      * @return MessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public MessageResponse sendMessage(String resourceUri, String datetime, MessageRequest message) throws ApiException {
-        ApiResponse<MessageResponse> resp = sendMessageWithHttpInfo(resourceUri, datetime, message);
+    public MessageResponse sendMessage(String resourceUri, String resourceUnit, Integer resourceTime, String resourceTimezone, MessageRequest message) throws ApiException {
+        ApiResponse<MessageResponse> resp = sendMessageWithHttpInfo(resourceUri, resourceUnit, resourceTime, resourceTimezone, message);
         return resp.getData();
     }
 
@@ -270,13 +281,15 @@ public class MessagesApi {
      * 
      * Enqueues a new message
      * @param resourceUri URI of Resource (required)
-     * @param datetime Datetime formatted by ISO 8601 (required)
+     * @param resourceUnit Unit of Resource (required)
+     * @param resourceTime Resource Time (required)
+     * @param resourceTimezone Timezone of Resource Time (required)
      * @param message Message to add (required)
      * @return ApiResponse&lt;MessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<MessageResponse> sendMessageWithHttpInfo(String resourceUri, String datetime, MessageRequest message) throws ApiException {
-        com.squareup.okhttp.Call call = sendMessageCall(resourceUri, datetime, message, null, null);
+    public ApiResponse<MessageResponse> sendMessageWithHttpInfo(String resourceUri, String resourceUnit, Integer resourceTime, String resourceTimezone, MessageRequest message) throws ApiException {
+        com.squareup.okhttp.Call call = sendMessageCall(resourceUri, resourceUnit, resourceTime, resourceTimezone, message, null, null);
         Type localVarReturnType = new TypeToken<MessageResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -285,13 +298,15 @@ public class MessagesApi {
      *  (asynchronously)
      * Enqueues a new message
      * @param resourceUri URI of Resource (required)
-     * @param datetime Datetime formatted by ISO 8601 (required)
+     * @param resourceUnit Unit of Resource (required)
+     * @param resourceTime Resource Time (required)
+     * @param resourceTimezone Timezone of Resource Time (required)
      * @param message Message to add (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call sendMessageAsync(String resourceUri, String datetime, MessageRequest message, final ApiCallback<MessageResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call sendMessageAsync(String resourceUri, String resourceUnit, Integer resourceTime, String resourceTimezone, MessageRequest message, final ApiCallback<MessageResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -312,7 +327,7 @@ public class MessagesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = sendMessageCall(resourceUri, datetime, message, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = sendMessageCall(resourceUri, resourceUnit, resourceTime, resourceTimezone, message, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<MessageResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

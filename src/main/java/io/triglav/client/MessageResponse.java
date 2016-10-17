@@ -35,7 +35,7 @@ import org.joda.time.DateTime;
 /**
  * MessageResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T13:54:43.541+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T16:38:23.765+09:00")
 public class MessageResponse   {
   @SerializedName("id")
   private Long id = null;
@@ -43,8 +43,14 @@ public class MessageResponse   {
   @SerializedName("resource_uri")
   private String resourceUri = null;
 
-  @SerializedName("datetime")
-  private String datetime = null;
+  @SerializedName("resource_unit")
+  private String resourceUnit = null;
+
+  @SerializedName("resource_time")
+  private Integer resourceTime = null;
+
+  @SerializedName("resource_timezone")
+  private String resourceTimezone = null;
 
   @SerializedName("conditions")
   private String conditions = null;
@@ -94,22 +100,58 @@ public class MessageResponse   {
     this.resourceUri = resourceUri;
   }
 
-  public MessageResponse datetime(String datetime) {
-    this.datetime = datetime;
+  public MessageResponse resourceUnit(String resourceUnit) {
+    this.resourceUnit = resourceUnit;
     return this;
   }
 
    /**
-   * Datetime formatted by ISO 8601
-   * @return datetime
+   * Get resourceUnit
+   * @return resourceUnit
   **/
-  @ApiModelProperty(example = "null", value = "Datetime formatted by ISO 8601")
-  public String getDatetime() {
-    return datetime;
+  @ApiModelProperty(example = "null", value = "")
+  public String getResourceUnit() {
+    return resourceUnit;
   }
 
-  public void setDatetime(String datetime) {
-    this.datetime = datetime;
+  public void setResourceUnit(String resourceUnit) {
+    this.resourceUnit = resourceUnit;
+  }
+
+  public MessageResponse resourceTime(Integer resourceTime) {
+    this.resourceTime = resourceTime;
+    return this;
+  }
+
+   /**
+   * Get resourceTime
+   * @return resourceTime
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Integer getResourceTime() {
+    return resourceTime;
+  }
+
+  public void setResourceTime(Integer resourceTime) {
+    this.resourceTime = resourceTime;
+  }
+
+  public MessageResponse resourceTimezone(String resourceTimezone) {
+    this.resourceTimezone = resourceTimezone;
+    return this;
+  }
+
+   /**
+   * Get resourceTimezone
+   * @return resourceTimezone
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getResourceTimezone() {
+    return resourceTimezone;
+  }
+
+  public void setResourceTimezone(String resourceTimezone) {
+    this.resourceTimezone = resourceTimezone;
   }
 
   public MessageResponse conditions(String conditions) {
@@ -196,7 +238,9 @@ public class MessageResponse   {
     MessageResponse messageResponse = (MessageResponse) o;
     return Objects.equals(this.id, messageResponse.id) &&
         Objects.equals(this.resourceUri, messageResponse.resourceUri) &&
-        Objects.equals(this.datetime, messageResponse.datetime) &&
+        Objects.equals(this.resourceUnit, messageResponse.resourceUnit) &&
+        Objects.equals(this.resourceTime, messageResponse.resourceTime) &&
+        Objects.equals(this.resourceTimezone, messageResponse.resourceTimezone) &&
         Objects.equals(this.conditions, messageResponse.conditions) &&
         Objects.equals(this.payload, messageResponse.payload) &&
         Objects.equals(this.createdAt, messageResponse.createdAt) &&
@@ -205,7 +249,7 @@ public class MessageResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, resourceUri, datetime, conditions, payload, createdAt, updatedAt);
+    return Objects.hash(id, resourceUri, resourceUnit, resourceTime, resourceTimezone, conditions, payload, createdAt, updatedAt);
   }
 
   @Override
@@ -215,7 +259,9 @@ public class MessageResponse   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    resourceUri: ").append(toIndentedString(resourceUri)).append("\n");
-    sb.append("    datetime: ").append(toIndentedString(datetime)).append("\n");
+    sb.append("    resourceUnit: ").append(toIndentedString(resourceUnit)).append("\n");
+    sb.append("    resourceTime: ").append(toIndentedString(resourceTime)).append("\n");
+    sb.append("    resourceTimezone: ").append(toIndentedString(resourceTimezone)).append("\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

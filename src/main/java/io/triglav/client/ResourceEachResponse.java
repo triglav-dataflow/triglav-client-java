@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T13:54:43.541+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-17T16:38:23.765+09:00")
 public class ResourceEachResponse   {
   @SerializedName("id")
   private Integer id = null;
@@ -44,6 +44,9 @@ public class ResourceEachResponse   {
 
   @SerializedName("unit")
   private String unit = null;
+
+  @SerializedName("timezone")
+  private String timezone = null;
 
   @SerializedName("day_span")
   private Integer daySpan = null;
@@ -102,6 +105,24 @@ public class ResourceEachResponse   {
     this.unit = unit;
   }
 
+  public ResourceEachResponse timezone(String timezone) {
+    this.timezone = timezone;
+    return this;
+  }
+
+   /**
+   * Get timezone
+   * @return timezone
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getTimezone() {
+    return timezone;
+  }
+
+  public void setTimezone(String timezone) {
+    this.timezone = timezone;
+  }
+
   public ResourceEachResponse daySpan(Integer daySpan) {
     this.daySpan = daySpan;
     return this;
@@ -133,12 +154,13 @@ public class ResourceEachResponse   {
     return Objects.equals(this.id, resourceEachResponse.id) &&
         Objects.equals(this.uri, resourceEachResponse.uri) &&
         Objects.equals(this.unit, resourceEachResponse.unit) &&
+        Objects.equals(this.timezone, resourceEachResponse.timezone) &&
         Objects.equals(this.daySpan, resourceEachResponse.daySpan);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri, unit, daySpan);
+    return Objects.hash(id, uri, unit, timezone, daySpan);
   }
 
   @Override
@@ -149,6 +171,7 @@ public class ResourceEachResponse   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    daySpan: ").append(toIndentedString(daySpan)).append("\n");
     sb.append("}");
     return sb.toString();

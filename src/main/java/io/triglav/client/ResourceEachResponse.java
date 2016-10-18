@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T10:36:54.388+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:07:08.095+09:00")
 public class ResourceEachResponse   {
   @SerializedName("id")
   private Integer id = null;
@@ -48,8 +48,8 @@ public class ResourceEachResponse   {
   @SerializedName("timezone")
   private String timezone = null;
 
-  @SerializedName("day_span")
-  private Integer daySpan = null;
+  @SerializedName("watch_span")
+  private Integer watchSpan = null;
 
   public ResourceEachResponse id(Integer id) {
     this.id = id;
@@ -123,22 +123,22 @@ public class ResourceEachResponse   {
     this.timezone = timezone;
   }
 
-  public ResourceEachResponse daySpan(Integer daySpan) {
-    this.daySpan = daySpan;
+  public ResourceEachResponse watchSpan(Integer watchSpan) {
+    this.watchSpan = watchSpan;
     return this;
   }
 
    /**
-   * Get daySpan
-   * @return daySpan
+   * Get watchSpan
+   * @return watchSpan
   **/
   @ApiModelProperty(example = "null", value = "")
-  public Integer getDaySpan() {
-    return daySpan;
+  public Integer getWatchSpan() {
+    return watchSpan;
   }
 
-  public void setDaySpan(Integer daySpan) {
-    this.daySpan = daySpan;
+  public void setWatchSpan(Integer watchSpan) {
+    this.watchSpan = watchSpan;
   }
 
 
@@ -155,12 +155,12 @@ public class ResourceEachResponse   {
         Objects.equals(this.uri, resourceEachResponse.uri) &&
         Objects.equals(this.unit, resourceEachResponse.unit) &&
         Objects.equals(this.timezone, resourceEachResponse.timezone) &&
-        Objects.equals(this.daySpan, resourceEachResponse.daySpan);
+        Objects.equals(this.watchSpan, resourceEachResponse.watchSpan);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri, unit, timezone, daySpan);
+    return Objects.hash(id, uri, unit, timezone, watchSpan);
   }
 
   @Override
@@ -172,7 +172,7 @@ public class ResourceEachResponse   {
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    daySpan: ").append(toIndentedString(daySpan)).append("\n");
+    sb.append("    watchSpan: ").append(toIndentedString(watchSpan)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BulkinsertResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T10:36:54.388+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:07:08.095+09:00")
 public class BulkinsertResponse   {
   @SerializedName("access_token")
   private Integer accessToken = null;

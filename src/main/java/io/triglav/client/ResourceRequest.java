@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResourceRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T10:36:54.388+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:07:08.095+09:00")
 public class ResourceRequest   {
   @SerializedName("description")
   private String description = null;
@@ -48,8 +48,8 @@ public class ResourceRequest   {
   @SerializedName("timezone")
   private String timezone = null;
 
-  @SerializedName("day_span")
-  private Integer daySpan = null;
+  @SerializedName("watch_span")
+  private Integer watchSpan = null;
 
   @SerializedName("consumable")
   private Boolean consumable = null;
@@ -81,10 +81,10 @@ public class ResourceRequest   {
   }
 
    /**
-   * Get uri
+   * URI of Resource
    * @return uri
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", required = true, value = "URI of Resource")
   public String getUri() {
     return uri;
   }
@@ -99,10 +99,10 @@ public class ResourceRequest   {
   }
 
    /**
-   * Get unit
+   * Time unit of resource to monitor such as daily, or hourly
    * @return unit
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", required = true, value = "Time unit of resource to monitor such as daily, or hourly")
   public String getUnit() {
     return unit;
   }
@@ -117,10 +117,10 @@ public class ResourceRequest   {
   }
 
    /**
-   * Get timezone
+   * Timezone of resource time, that is, timezone of %Y-%m-%d for hdfs://path/to/%Y-%m-%d such as +09:00
    * @return timezone
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Timezone of resource time, that is, timezone of %Y-%m-%d for hdfs://path/to/%Y-%m-%d such as +09:00")
   public String getTimezone() {
     return timezone;
   }
@@ -129,22 +129,22 @@ public class ResourceRequest   {
     this.timezone = timezone;
   }
 
-  public ResourceRequest daySpan(Integer daySpan) {
-    this.daySpan = daySpan;
+  public ResourceRequest watchSpan(Integer watchSpan) {
+    this.watchSpan = watchSpan;
     return this;
   }
 
    /**
-   * Get daySpan
-   * @return daySpan
+   * Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly
+   * @return watchSpan
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getDaySpan() {
-    return daySpan;
+  @ApiModelProperty(example = "null", value = "Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly")
+  public Integer getWatchSpan() {
+    return watchSpan;
   }
 
-  public void setDaySpan(Integer daySpan) {
-    this.daySpan = daySpan;
+  public void setWatchSpan(Integer watchSpan) {
+    this.watchSpan = watchSpan;
   }
 
   public ResourceRequest consumable(Boolean consumable) {
@@ -153,10 +153,10 @@ public class ResourceRequest   {
   }
 
    /**
-   * Get consumable
+   * True if this resource should be consumed
    * @return consumable
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if this resource should be consumed")
   public Boolean getConsumable() {
     return consumable;
   }
@@ -171,10 +171,10 @@ public class ResourceRequest   {
   }
 
    /**
-   * Get notifiable
+   * True if this resource should be notified, that is, monitor agent is not necessary
    * @return notifiable
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "True if this resource should be notified, that is, monitor agent is not necessary")
   public Boolean getNotifiable() {
     return notifiable;
   }
@@ -197,14 +197,14 @@ public class ResourceRequest   {
         Objects.equals(this.uri, resourceRequest.uri) &&
         Objects.equals(this.unit, resourceRequest.unit) &&
         Objects.equals(this.timezone, resourceRequest.timezone) &&
-        Objects.equals(this.daySpan, resourceRequest.daySpan) &&
+        Objects.equals(this.watchSpan, resourceRequest.watchSpan) &&
         Objects.equals(this.consumable, resourceRequest.consumable) &&
         Objects.equals(this.notifiable, resourceRequest.notifiable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, uri, unit, timezone, daySpan, consumable, notifiable);
+    return Objects.hash(description, uri, unit, timezone, watchSpan, consumable, notifiable);
   }
 
   @Override
@@ -216,7 +216,7 @@ public class ResourceRequest   {
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    daySpan: ").append(toIndentedString(daySpan)).append("\n");
+    sb.append("    watchSpan: ").append(toIndentedString(watchSpan)).append("\n");
     sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
     sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
     sb.append("}");

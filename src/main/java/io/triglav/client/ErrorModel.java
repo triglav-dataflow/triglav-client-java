@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * ErrorModel
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T10:36:54.388+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:07:08.095+09:00")
 public class ErrorModel   {
   @SerializedName("error")
   private String error = null;

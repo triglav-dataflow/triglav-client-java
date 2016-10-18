@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accessToken** | **Integer** | Number of imserts |  [optional]
+**numInserts** | **Integer** | Number of inserts |  [optional]
 
 
 

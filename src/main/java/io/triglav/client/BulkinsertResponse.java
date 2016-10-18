@@ -34,27 +34,27 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * BulkinsertResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:07:08.095+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:15:58.649+09:00")
 public class BulkinsertResponse   {
-  @SerializedName("access_token")
-  private Integer accessToken = null;
+  @SerializedName("num_inserts")
+  private Integer numInserts = null;
 
-  public BulkinsertResponse accessToken(Integer accessToken) {
-    this.accessToken = accessToken;
+  public BulkinsertResponse numInserts(Integer numInserts) {
+    this.numInserts = numInserts;
     return this;
   }
 
    /**
-   * Number of imserts
-   * @return accessToken
+   * Number of inserts
+   * @return numInserts
   **/
-  @ApiModelProperty(example = "null", value = "Number of imserts")
-  public Integer getAccessToken() {
-    return accessToken;
+  @ApiModelProperty(example = "null", value = "Number of inserts")
+  public Integer getNumInserts() {
+    return numInserts;
   }
 
-  public void setAccessToken(Integer accessToken) {
-    this.accessToken = accessToken;
+  public void setNumInserts(Integer numInserts) {
+    this.numInserts = numInserts;
   }
 
 
@@ -67,12 +67,12 @@ public class BulkinsertResponse   {
       return false;
     }
     BulkinsertResponse bulkinsertResponse = (BulkinsertResponse) o;
-    return Objects.equals(this.accessToken, bulkinsertResponse.accessToken);
+    return Objects.equals(this.numInserts, bulkinsertResponse.numInserts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken);
+    return Objects.hash(numInserts);
   }
 
   @Override
@@ -80,7 +80,7 @@ public class BulkinsertResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class BulkinsertResponse {\n");
     
-    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
+    sb.append("    numInserts: ").append(toIndentedString(numInserts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

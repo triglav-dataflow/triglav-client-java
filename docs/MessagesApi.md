@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="fetchMessages"></a>
 # **fetchMessages**
-> List&lt;MessageEachResponse&gt; fetchMessages(offset, resourceUris)
+> List&lt;MessageEachResponse&gt; fetchMessages(offset, limit, resourceUris)
 
 
 
@@ -35,9 +35,10 @@ api_key.setApiKey("YOUR API KEY");
 
 MessagesApi apiInstance = new MessagesApi();
 Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to fetch from
+Integer limit = 56; // Integer | Number of limits
 String resourceUris = "resourceUris_example"; // String | URIs of Resource
 try {
-    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, resourceUris);
+    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, limit, resourceUris);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#fetchMessages");
@@ -50,6 +51,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to fetch from |
+ **limit** | **Integer**| Number of limits |
  **resourceUris** | **String**| URIs of Resource |
 
 ### Return type

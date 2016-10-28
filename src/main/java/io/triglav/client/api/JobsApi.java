@@ -39,8 +39,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 import io.triglav.client.JobRequest;
-import io.triglav.client.ErrorModel;
 import io.triglav.client.JobResponse;
+import io.triglav.client.ErrorModel;
 import io.triglav.client.JobEachResponse;
 
 import java.lang.reflect.Type;

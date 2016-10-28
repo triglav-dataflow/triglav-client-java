@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **uri** | **String** |  |  [optional]
 **unit** | **String** |  |  [optional]
 **timezone** | **String** |  |  [optional]
-**watchSpan** | **Integer** |  |  [optional]
+**spanInDays** | **Integer** |  |  [optional]
 
 
 

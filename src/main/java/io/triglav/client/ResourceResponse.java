@@ -36,7 +36,7 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:15:58.649+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-29T03:15:14.155+09:00")
 public class ResourceResponse   {
   @SerializedName("description")
   private String description = null;
@@ -50,8 +50,8 @@ public class ResourceResponse   {
   @SerializedName("timezone")
   private String timezone = null;
 
-  @SerializedName("watch_span")
-  private Integer watchSpan = null;
+  @SerializedName("span_in_days")
+  private Integer spanInDays = null;
 
   @SerializedName("consumable")
   private Boolean consumable = null;
@@ -140,22 +140,22 @@ public class ResourceResponse   {
     this.timezone = timezone;
   }
 
-  public ResourceResponse watchSpan(Integer watchSpan) {
-    this.watchSpan = watchSpan;
+  public ResourceResponse spanInDays(Integer spanInDays) {
+    this.spanInDays = spanInDays;
     return this;
   }
 
    /**
    * Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly
-   * @return watchSpan
+   * @return spanInDays
   **/
   @ApiModelProperty(example = "null", value = "Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly")
-  public Integer getWatchSpan() {
-    return watchSpan;
+  public Integer getSpanInDays() {
+    return spanInDays;
   }
 
-  public void setWatchSpan(Integer watchSpan) {
-    this.watchSpan = watchSpan;
+  public void setSpanInDays(Integer spanInDays) {
+    this.spanInDays = spanInDays;
   }
 
   public ResourceResponse consumable(Boolean consumable) {
@@ -262,7 +262,7 @@ public class ResourceResponse   {
         Objects.equals(this.uri, resourceResponse.uri) &&
         Objects.equals(this.unit, resourceResponse.unit) &&
         Objects.equals(this.timezone, resourceResponse.timezone) &&
-        Objects.equals(this.watchSpan, resourceResponse.watchSpan) &&
+        Objects.equals(this.spanInDays, resourceResponse.spanInDays) &&
         Objects.equals(this.consumable, resourceResponse.consumable) &&
         Objects.equals(this.notifiable, resourceResponse.notifiable) &&
         Objects.equals(this.id, resourceResponse.id) &&
@@ -272,7 +272,7 @@ public class ResourceResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, uri, unit, timezone, watchSpan, consumable, notifiable, id, createdAt, updatedAt);
+    return Objects.hash(description, uri, unit, timezone, spanInDays, consumable, notifiable, id, createdAt, updatedAt);
   }
 
   @Override
@@ -284,7 +284,7 @@ public class ResourceResponse   {
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
-    sb.append("    watchSpan: ").append(toIndentedString(watchSpan)).append("\n");
+    sb.append("    spanInDays: ").append(toIndentedString(spanInDays)).append("\n");
     sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
     sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");

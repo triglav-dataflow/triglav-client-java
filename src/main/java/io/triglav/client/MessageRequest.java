@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MessageRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-18T11:15:58.649+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-29T03:15:14.155+09:00")
 public class MessageRequest   {
   @SerializedName("resource_uri")
   private String resourceUri = null;
@@ -57,10 +57,10 @@ public class MessageRequest   {
   }
 
    /**
-   * Get resourceUri
+   * URI of Resource
    * @return resourceUri
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", required = true, value = "URI of Resource")
   public String getResourceUri() {
     return resourceUri;
   }
@@ -75,10 +75,10 @@ public class MessageRequest   {
   }
 
    /**
-   * Get resourceUnit
+   * Time unit of resource to monitor such as daily, or hourly
    * @return resourceUnit
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", required = true, value = "Time unit of resource to monitor such as daily, or hourly")
   public String getResourceUnit() {
     return resourceUnit;
   }
@@ -93,10 +93,10 @@ public class MessageRequest   {
   }
 
    /**
-   * Get resourceTime
+   * Time of Resource in unix timestamp such as 1476025200 (2016-10-10 in +09:00)
    * @return resourceTime
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", required = true, value = "Time of Resource in unix timestamp such as 1476025200 (2016-10-10 in +09:00)")
   public Integer getResourceTime() {
     return resourceTime;
   }
@@ -111,10 +111,10 @@ public class MessageRequest   {
   }
 
    /**
-   * Get resourceTimezone
+   * Timezone of resource time, that is, timezone of %Y-%m-%d for hdfs://path/to/%Y-%m-%d such as +09:00
    * @return resourceTimezone
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", required = true, value = "Timezone of resource time, that is, timezone of %Y-%m-%d for hdfs://path/to/%Y-%m-%d such as +09:00")
   public String getResourceTimezone() {
     return resourceTimezone;
   }
@@ -129,10 +129,10 @@ public class MessageRequest   {
   }
 
    /**
-   * Get payload
+   * Any json string
    * @return payload
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "Any json string")
   public String getPayload() {
     return payload;
   }

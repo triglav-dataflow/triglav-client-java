@@ -36,7 +36,7 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T03:15:25.251+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T04:04:07.242+09:00")
 public class ResourceResponse   {
   @SerializedName("id")
   private Long id = null;
@@ -56,17 +56,14 @@ public class ResourceResponse   {
   @SerializedName("span_in_days")
   private Integer spanInDays = null;
 
-  @SerializedName("consumable")
-  private Boolean consumable = null;
-
-  @SerializedName("notifiable")
-  private Boolean notifiable = null;
-
   @SerializedName("created_at")
   private DateTime createdAt = null;
 
   @SerializedName("updated_at")
   private DateTime updatedAt = null;
+
+  @SerializedName("consumable")
+  private Boolean consumable = null;
 
   public ResourceResponse id(Long id) {
     this.id = id;
@@ -176,42 +173,6 @@ public class ResourceResponse   {
     this.spanInDays = spanInDays;
   }
 
-  public ResourceResponse consumable(Boolean consumable) {
-    this.consumable = consumable;
-    return this;
-  }
-
-   /**
-   * True if this resource should be consumed
-   * @return consumable
-  **/
-  @ApiModelProperty(example = "null", value = "True if this resource should be consumed")
-  public Boolean getConsumable() {
-    return consumable;
-  }
-
-  public void setConsumable(Boolean consumable) {
-    this.consumable = consumable;
-  }
-
-  public ResourceResponse notifiable(Boolean notifiable) {
-    this.notifiable = notifiable;
-    return this;
-  }
-
-   /**
-   * True if this resource should be notified, that is, monitor agent is not necessary
-   * @return notifiable
-  **/
-  @ApiModelProperty(example = "null", value = "True if this resource should be notified, that is, monitor agent is not necessary")
-  public Boolean getNotifiable() {
-    return notifiable;
-  }
-
-  public void setNotifiable(Boolean notifiable) {
-    this.notifiable = notifiable;
-  }
-
   public ResourceResponse createdAt(DateTime createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -248,6 +209,24 @@ public class ResourceResponse   {
     this.updatedAt = updatedAt;
   }
 
+  public ResourceResponse consumable(Boolean consumable) {
+    this.consumable = consumable;
+    return this;
+  }
+
+   /**
+   * True if this resource should be consumed (if in input_resources)
+   * @return consumable
+  **/
+  @ApiModelProperty(example = "null", value = "True if this resource should be consumed (if in input_resources)")
+  public Boolean getConsumable() {
+    return consumable;
+  }
+
+  public void setConsumable(Boolean consumable) {
+    this.consumable = consumable;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -264,15 +243,14 @@ public class ResourceResponse   {
         Objects.equals(this.unit, resourceResponse.unit) &&
         Objects.equals(this.timezone, resourceResponse.timezone) &&
         Objects.equals(this.spanInDays, resourceResponse.spanInDays) &&
-        Objects.equals(this.consumable, resourceResponse.consumable) &&
-        Objects.equals(this.notifiable, resourceResponse.notifiable) &&
         Objects.equals(this.createdAt, resourceResponse.createdAt) &&
-        Objects.equals(this.updatedAt, resourceResponse.updatedAt);
+        Objects.equals(this.updatedAt, resourceResponse.updatedAt) &&
+        Objects.equals(this.consumable, resourceResponse.consumable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, description, uri, unit, timezone, spanInDays, consumable, notifiable, createdAt, updatedAt);
+    return Objects.hash(id, description, uri, unit, timezone, spanInDays, createdAt, updatedAt, consumable);
   }
 
   @Override
@@ -286,10 +264,9 @@ public class ResourceResponse   {
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    spanInDays: ").append(toIndentedString(spanInDays)).append("\n");
-    sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
-    sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
     sb.append("}");
     return sb.toString();
   }

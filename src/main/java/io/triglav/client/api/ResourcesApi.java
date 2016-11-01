@@ -385,7 +385,7 @@ public class ResourcesApi {
         return call;
     }
     /* Build call for listResources */
-    private com.squareup.okhttp.Call listResourcesCall(String uriPrefix, Boolean consumable, Boolean notifiable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listResourcesCall(String uriPrefix, Boolean consumable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'uriPrefix' is set
@@ -398,11 +398,6 @@ public class ResourcesApi {
             throw new ApiException("Missing the required parameter 'consumable' when calling listResources(Async)");
         }
         
-        // verify the required parameter 'notifiable' is set
-        if (notifiable == null) {
-            throw new ApiException("Missing the required parameter 'notifiable' when calling listResources(Async)");
-        }
-        
 
         // create path and map variables
         String localVarPath = "/resources".replaceAll("\\{format\\}","json");
@@ -412,8 +407,6 @@ public class ResourcesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "uri_prefix", uriPrefix));
         if (consumable != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "consumable", consumable));
-        if (notifiable != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "notifiable", notifiable));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -452,12 +445,11 @@ public class ResourcesApi {
      * Returns all resources from the system
      * @param uriPrefix Prefix of Resource URI (required)
      * @param consumable Consuamble (required)
-     * @param notifiable Notifiable (required)
      * @return List&lt;ResourceEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<ResourceEachResponse> listResources(String uriPrefix, Boolean consumable, Boolean notifiable) throws ApiException {
-        ApiResponse<List<ResourceEachResponse>> resp = listResourcesWithHttpInfo(uriPrefix, consumable, notifiable);
+    public List<ResourceEachResponse> listResources(String uriPrefix, Boolean consumable) throws ApiException {
+        ApiResponse<List<ResourceEachResponse>> resp = listResourcesWithHttpInfo(uriPrefix, consumable);
         return resp.getData();
     }
 
@@ -466,12 +458,11 @@ public class ResourcesApi {
      * Returns all resources from the system
      * @param uriPrefix Prefix of Resource URI (required)
      * @param consumable Consuamble (required)
-     * @param notifiable Notifiable (required)
      * @return ApiResponse&lt;List&lt;ResourceEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<ResourceEachResponse>> listResourcesWithHttpInfo(String uriPrefix, Boolean consumable, Boolean notifiable) throws ApiException {
-        com.squareup.okhttp.Call call = listResourcesCall(uriPrefix, consumable, notifiable, null, null);
+    public ApiResponse<List<ResourceEachResponse>> listResourcesWithHttpInfo(String uriPrefix, Boolean consumable) throws ApiException {
+        com.squareup.okhttp.Call call = listResourcesCall(uriPrefix, consumable, null, null);
         Type localVarReturnType = new TypeToken<List<ResourceEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -481,12 +472,11 @@ public class ResourcesApi {
      * Returns all resources from the system
      * @param uriPrefix Prefix of Resource URI (required)
      * @param consumable Consuamble (required)
-     * @param notifiable Notifiable (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listResourcesAsync(String uriPrefix, Boolean consumable, Boolean notifiable, final ApiCallback<List<ResourceEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listResourcesAsync(String uriPrefix, Boolean consumable, final ApiCallback<List<ResourceEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -507,7 +497,7 @@ public class ResourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listResourcesCall(uriPrefix, consumable, notifiable, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listResourcesCall(uriPrefix, consumable, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<ResourceEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

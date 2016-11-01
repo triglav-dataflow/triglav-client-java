@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="listResources"></a>
 # **listResources**
-> List&lt;ResourceEachResponse&gt; listResources(uriPrefix, consumable, notifiable)
+> List&lt;ResourceEachResponse&gt; listResources(uriPrefix, consumable)
 
 
 
@@ -203,9 +203,8 @@ api_key.setApiKey("YOUR API KEY");
 ResourcesApi apiInstance = new ResourcesApi();
 String uriPrefix = "uriPrefix_example"; // String | Prefix of Resource URI
 Boolean consumable = true; // Boolean | Consuamble
-Boolean notifiable = true; // Boolean | Notifiable
 try {
-    List<ResourceEachResponse> result = apiInstance.listResources(uriPrefix, consumable, notifiable);
+    List<ResourceEachResponse> result = apiInstance.listResources(uriPrefix, consumable);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#listResources");
@@ -219,7 +218,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uriPrefix** | **String**| Prefix of Resource URI |
  **consumable** | **Boolean**| Consuamble |
- **notifiable** | **Boolean**| Notifiable |
 
 ### Return type
 

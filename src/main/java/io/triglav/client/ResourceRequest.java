@@ -34,8 +34,11 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResourceRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-29T03:15:14.155+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T03:15:25.251+09:00")
 public class ResourceRequest   {
+  @SerializedName("id")
+  private Long id = null;
+
   @SerializedName("description")
   private String description = null;
 
@@ -56,6 +59,24 @@ public class ResourceRequest   {
 
   @SerializedName("notifiable")
   private Boolean notifiable = null;
+
+  public ResourceRequest id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public ResourceRequest description(String description) {
     this.description = description;
@@ -102,7 +123,7 @@ public class ResourceRequest   {
    * Time unit of resource to monitor such as daily, or hourly
    * @return unit
   **/
-  @ApiModelProperty(example = "null", required = true, value = "Time unit of resource to monitor such as daily, or hourly")
+  @ApiModelProperty(example = "null", value = "Time unit of resource to monitor such as daily, or hourly")
   public String getUnit() {
     return unit;
   }
@@ -135,10 +156,10 @@ public class ResourceRequest   {
   }
 
    /**
-   * Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly
+   * Time span of resource to monitor, default is 32
    * @return spanInDays
   **/
-  @ApiModelProperty(example = "null", value = "Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly")
+  @ApiModelProperty(example = "null", value = "Time span of resource to monitor, default is 32")
   public Integer getSpanInDays() {
     return spanInDays;
   }
@@ -193,7 +214,8 @@ public class ResourceRequest   {
       return false;
     }
     ResourceRequest resourceRequest = (ResourceRequest) o;
-    return Objects.equals(this.description, resourceRequest.description) &&
+    return Objects.equals(this.id, resourceRequest.id) &&
+        Objects.equals(this.description, resourceRequest.description) &&
         Objects.equals(this.uri, resourceRequest.uri) &&
         Objects.equals(this.unit, resourceRequest.unit) &&
         Objects.equals(this.timezone, resourceRequest.timezone) &&
@@ -204,7 +226,7 @@ public class ResourceRequest   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, uri, unit, timezone, spanInDays, consumable, notifiable);
+    return Objects.hash(id, description, uri, unit, timezone, spanInDays, consumable, notifiable);
   }
 
   @Override
@@ -212,6 +234,7 @@ public class ResourceRequest   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResourceRequest {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");

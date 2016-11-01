@@ -29,6 +29,7 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.triglav.client.JobRequest;
 import io.triglav.client.ResourceResponse;
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ import org.joda.time.DateTime;
 /**
  * JobResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-29T03:15:14.155+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T03:15:25.251+09:00")
 public class JobResponse   {
   @SerializedName("id")
   private Long id = null;
@@ -49,17 +50,17 @@ public class JobResponse   {
   @SerializedName("contact_id")
   private Integer contactId = null;
 
-  @SerializedName("created_at")
-  private DateTime createdAt = null;
-
-  @SerializedName("updated_at")
-  private DateTime updatedAt = null;
-
   @SerializedName("input_resources")
   private List<ResourceResponse> inputResources = new ArrayList<ResourceResponse>();
 
   @SerializedName("output_resources")
   private List<ResourceResponse> outputResources = new ArrayList<ResourceResponse>();
+
+  @SerializedName("created_at")
+  private DateTime createdAt = null;
+
+  @SerializedName("updated_at")
+  private DateTime updatedAt = null;
 
   public JobResponse id(Long id) {
     this.id = id;
@@ -115,6 +116,42 @@ public class JobResponse   {
     this.contactId = contactId;
   }
 
+  public JobResponse inputResources(List<ResourceResponse> inputResources) {
+    this.inputResources = inputResources;
+    return this;
+  }
+
+   /**
+   * Input resources
+   * @return inputResources
+  **/
+  @ApiModelProperty(example = "null", value = "Input resources")
+  public List<ResourceResponse> getInputResources() {
+    return inputResources;
+  }
+
+  public void setInputResources(List<ResourceResponse> inputResources) {
+    this.inputResources = inputResources;
+  }
+
+  public JobResponse outputResources(List<ResourceResponse> outputResources) {
+    this.outputResources = outputResources;
+    return this;
+  }
+
+   /**
+   * Output resources
+   * @return outputResources
+  **/
+  @ApiModelProperty(example = "null", value = "Output resources")
+  public List<ResourceResponse> getOutputResources() {
+    return outputResources;
+  }
+
+  public void setOutputResources(List<ResourceResponse> outputResources) {
+    this.outputResources = outputResources;
+  }
+
   public JobResponse createdAt(DateTime createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -151,42 +188,6 @@ public class JobResponse   {
     this.updatedAt = updatedAt;
   }
 
-  public JobResponse inputResources(List<ResourceResponse> inputResources) {
-    this.inputResources = inputResources;
-    return this;
-  }
-
-   /**
-   * New resources are created if it does not exit. Need to use Resource API to update
-   * @return inputResources
-  **/
-  @ApiModelProperty(example = "null", value = "New resources are created if it does not exit. Need to use Resource API to update")
-  public List<ResourceResponse> getInputResources() {
-    return inputResources;
-  }
-
-  public void setInputResources(List<ResourceResponse> inputResources) {
-    this.inputResources = inputResources;
-  }
-
-  public JobResponse outputResources(List<ResourceResponse> outputResources) {
-    this.outputResources = outputResources;
-    return this;
-  }
-
-   /**
-   * New resources are created if it does not exit. Need to use Resource API to update
-   * @return outputResources
-  **/
-  @ApiModelProperty(example = "null", value = "New resources are created if it does not exit. Need to use Resource API to update")
-  public List<ResourceResponse> getOutputResources() {
-    return outputResources;
-  }
-
-  public void setOutputResources(List<ResourceResponse> outputResources) {
-    this.outputResources = outputResources;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -200,15 +201,15 @@ public class JobResponse   {
     return Objects.equals(this.id, jobResponse.id) &&
         Objects.equals(this.uri, jobResponse.uri) &&
         Objects.equals(this.contactId, jobResponse.contactId) &&
-        Objects.equals(this.createdAt, jobResponse.createdAt) &&
-        Objects.equals(this.updatedAt, jobResponse.updatedAt) &&
         Objects.equals(this.inputResources, jobResponse.inputResources) &&
-        Objects.equals(this.outputResources, jobResponse.outputResources);
+        Objects.equals(this.outputResources, jobResponse.outputResources) &&
+        Objects.equals(this.createdAt, jobResponse.createdAt) &&
+        Objects.equals(this.updatedAt, jobResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri, contactId, createdAt, updatedAt, inputResources, outputResources);
+    return Objects.hash(id, uri, contactId, inputResources, outputResources, createdAt, updatedAt);
   }
 
   @Override
@@ -219,10 +220,10 @@ public class JobResponse   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    contactId: ").append(toIndentedString(contactId)).append("\n");
-    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
-    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    inputResources: ").append(toIndentedString(inputResources)).append("\n");
     sb.append("    outputResources: ").append(toIndentedString(outputResources)).append("\n");
+    sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
+    sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
     return sb.toString();
   }

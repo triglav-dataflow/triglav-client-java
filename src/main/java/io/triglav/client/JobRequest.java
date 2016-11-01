@@ -37,8 +37,11 @@ import java.util.List;
 /**
  * JobRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-29T03:15:14.155+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T03:15:25.251+09:00")
 public class JobRequest   {
+  @SerializedName("id")
+  private Long id = null;
+
   @SerializedName("uri")
   private String uri = null;
 
@@ -50,6 +53,24 @@ public class JobRequest   {
 
   @SerializedName("output_resources")
   private List<ResourceRequest> outputResources = new ArrayList<ResourceRequest>();
+
+  public JobRequest id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public JobRequest uri(String uri) {
     this.uri = uri;
@@ -93,10 +114,10 @@ public class JobRequest   {
   }
 
    /**
-   * New resources are created if it does not exit. Need to use Resource API to update
+   * New resources are created if id is not given. Update if id is given
    * @return inputResources
   **/
-  @ApiModelProperty(example = "null", value = "New resources are created if it does not exit. Need to use Resource API to update")
+  @ApiModelProperty(example = "null", value = "New resources are created if id is not given. Update if id is given")
   public List<ResourceRequest> getInputResources() {
     return inputResources;
   }
@@ -111,10 +132,10 @@ public class JobRequest   {
   }
 
    /**
-   * New resources are created if it does not exit. Need to use Resource API to update
+   * New resources are created if id is not given. Update if id is given
    * @return outputResources
   **/
-  @ApiModelProperty(example = "null", value = "New resources are created if it does not exit. Need to use Resource API to update")
+  @ApiModelProperty(example = "null", value = "New resources are created if id is not given. Update if id is given")
   public List<ResourceRequest> getOutputResources() {
     return outputResources;
   }
@@ -133,7 +154,8 @@ public class JobRequest   {
       return false;
     }
     JobRequest jobRequest = (JobRequest) o;
-    return Objects.equals(this.uri, jobRequest.uri) &&
+    return Objects.equals(this.id, jobRequest.id) &&
+        Objects.equals(this.uri, jobRequest.uri) &&
         Objects.equals(this.contactId, jobRequest.contactId) &&
         Objects.equals(this.inputResources, jobRequest.inputResources) &&
         Objects.equals(this.outputResources, jobRequest.outputResources);
@@ -141,7 +163,7 @@ public class JobRequest   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri, contactId, inputResources, outputResources);
+    return Objects.hash(id, uri, contactId, inputResources, outputResources);
   }
 
   @Override
@@ -149,6 +171,7 @@ public class JobRequest   {
     StringBuilder sb = new StringBuilder();
     sb.append("class JobRequest {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    contactId: ").append(toIndentedString(contactId)).append("\n");
     sb.append("    inputResources: ").append(toIndentedString(inputResources)).append("\n");

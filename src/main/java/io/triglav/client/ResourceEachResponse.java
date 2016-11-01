@@ -34,11 +34,8 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-29T03:15:14.155+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T03:15:25.251+09:00")
 public class ResourceEachResponse   {
-  @SerializedName("id")
-  private Integer id = null;
-
   @SerializedName("uri")
   private String uri = null;
 
@@ -51,34 +48,16 @@ public class ResourceEachResponse   {
   @SerializedName("span_in_days")
   private Integer spanInDays = null;
 
-  public ResourceEachResponse id(Integer id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
   public ResourceEachResponse uri(String uri) {
     this.uri = uri;
     return this;
   }
 
    /**
-   * Get uri
+   * resource uri
    * @return uri
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "resource uri")
   public String getUri() {
     return uri;
   }
@@ -93,10 +72,10 @@ public class ResourceEachResponse   {
   }
 
    /**
-   * Get unit
+   * 'daily' or 'hourly', and 'daily,hourly'
    * @return unit
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "'daily' or 'hourly', and 'daily,hourly'")
   public String getUnit() {
     return unit;
   }
@@ -111,10 +90,10 @@ public class ResourceEachResponse   {
   }
 
    /**
-   * Get timezone
+   * timezone of the format [+-]HH:MM
    * @return timezone
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "timezone of the format [+-]HH:MM")
   public String getTimezone() {
     return timezone;
   }
@@ -129,10 +108,10 @@ public class ResourceEachResponse   {
   }
 
    /**
-   * Get spanInDays
+   * span in days
    * @return spanInDays
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "span in days")
   public Integer getSpanInDays() {
     return spanInDays;
   }
@@ -151,8 +130,7 @@ public class ResourceEachResponse   {
       return false;
     }
     ResourceEachResponse resourceEachResponse = (ResourceEachResponse) o;
-    return Objects.equals(this.id, resourceEachResponse.id) &&
-        Objects.equals(this.uri, resourceEachResponse.uri) &&
+    return Objects.equals(this.uri, resourceEachResponse.uri) &&
         Objects.equals(this.unit, resourceEachResponse.unit) &&
         Objects.equals(this.timezone, resourceEachResponse.timezone) &&
         Objects.equals(this.spanInDays, resourceEachResponse.spanInDays);
@@ -160,7 +138,7 @@ public class ResourceEachResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri, unit, timezone, spanInDays);
+    return Objects.hash(uri, unit, timezone, spanInDays);
   }
 
   @Override
@@ -168,7 +146,6 @@ public class ResourceEachResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResourceEachResponse {\n");
     
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");

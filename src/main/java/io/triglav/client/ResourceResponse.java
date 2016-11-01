@@ -36,8 +36,11 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-10-29T03:15:14.155+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T03:15:25.251+09:00")
 public class ResourceResponse   {
+  @SerializedName("id")
+  private Long id = null;
+
   @SerializedName("description")
   private String description = null;
 
@@ -59,14 +62,29 @@ public class ResourceResponse   {
   @SerializedName("notifiable")
   private Boolean notifiable = null;
 
-  @SerializedName("id")
-  private Long id = null;
-
   @SerializedName("created_at")
   private DateTime createdAt = null;
 
   @SerializedName("updated_at")
   private DateTime updatedAt = null;
+
+  public ResourceResponse id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public ResourceResponse description(String description) {
     this.description = description;
@@ -113,7 +131,7 @@ public class ResourceResponse   {
    * Time unit of resource to monitor such as daily, or hourly
    * @return unit
   **/
-  @ApiModelProperty(example = "null", required = true, value = "Time unit of resource to monitor such as daily, or hourly")
+  @ApiModelProperty(example = "null", value = "Time unit of resource to monitor such as daily, or hourly")
   public String getUnit() {
     return unit;
   }
@@ -146,10 +164,10 @@ public class ResourceResponse   {
   }
 
    /**
-   * Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly
+   * Time span of resource to monitor, default is 32
    * @return spanInDays
   **/
-  @ApiModelProperty(example = "null", value = "Time span of resource to monitor. default is 32 for daily, 32*24 (32 days) for hourly")
+  @ApiModelProperty(example = "null", value = "Time span of resource to monitor, default is 32")
   public Integer getSpanInDays() {
     return spanInDays;
   }
@@ -192,24 +210,6 @@ public class ResourceResponse   {
 
   public void setNotifiable(Boolean notifiable) {
     this.notifiable = notifiable;
-  }
-
-  public ResourceResponse id(Long id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public ResourceResponse createdAt(DateTime createdAt) {
@@ -258,21 +258,21 @@ public class ResourceResponse   {
       return false;
     }
     ResourceResponse resourceResponse = (ResourceResponse) o;
-    return Objects.equals(this.description, resourceResponse.description) &&
+    return Objects.equals(this.id, resourceResponse.id) &&
+        Objects.equals(this.description, resourceResponse.description) &&
         Objects.equals(this.uri, resourceResponse.uri) &&
         Objects.equals(this.unit, resourceResponse.unit) &&
         Objects.equals(this.timezone, resourceResponse.timezone) &&
         Objects.equals(this.spanInDays, resourceResponse.spanInDays) &&
         Objects.equals(this.consumable, resourceResponse.consumable) &&
         Objects.equals(this.notifiable, resourceResponse.notifiable) &&
-        Objects.equals(this.id, resourceResponse.id) &&
         Objects.equals(this.createdAt, resourceResponse.createdAt) &&
         Objects.equals(this.updatedAt, resourceResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(description, uri, unit, timezone, spanInDays, consumable, notifiable, id, createdAt, updatedAt);
+    return Objects.hash(id, description, uri, unit, timezone, spanInDays, consumable, notifiable, createdAt, updatedAt);
   }
 
   @Override
@@ -280,6 +280,7 @@ public class ResourceResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class ResourceResponse {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
@@ -287,7 +288,6 @@ public class ResourceResponse   {
     sb.append("    spanInDays: ").append(toIndentedString(spanInDays)).append("\n");
     sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
     sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

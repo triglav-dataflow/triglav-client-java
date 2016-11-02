@@ -25,7 +25,7 @@
 
 package io.triglav.client;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T04:04:07.242+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T10:03:32.828+09:00")
 public class Pair {
     private String name = "";
     private String value = "";

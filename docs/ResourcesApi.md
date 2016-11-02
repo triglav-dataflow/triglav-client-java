@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**createResource**](ResourcesApi.md#createResource) | **POST** /resources | 
 [**deleteResource**](ResourcesApi.md#deleteResource) | **DELETE** /resources/{id_or_uri} | 
 [**getResource**](ResourcesApi.md#getResource) | **GET** /resources/{id_or_uri} | 
+[**listMonResources**](ResourcesApi.md#listMonResources) | **GET** /mon_resources | 
 [**listResources**](ResourcesApi.md#listResources) | **GET** /resources | 
 [**updateResource**](ResourcesApi.md#updateResource) | **PATCH** /resources/{id_or_uri} | 
 
@@ -175,13 +176,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="listResources"></a>
-# **listResources**
-> List&lt;ResourceEachResponse&gt; listResources(uriPrefix, consumable)
+<a name="listMonResources"></a>
+# **listMonResources**
+> List&lt;ResourceEachResponse&gt; listMonResources(uriPrefix)
 
 
 
-Returns all resources from the system
+Returns resources required to be monitored
 
 ### Example
 ```java
@@ -202,9 +203,63 @@ api_key.setApiKey("YOUR API KEY");
 
 ResourcesApi apiInstance = new ResourcesApi();
 String uriPrefix = "uriPrefix_example"; // String | Prefix of Resource URI
-Boolean consumable = true; // Boolean | Consuamble
 try {
-    List<ResourceEachResponse> result = apiInstance.listResources(uriPrefix, consumable);
+    List<ResourceEachResponse> result = apiInstance.listMonResources(uriPrefix);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ResourcesApi#listMonResources");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uriPrefix** | **String**| Prefix of Resource URI |
+
+### Return type
+
+[**List&lt;ResourceEachResponse&gt;**](ResourceEachResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="listResources"></a>
+# **listResources**
+> List&lt;ResourceEachResponse&gt; listResources(uriPrefix)
+
+
+
+Returns all resources
+
+### Example
+```java
+// Import classes:
+//import io.triglav.client.ApiClient;
+//import io.triglav.client.ApiException;
+//import io.triglav.client.Configuration;
+//import io.triglav.client.auth.*;
+//import io.triglav.client.api.ResourcesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+ResourcesApi apiInstance = new ResourcesApi();
+String uriPrefix = "uriPrefix_example"; // String | Prefix of Resource URI
+try {
+    List<ResourceEachResponse> result = apiInstance.listResources(uriPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#listResources");
@@ -216,8 +271,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uriPrefix** | **String**| Prefix of Resource URI |
- **consumable** | **Boolean**| Consuamble |
+ **uriPrefix** | **String**| Prefix of Resource URI | [optional]
 
 ### Return type
 

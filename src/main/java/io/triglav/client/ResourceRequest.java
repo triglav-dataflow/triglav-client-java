@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ResourceRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T04:04:07.242+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T10:03:32.828+09:00")
 public class ResourceRequest   {
   @SerializedName("id")
   private Long id = null;
@@ -53,6 +53,12 @@ public class ResourceRequest   {
 
   @SerializedName("span_in_days")
   private Integer spanInDays = null;
+
+  @SerializedName("consumable")
+  private Boolean consumable = null;
+
+  @SerializedName("notifiable")
+  private Boolean notifiable = null;
 
   public ResourceRequest id(Long id) {
     this.id = id;
@@ -162,6 +168,42 @@ public class ResourceRequest   {
     this.spanInDays = spanInDays;
   }
 
+  public ResourceRequest consumable(Boolean consumable) {
+    this.consumable = consumable;
+    return this;
+  }
+
+   /**
+   * True if this resource should be consumed. Input resources are automatically set to true, and output resources are set to false
+   * @return consumable
+  **/
+  @ApiModelProperty(example = "null", value = "True if this resource should be consumed. Input resources are automatically set to true, and output resources are set to false")
+  public Boolean getConsumable() {
+    return consumable;
+  }
+
+  public void setConsumable(Boolean consumable) {
+    this.consumable = consumable;
+  }
+
+  public ResourceRequest notifiable(Boolean notifiable) {
+    this.notifiable = notifiable;
+    return this;
+  }
+
+   /**
+   * True if a job notifies its end of task to triglav for this resource, that is, monitoring in agent is not necessary
+   * @return notifiable
+  **/
+  @ApiModelProperty(example = "null", value = "True if a job notifies its end of task to triglav for this resource, that is, monitoring in agent is not necessary")
+  public Boolean getNotifiable() {
+    return notifiable;
+  }
+
+  public void setNotifiable(Boolean notifiable) {
+    this.notifiable = notifiable;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -177,12 +219,14 @@ public class ResourceRequest   {
         Objects.equals(this.uri, resourceRequest.uri) &&
         Objects.equals(this.unit, resourceRequest.unit) &&
         Objects.equals(this.timezone, resourceRequest.timezone) &&
-        Objects.equals(this.spanInDays, resourceRequest.spanInDays);
+        Objects.equals(this.spanInDays, resourceRequest.spanInDays) &&
+        Objects.equals(this.consumable, resourceRequest.consumable) &&
+        Objects.equals(this.notifiable, resourceRequest.notifiable);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, description, uri, unit, timezone, spanInDays);
+    return Objects.hash(id, description, uri, unit, timezone, spanInDays, consumable, notifiable);
   }
 
   @Override
@@ -196,6 +240,8 @@ public class ResourceRequest   {
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    spanInDays: ").append(toIndentedString(spanInDays)).append("\n");
+    sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
+    sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 <a name="listMonResources"></a>
 # **listMonResources**
-> List&lt;ResourceEachResponse&gt; listMonResources(uriPrefix)
+> List&lt;MonResourceEachResponse&gt; listMonResources(uriPrefix)
 
 
 
@@ -204,7 +204,7 @@ api_key.setApiKey("YOUR API KEY");
 ResourcesApi apiInstance = new ResourcesApi();
 String uriPrefix = "uriPrefix_example"; // String | Prefix of Resource URI
 try {
-    List<ResourceEachResponse> result = apiInstance.listMonResources(uriPrefix);
+    List<MonResourceEachResponse> result = apiInstance.listMonResources(uriPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ResourcesApi#listMonResources");
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;ResourceEachResponse&gt;**](ResourceEachResponse.md)
+[**List&lt;MonResourceEachResponse&gt;**](MonResourceEachResponse.md)
 
 ### Authorization
 

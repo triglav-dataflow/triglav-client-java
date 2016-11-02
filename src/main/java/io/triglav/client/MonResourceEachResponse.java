@@ -29,14 +29,13 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.triglav.client.MonResourceEachResponse;
 
 
 /**
- * ResourceEachResponse
+ * MonResourceEachResponse
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-11-02T10:28:08.215+09:00")
-public class ResourceEachResponse   {
+public class MonResourceEachResponse   {
   @SerializedName("uri")
   private String uri = null;
 
@@ -49,13 +48,7 @@ public class ResourceEachResponse   {
   @SerializedName("span_in_days")
   private Integer spanInDays = null;
 
-  @SerializedName("consumable")
-  private Boolean consumable = null;
-
-  @SerializedName("notifiable")
-  private Boolean notifiable = null;
-
-  public ResourceEachResponse uri(String uri) {
+  public MonResourceEachResponse uri(String uri) {
     this.uri = uri;
     return this;
   }
@@ -73,16 +66,16 @@ public class ResourceEachResponse   {
     this.uri = uri;
   }
 
-  public ResourceEachResponse unit(String unit) {
+  public MonResourceEachResponse unit(String unit) {
     this.unit = unit;
     return this;
   }
 
    /**
-   * 'daily' or 'hourly'
+   * 'daily' or 'hourly', and 'daily,hourly'
    * @return unit
   **/
-  @ApiModelProperty(example = "null", value = "'daily' or 'hourly'")
+  @ApiModelProperty(example = "null", value = "'daily' or 'hourly', and 'daily,hourly'")
   public String getUnit() {
     return unit;
   }
@@ -91,7 +84,7 @@ public class ResourceEachResponse   {
     this.unit = unit;
   }
 
-  public ResourceEachResponse timezone(String timezone) {
+  public MonResourceEachResponse timezone(String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -109,7 +102,7 @@ public class ResourceEachResponse   {
     this.timezone = timezone;
   }
 
-  public ResourceEachResponse spanInDays(Integer spanInDays) {
+  public MonResourceEachResponse spanInDays(Integer spanInDays) {
     this.spanInDays = spanInDays;
     return this;
   }
@@ -127,42 +120,6 @@ public class ResourceEachResponse   {
     this.spanInDays = spanInDays;
   }
 
-  public ResourceEachResponse consumable(Boolean consumable) {
-    this.consumable = consumable;
-    return this;
-  }
-
-   /**
-   * True if this resource should be consumed
-   * @return consumable
-  **/
-  @ApiModelProperty(example = "null", value = "True if this resource should be consumed")
-  public Boolean getConsumable() {
-    return consumable;
-  }
-
-  public void setConsumable(Boolean consumable) {
-    this.consumable = consumable;
-  }
-
-  public ResourceEachResponse notifiable(Boolean notifiable) {
-    this.notifiable = notifiable;
-    return this;
-  }
-
-   /**
-   * True if a job notifies its end of task to triglav for this resource, that is, monitoring in agent is not necessary
-   * @return notifiable
-  **/
-  @ApiModelProperty(example = "null", value = "True if a job notifies its end of task to triglav for this resource, that is, monitoring in agent is not necessary")
-  public Boolean getNotifiable() {
-    return notifiable;
-  }
-
-  public void setNotifiable(Boolean notifiable) {
-    this.notifiable = notifiable;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -172,31 +129,27 @@ public class ResourceEachResponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResourceEachResponse resourceEachResponse = (ResourceEachResponse) o;
-    return Objects.equals(this.uri, resourceEachResponse.uri) &&
-        Objects.equals(this.unit, resourceEachResponse.unit) &&
-        Objects.equals(this.timezone, resourceEachResponse.timezone) &&
-        Objects.equals(this.spanInDays, resourceEachResponse.spanInDays) &&
-        Objects.equals(this.consumable, resourceEachResponse.consumable) &&
-        Objects.equals(this.notifiable, resourceEachResponse.notifiable);
+    MonResourceEachResponse monResourceEachResponse = (MonResourceEachResponse) o;
+    return Objects.equals(this.uri, monResourceEachResponse.uri) &&
+        Objects.equals(this.unit, monResourceEachResponse.unit) &&
+        Objects.equals(this.timezone, monResourceEachResponse.timezone) &&
+        Objects.equals(this.spanInDays, monResourceEachResponse.spanInDays);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri, unit, timezone, spanInDays, consumable, notifiable);
+    return Objects.hash(uri, unit, timezone, spanInDays);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResourceEachResponse {\n");
+    sb.append("class MonResourceEachResponse {\n");
     
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    spanInDays: ").append(toIndentedString(spanInDays)).append("\n");
-    sb.append("    consumable: ").append(toIndentedString(consumable)).append("\n");
-    sb.append("    notifiable: ").append(toIndentedString(notifiable)).append("\n");
     sb.append("}");
     return sb.toString();
   }

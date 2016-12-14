@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**createResource**](ResourcesApi.md#createResource) | **POST** /resources | 
 [**deleteResource**](ResourcesApi.md#deleteResource) | **DELETE** /resources/{id_or_uri} | 
 [**getResource**](ResourcesApi.md#getResource) | **GET** /resources/{id_or_uri} | 
-[**listMonResources**](ResourcesApi.md#listMonResources) | **GET** /mon_resources | 
+[**listAggregatedResources**](ResourcesApi.md#listAggregatedResources) | **GET** /aggregated_resources | 
 [**listResources**](ResourcesApi.md#listResources) | **GET** /resources | 
 [**updateResource**](ResourcesApi.md#updateResource) | **PATCH** /resources/{id_or_uri} | 
 
@@ -176,13 +176,13 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="listMonResources"></a>
-# **listMonResources**
-> List&lt;MonResourceEachResponse&gt; listMonResources(uriPrefix)
+<a name="listAggregatedResources"></a>
+# **listAggregatedResources**
+> List&lt;AggregatedResourceEachResponse&gt; listAggregatedResources(uriPrefix)
 
 
 
-Returns resources required to be monitored
+Returns aggregated resources to be monitored
 
 ### Example
 ```java
@@ -204,10 +204,10 @@ api_key.setApiKey("YOUR API KEY");
 ResourcesApi apiInstance = new ResourcesApi();
 String uriPrefix = "uriPrefix_example"; // String | Prefix of Resource URI
 try {
-    List<MonResourceEachResponse> result = apiInstance.listMonResources(uriPrefix);
+    List<AggregatedResourceEachResponse> result = apiInstance.listAggregatedResources(uriPrefix);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ResourcesApi#listMonResources");
+    System.err.println("Exception when calling ResourcesApi#listAggregatedResources");
     e.printStackTrace();
 }
 ```
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;MonResourceEachResponse&gt;**](MonResourceEachResponse.md)
+[**List&lt;AggregatedResourceEachResponse&gt;**](AggregatedResourceEachResponse.md)
 
 ### Authorization
 

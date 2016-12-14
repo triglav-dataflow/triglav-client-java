@@ -41,7 +41,7 @@ import java.io.IOException;
 import io.triglav.client.ResourceResponse;
 import io.triglav.client.ErrorModel;
 import io.triglav.client.ResourceRequest;
-import io.triglav.client.MonResourceEachResponse;
+import io.triglav.client.AggregatedResourceEachResponse;
 import io.triglav.client.ResourceEachResponse;
 
 import java.lang.reflect.Type;
@@ -385,18 +385,18 @@ public class ResourcesApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for listMonResources */
-    private com.squareup.okhttp.Call listMonResourcesCall(String uriPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for listAggregatedResources */
+    private com.squareup.okhttp.Call listAggregatedResourcesCall(String uriPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'uriPrefix' is set
         if (uriPrefix == null) {
-            throw new ApiException("Missing the required parameter 'uriPrefix' when calling listMonResources(Async)");
+            throw new ApiException("Missing the required parameter 'uriPrefix' when calling listAggregatedResources(Async)");
         }
         
 
         // create path and map variables
-        String localVarPath = "/mon_resources".replaceAll("\\{format\\}","json");
+        String localVarPath = "/aggregated_resources".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         if (uriPrefix != null)
@@ -436,38 +436,38 @@ public class ResourcesApi {
 
     /**
      * 
-     * Returns resources required to be monitored
+     * Returns aggregated resources to be monitored
      * @param uriPrefix Prefix of Resource URI (required)
-     * @return List&lt;MonResourceEachResponse&gt;
+     * @return List&lt;AggregatedResourceEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MonResourceEachResponse> listMonResources(String uriPrefix) throws ApiException {
-        ApiResponse<List<MonResourceEachResponse>> resp = listMonResourcesWithHttpInfo(uriPrefix);
+    public List<AggregatedResourceEachResponse> listAggregatedResources(String uriPrefix) throws ApiException {
+        ApiResponse<List<AggregatedResourceEachResponse>> resp = listAggregatedResourcesWithHttpInfo(uriPrefix);
         return resp.getData();
     }
 
     /**
      * 
-     * Returns resources required to be monitored
+     * Returns aggregated resources to be monitored
      * @param uriPrefix Prefix of Resource URI (required)
-     * @return ApiResponse&lt;List&lt;MonResourceEachResponse&gt;&gt;
+     * @return ApiResponse&lt;List&lt;AggregatedResourceEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MonResourceEachResponse>> listMonResourcesWithHttpInfo(String uriPrefix) throws ApiException {
-        com.squareup.okhttp.Call call = listMonResourcesCall(uriPrefix, null, null);
-        Type localVarReturnType = new TypeToken<List<MonResourceEachResponse>>(){}.getType();
+    public ApiResponse<List<AggregatedResourceEachResponse>> listAggregatedResourcesWithHttpInfo(String uriPrefix) throws ApiException {
+        com.squareup.okhttp.Call call = listAggregatedResourcesCall(uriPrefix, null, null);
+        Type localVarReturnType = new TypeToken<List<AggregatedResourceEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
-     * Returns resources required to be monitored
+     * Returns aggregated resources to be monitored
      * @param uriPrefix Prefix of Resource URI (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listMonResourcesAsync(String uriPrefix, final ApiCallback<List<MonResourceEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAggregatedResourcesAsync(String uriPrefix, final ApiCallback<List<AggregatedResourceEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -488,8 +488,8 @@ public class ResourcesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listMonResourcesCall(uriPrefix, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<MonResourceEachResponse>>(){}.getType();
+        com.squareup.okhttp.Call call = listAggregatedResourcesCall(uriPrefix, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<List<AggregatedResourceEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

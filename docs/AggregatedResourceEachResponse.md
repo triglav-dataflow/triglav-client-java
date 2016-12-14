@@ -1,5 +1,5 @@
 
-# MonResourceEachResponse
+# AggregatedResourceEachResponse
 
 ## Properties
 Name | Type | Description | Notes

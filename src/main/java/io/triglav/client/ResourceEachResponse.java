@@ -29,13 +29,13 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import io.triglav.client.MonResourceEachResponse;
+import io.triglav.client.AggregatedResourceEachResponse;
 
 
 /**
  * ResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-13T15:44:22.555+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-14T16:27:45.597+09:00")
 public class ResourceEachResponse   {
   @SerializedName("uri")
   private String uri = null;

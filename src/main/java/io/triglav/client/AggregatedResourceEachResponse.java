@@ -32,10 +32,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 
 /**
- * MonResourceEachResponse
+ * AggregatedResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-13T15:44:22.555+09:00")
-public class MonResourceEachResponse   {
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-14T16:27:45.597+09:00")
+public class AggregatedResourceEachResponse   {
   @SerializedName("uri")
   private String uri = null;
 
@@ -48,7 +48,7 @@ public class MonResourceEachResponse   {
   @SerializedName("span_in_days")
   private Integer spanInDays = null;
 
-  public MonResourceEachResponse uri(String uri) {
+  public AggregatedResourceEachResponse uri(String uri) {
     this.uri = uri;
     return this;
   }
@@ -66,7 +66,7 @@ public class MonResourceEachResponse   {
     this.uri = uri;
   }
 
-  public MonResourceEachResponse unit(String unit) {
+  public AggregatedResourceEachResponse unit(String unit) {
     this.unit = unit;
     return this;
   }
@@ -84,7 +84,7 @@ public class MonResourceEachResponse   {
     this.unit = unit;
   }
 
-  public MonResourceEachResponse timezone(String timezone) {
+  public AggregatedResourceEachResponse timezone(String timezone) {
     this.timezone = timezone;
     return this;
   }
@@ -102,7 +102,7 @@ public class MonResourceEachResponse   {
     this.timezone = timezone;
   }
 
-  public MonResourceEachResponse spanInDays(Integer spanInDays) {
+  public AggregatedResourceEachResponse spanInDays(Integer spanInDays) {
     this.spanInDays = spanInDays;
     return this;
   }
@@ -129,11 +129,11 @@ public class MonResourceEachResponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MonResourceEachResponse monResourceEachResponse = (MonResourceEachResponse) o;
-    return Objects.equals(this.uri, monResourceEachResponse.uri) &&
-        Objects.equals(this.unit, monResourceEachResponse.unit) &&
-        Objects.equals(this.timezone, monResourceEachResponse.timezone) &&
-        Objects.equals(this.spanInDays, monResourceEachResponse.spanInDays);
+    AggregatedResourceEachResponse aggregatedResourceEachResponse = (AggregatedResourceEachResponse) o;
+    return Objects.equals(this.uri, aggregatedResourceEachResponse.uri) &&
+        Objects.equals(this.unit, aggregatedResourceEachResponse.unit) &&
+        Objects.equals(this.timezone, aggregatedResourceEachResponse.timezone) &&
+        Objects.equals(this.spanInDays, aggregatedResourceEachResponse.spanInDays);
   }
 
   @Override
@@ -144,7 +144,7 @@ public class MonResourceEachResponse   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class MonResourceEachResponse {\n");
+    sb.append("class AggregatedResourceEachResponse {\n");
     
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");

@@ -37,16 +37,13 @@ import java.util.List;
 /**
  * JobRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-14T16:27:45.597+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-16T20:28:28.337+09:00")
 public class JobRequest   {
   @SerializedName("id")
   private Long id = null;
 
   @SerializedName("uri")
   private String uri = null;
-
-  @SerializedName("contact_id")
-  private Integer contactId = null;
 
   @SerializedName("input_resources")
   private List<ResourceRequest> inputResources = new ArrayList<ResourceRequest>();
@@ -88,24 +85,6 @@ public class JobRequest   {
 
   public void setUri(String uri) {
     this.uri = uri;
-  }
-
-  public JobRequest contactId(Integer contactId) {
-    this.contactId = contactId;
-    return this;
-  }
-
-   /**
-   * Get contactId
-   * @return contactId
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public Integer getContactId() {
-    return contactId;
-  }
-
-  public void setContactId(Integer contactId) {
-    this.contactId = contactId;
   }
 
   public JobRequest inputResources(List<ResourceRequest> inputResources) {
@@ -156,14 +135,13 @@ public class JobRequest   {
     JobRequest jobRequest = (JobRequest) o;
     return Objects.equals(this.id, jobRequest.id) &&
         Objects.equals(this.uri, jobRequest.uri) &&
-        Objects.equals(this.contactId, jobRequest.contactId) &&
         Objects.equals(this.inputResources, jobRequest.inputResources) &&
         Objects.equals(this.outputResources, jobRequest.outputResources);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri, contactId, inputResources, outputResources);
+    return Objects.hash(id, uri, inputResources, outputResources);
   }
 
   @Override
@@ -173,7 +151,6 @@ public class JobRequest   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
-    sb.append("    contactId: ").append(toIndentedString(contactId)).append("\n");
     sb.append("    inputResources: ").append(toIndentedString(inputResources)).append("\n");
     sb.append("    outputResources: ").append(toIndentedString(outputResources)).append("\n");
     sb.append("}");

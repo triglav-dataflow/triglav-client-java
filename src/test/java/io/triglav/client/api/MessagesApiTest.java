@@ -29,7 +29,7 @@ import io.triglav.client.ApiException;
 import io.triglav.client.ErrorModel;
 import io.triglav.client.MessageEachResponse;
 import io.triglav.client.MessageRequest;
-import io.triglav.client.MessageResponse;
+import io.triglav.client.BulkinsertResponse;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -48,7 +48,7 @@ public class MessagesApiTest {
     /**
      * 
      *
-     * Fetches messages
+     * Fetch messages with HTTP POST method
      *
      * @throws ApiException
      *          if the Api call fails
@@ -56,9 +56,9 @@ public class MessagesApiTest {
     @Test
     public void fetchMessagesTest() throws ApiException {
         Integer offset = null;
-        String resourceUri = null;
-        String datetime = null;
-        // List<MessageEachResponse> response = api.fetchMessages(offset, resourceUri, datetime);
+        Integer limit = null;
+        String resourceUris = null;
+        // List<MessageEachResponse> response = api.fetchMessages(offset, limit, resourceUris);
 
         // TODO: test validations
     }
@@ -66,17 +66,33 @@ public class MessagesApiTest {
     /**
      * 
      *
-     * Enqueues a new message
+     * List messages with HTTP GET method
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void sendMessageTest() throws ApiException {
-        String resourceUri = null;
-        String datetime = null;
-        MessageRequest message = null;
-        // MessageResponse response = api.sendMessage(resourceUri, datetime, message);
+    public void listMessagesTest() throws ApiException {
+        Integer offset = null;
+        Integer limit = null;
+        String resourceUris = null;
+        // List<MessageEachResponse> response = api.listMessages(offset, limit, resourceUris);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * Enqueues new messages
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void sendMessagesTest() throws ApiException {
+        List<MessageRequest> messages = null;
+        // BulkinsertResponse response = api.sendMessages(messages);
 
         // TODO: test validations
     }

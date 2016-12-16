@@ -27,8 +27,8 @@ package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
 import io.triglav.client.JobRequest;
-import io.triglav.client.ErrorModel;
 import io.triglav.client.JobResponse;
+import io.triglav.client.ErrorModel;
 import io.triglav.client.JobEachResponse;
 import org.junit.Test;
 

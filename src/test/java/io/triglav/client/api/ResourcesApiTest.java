@@ -26,9 +26,10 @@
 package io.triglav.client.api;
 
 import io.triglav.client.ApiException;
-import io.triglav.client.ResourceRequest;
 import io.triglav.client.ResourceResponse;
 import io.triglav.client.ErrorModel;
+import io.triglav.client.ResourceRequest;
+import io.triglav.client.AggregatedResourceEachResponse;
 import io.triglav.client.ResourceEachResponse;
 import org.junit.Test;
 
@@ -96,7 +97,23 @@ public class ResourcesApiTest {
     /**
      * 
      *
-     * Returns all resources from the system
+     * Returns aggregated resources to be monitored
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAggregatedResourcesTest() throws ApiException {
+        String uriPrefix = null;
+        // List<AggregatedResourceEachResponse> response = api.listAggregatedResources(uriPrefix);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * 
+     *
+     * Returns all resources
      *
      * @throws ApiException
      *          if the Api call fails
@@ -104,9 +121,7 @@ public class ResourcesApiTest {
     @Test
     public void listResourcesTest() throws ApiException {
         String uriPrefix = null;
-        Boolean consumable = null;
-        Boolean notifiable = null;
-        // List<ResourceEachResponse> response = api.listResources(uriPrefix, consumable, notifiable);
+        // List<ResourceEachResponse> response = api.listResources(uriPrefix);
 
         // TODO: test validations
     }

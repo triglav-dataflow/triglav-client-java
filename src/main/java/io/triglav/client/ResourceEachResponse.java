@@ -35,7 +35,7 @@ import io.triglav.client.AggregatedResourceEachResponse;
 /**
  * ResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-16T20:28:28.337+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-19T10:56:11.053+09:00")
 public class ResourceEachResponse   {
   @SerializedName("uri")
   private String uri = null;

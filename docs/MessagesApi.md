@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="fetchMessages"></a>
 # **fetchMessages**
-> List&lt;MessageEachResponse&gt; fetchMessages(offset, resourceUris, limit)
+> List&lt;MessageEachResponse&gt; fetchMessages(offset, limit, resourceUris)
 
 
 
@@ -36,10 +36,10 @@ api_key.setApiKey("YOUR API KEY");
 
 MessagesApi apiInstance = new MessagesApi();
 Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to fetch from
-String resourceUris = "resourceUris_example"; // String | URIs of Resource
 Integer limit = 56; // Integer | Number of limits
+String resourceUris = "resourceUris_example"; // String | URIs of Resource
 try {
-    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, resourceUris, limit);
+    List<MessageEachResponse> result = apiInstance.fetchMessages(offset, limit, resourceUris);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#fetchMessages");
@@ -52,8 +52,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to fetch from |
- **resourceUris** | **String**| URIs of Resource |
  **limit** | **Integer**| Number of limits | [optional]
+ **resourceUris** | **String**| URIs of Resource | [optional]
 
 ### Return type
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 <a name="listMessages"></a>
 # **listMessages**
-> List&lt;MessageEachResponse&gt; listMessages(offset, resourceUris, limit)
+> List&lt;MessageEachResponse&gt; listMessages(offset, limit, resourceUris)
 
 
 
@@ -95,10 +95,10 @@ api_key.setApiKey("YOUR API KEY");
 
 MessagesApi apiInstance = new MessagesApi();
 Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to list from
-String resourceUris = "resourceUris_example"; // String | URIs of Resource
 Integer limit = 56; // Integer | Number of limits
+String resourceUris = "resourceUris_example"; // String | URIs of Resource
 try {
-    List<MessageEachResponse> result = apiInstance.listMessages(offset, resourceUris, limit);
+    List<MessageEachResponse> result = apiInstance.listMessages(offset, limit, resourceUris);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#listMessages");
@@ -111,8 +111,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to list from |
- **resourceUris** | **String**| URIs of Resource |
  **limit** | **Integer**| Number of limits | [optional]
+ **resourceUris** | **String**| URIs of Resource | [optional]
 
 ### Return type
 

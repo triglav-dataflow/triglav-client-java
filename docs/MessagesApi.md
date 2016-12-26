@@ -5,6 +5,7 @@ All URIs are relative to *http://localhost/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**fetchMessages**](MessagesApi.md#fetchMessages) | **POST** /fetch_messages | 
+[**getLastMessageId**](MessagesApi.md#getLastMessageId) | **GET** /messages/last_id | 
 [**listMessages**](MessagesApi.md#listMessages) | **GET** /messages | 
 [**sendMessages**](MessagesApi.md#sendMessages) | **POST** /messages | 
 
@@ -54,6 +55,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;MessageEachResponse&gt;**](MessageEachResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getLastMessageId"></a>
+# **getLastMessageId**
+> LastMessageIdResponse getLastMessageId()
+
+
+
+Get the current last message id which would be used as a first offset to fetch messages
+
+### Example
+```java
+// Import classes:
+//import io.triglav.client.ApiClient;
+//import io.triglav.client.ApiException;
+//import io.triglav.client.Configuration;
+//import io.triglav.client.auth.*;
+//import io.triglav.client.api.MessagesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+MessagesApi apiInstance = new MessagesApi();
+try {
+    LastMessageIdResponse result = apiInstance.getLastMessageId();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling MessagesApi#getLastMessageId");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**LastMessageIdResponse**](LastMessageIdResponse.md)
 
 ### Authorization
 

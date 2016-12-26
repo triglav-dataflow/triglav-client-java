@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **username** | **String** |  | 
 **password** | **String** |  | 
-**authenticator** | [**AuthenticatorEnum**](#AuthenticatorEnum) |  | 
+**authenticator** | [**AuthenticatorEnum**](#AuthenticatorEnum) |  |  [optional]
 
 
 <a name="AuthenticatorEnum"></a>
@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 LOCAL | &quot;local&quot;
-LDAP | &quot;ldap&quot;
 
 
 

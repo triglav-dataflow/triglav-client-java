@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Credential
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-19T23:22:33.061+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-26T19:42:47.621+09:00")
 public class Credential   {
   @SerializedName("username")
   private String username = null;
@@ -47,10 +47,7 @@ public class Credential   {
    */
   public enum AuthenticatorEnum {
     @SerializedName("local")
-    LOCAL("local"),
-    
-    @SerializedName("ldap")
-    LDAP("ldap");
+    LOCAL("local");
 
     private String value;
 
@@ -112,7 +109,7 @@ public class Credential   {
    * Get authenticator
    * @return authenticator
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
+  @ApiModelProperty(example = "null", value = "")
   public AuthenticatorEnum getAuthenticator() {
     return authenticator;
   }

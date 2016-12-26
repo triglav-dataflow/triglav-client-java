@@ -29,55 +29,32 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
- * ErrorModel
+ * LastMessageIdResponse
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-26T19:42:47.621+09:00")
-public class ErrorModel   {
-  @SerializedName("error")
-  private String error = null;
+public class LastMessageIdResponse   {
+  @SerializedName("id")
+  private Integer id = null;
 
-  @SerializedName("backtrace")
-  private List<String> backtrace = new ArrayList<String>();
-
-  public ErrorModel error(String error) {
-    this.error = error;
+  public LastMessageIdResponse id(Integer id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get error
-   * @return error
+   * last message id
+   * @return id
   **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public String getError() {
-    return error;
+  @ApiModelProperty(example = "null", value = "last message id")
+  public Integer getId() {
+    return id;
   }
 
-  public void setError(String error) {
-    this.error = error;
-  }
-
-  public ErrorModel backtrace(List<String> backtrace) {
-    this.backtrace = backtrace;
-    return this;
-  }
-
-   /**
-   * Get backtrace
-   * @return backtrace
-  **/
-  @ApiModelProperty(example = "null", required = true, value = "")
-  public List<String> getBacktrace() {
-    return backtrace;
-  }
-
-  public void setBacktrace(List<String> backtrace) {
-    this.backtrace = backtrace;
+  public void setId(Integer id) {
+    this.id = id;
   }
 
 
@@ -89,23 +66,21 @@ public class ErrorModel   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorModel errorModel = (ErrorModel) o;
-    return Objects.equals(this.error, errorModel.error) &&
-        Objects.equals(this.backtrace, errorModel.backtrace);
+    LastMessageIdResponse lastMessageIdResponse = (LastMessageIdResponse) o;
+    return Objects.equals(this.id, lastMessageIdResponse.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error, backtrace);
+    return Objects.hash(id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorModel {\n");
+    sb.append("class LastMessageIdResponse {\n");
     
-    sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    backtrace: ").append(toIndentedString(backtrace)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

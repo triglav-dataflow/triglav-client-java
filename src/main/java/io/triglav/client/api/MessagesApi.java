@@ -41,6 +41,7 @@ import java.io.IOException;
 import io.triglav.client.ErrorModel;
 import io.triglav.client.MessageEachResponse;
 import io.triglav.client.MessageFetchRequest;
+import io.triglav.client.LastMessageIdResponse;
 import io.triglav.client.MessageRequest;
 import io.triglav.client.BulkinsertResponse;
 
@@ -172,6 +173,104 @@ public class MessagesApi {
 
         com.squareup.okhttp.Call call = fetchMessagesCall(fetchRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for getLastMessageId */
+    private com.squareup.okhttp.Call getLastMessageIdCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+
+        // create path and map variables
+        String localVarPath = "/messages/last_id".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    /**
+     * 
+     * Get the current last message id which would be used as a first offset to fetch messages
+     * @return LastMessageIdResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public LastMessageIdResponse getLastMessageId() throws ApiException {
+        ApiResponse<LastMessageIdResponse> resp = getLastMessageIdWithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * 
+     * Get the current last message id which would be used as a first offset to fetch messages
+     * @return ApiResponse&lt;LastMessageIdResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<LastMessageIdResponse> getLastMessageIdWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = getLastMessageIdCall(null, null);
+        Type localVarReturnType = new TypeToken<LastMessageIdResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     *  (asynchronously)
+     * Get the current last message id which would be used as a first offset to fetch messages
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getLastMessageIdAsync(final ApiCallback<LastMessageIdResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getLastMessageIdCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<LastMessageIdResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

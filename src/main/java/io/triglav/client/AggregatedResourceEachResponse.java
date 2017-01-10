@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * AggregatedResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-26T19:42:47.621+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-10T14:22:10.287+09:00")
 public class AggregatedResourceEachResponse   {
   @SerializedName("uri")
   private String uri = null;
@@ -72,10 +72,10 @@ public class AggregatedResourceEachResponse   {
   }
 
    /**
-   * 'daily' or 'hourly', and 'daily,hourly'
+   * 'singular' or 'daily' or 'hourly', or their combinations such as 'daily,hourly', 'daily,hourly,singular'
    * @return unit
   **/
-  @ApiModelProperty(example = "null", value = "'daily' or 'hourly', and 'daily,hourly'")
+  @ApiModelProperty(example = "null", value = "'singular' or 'daily' or 'hourly', or their combinations such as 'daily,hourly', 'daily,hourly,singular'")
   public String getUnit() {
     return unit;
   }

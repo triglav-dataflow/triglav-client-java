@@ -36,7 +36,7 @@ import java.util.List;
 /**
  * MessageFetchRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-26T19:42:47.621+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-10T14:22:10.287+09:00")
 public class MessageFetchRequest   {
   @SerializedName("offset")
   private Long offset = null;
@@ -46,6 +46,12 @@ public class MessageFetchRequest   {
 
   @SerializedName("resource_uris")
   private List<String> resourceUris = new ArrayList<String>();
+
+  @SerializedName("resource_unit")
+  private String resourceUnit = null;
+
+  @SerializedName("resource_time")
+  private Long resourceTime = null;
 
   public MessageFetchRequest offset(Long offset) {
     this.offset = offset;
@@ -101,6 +107,42 @@ public class MessageFetchRequest   {
     this.resourceUris = resourceUris;
   }
 
+  public MessageFetchRequest resourceUnit(String resourceUnit) {
+    this.resourceUnit = resourceUnit;
+    return this;
+  }
+
+   /**
+   * Resource Unit such as daily, hourly, or singular. Required if resource_time is given
+   * @return resourceUnit
+  **/
+  @ApiModelProperty(example = "null", value = "Resource Unit such as daily, hourly, or singular. Required if resource_time is given")
+  public String getResourceUnit() {
+    return resourceUnit;
+  }
+
+  public void setResourceUnit(String resourceUnit) {
+    this.resourceUnit = resourceUnit;
+  }
+
+  public MessageFetchRequest resourceTime(Long resourceTime) {
+    this.resourceTime = resourceTime;
+    return this;
+  }
+
+   /**
+   * Resource Time in UNIX TIMESTAMP
+   * @return resourceTime
+  **/
+  @ApiModelProperty(example = "null", value = "Resource Time in UNIX TIMESTAMP")
+  public Long getResourceTime() {
+    return resourceTime;
+  }
+
+  public void setResourceTime(Long resourceTime) {
+    this.resourceTime = resourceTime;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -113,12 +155,14 @@ public class MessageFetchRequest   {
     MessageFetchRequest messageFetchRequest = (MessageFetchRequest) o;
     return Objects.equals(this.offset, messageFetchRequest.offset) &&
         Objects.equals(this.limit, messageFetchRequest.limit) &&
-        Objects.equals(this.resourceUris, messageFetchRequest.resourceUris);
+        Objects.equals(this.resourceUris, messageFetchRequest.resourceUris) &&
+        Objects.equals(this.resourceUnit, messageFetchRequest.resourceUnit) &&
+        Objects.equals(this.resourceTime, messageFetchRequest.resourceTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offset, limit, resourceUris);
+    return Objects.hash(offset, limit, resourceUris, resourceUnit, resourceTime);
   }
 
   @Override
@@ -129,6 +173,8 @@ public class MessageFetchRequest   {
     sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
     sb.append("    resourceUris: ").append(toIndentedString(resourceUris)).append("\n");
+    sb.append("    resourceUnit: ").append(toIndentedString(resourceUnit)).append("\n");
+    sb.append("    resourceTime: ").append(toIndentedString(resourceTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

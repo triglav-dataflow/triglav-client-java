@@ -36,7 +36,7 @@ import org.joda.time.DateTime;
 /**
  * MessageResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2016-12-26T19:42:47.621+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-10T14:22:10.287+09:00")
 public class MessageResponse   {
   @SerializedName("resource_uri")
   private String resourceUri = null;
@@ -86,10 +86,10 @@ public class MessageResponse   {
   }
 
    /**
-   * Time unit of resource to monitor such as daily, or hourly
+   * Time unit of resource to monitor such as singular, daily, or hourly
    * @return resourceUnit
   **/
-  @ApiModelProperty(example = "null", required = true, value = "Time unit of resource to monitor such as daily, or hourly")
+  @ApiModelProperty(example = "null", required = true, value = "Time unit of resource to monitor such as singular, daily, or hourly")
   public String getResourceUnit() {
     return resourceUnit;
   }

@@ -275,7 +275,7 @@ public class MessagesApi {
         return call;
     }
     /* Build call for listMessages */
-    private com.squareup.okhttp.Call listMessagesCall(Integer offset, Integer limit, String resourceUris, String resourceUnit, Integer resourceTime, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listMessagesCall(Integer offset, Integer limit, String resourceUris, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'offset' is set
@@ -294,10 +294,6 @@ public class MessagesApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
         if (resourceUris != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_uris", resourceUris));
-        if (resourceUnit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_unit", resourceUnit));
-        if (resourceTime != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_time", resourceTime));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -337,13 +333,11 @@ public class MessagesApi {
      * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
      * @param limit Number of limits (optional)
      * @param resourceUris URIs of Resource (optional)
-     * @param resourceUnit Resource Unit such as daily, hourly, or singular. Required if resource_time is given (optional)
-     * @param resourceTime Resource Time in UNIX Timestamp (optional)
      * @return List&lt;MessageEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MessageEachResponse> listMessages(Integer offset, Integer limit, String resourceUris, String resourceUnit, Integer resourceTime) throws ApiException {
-        ApiResponse<List<MessageEachResponse>> resp = listMessagesWithHttpInfo(offset, limit, resourceUris, resourceUnit, resourceTime);
+    public List<MessageEachResponse> listMessages(Integer offset, Integer limit, String resourceUris) throws ApiException {
+        ApiResponse<List<MessageEachResponse>> resp = listMessagesWithHttpInfo(offset, limit, resourceUris);
         return resp.getData();
     }
 
@@ -353,13 +347,11 @@ public class MessagesApi {
      * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
      * @param limit Number of limits (optional)
      * @param resourceUris URIs of Resource (optional)
-     * @param resourceUnit Resource Unit such as daily, hourly, or singular. Required if resource_time is given (optional)
-     * @param resourceTime Resource Time in UNIX Timestamp (optional)
      * @return ApiResponse&lt;List&lt;MessageEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MessageEachResponse>> listMessagesWithHttpInfo(Integer offset, Integer limit, String resourceUris, String resourceUnit, Integer resourceTime) throws ApiException {
-        com.squareup.okhttp.Call call = listMessagesCall(offset, limit, resourceUris, resourceUnit, resourceTime, null, null);
+    public ApiResponse<List<MessageEachResponse>> listMessagesWithHttpInfo(Integer offset, Integer limit, String resourceUris) throws ApiException {
+        com.squareup.okhttp.Call call = listMessagesCall(offset, limit, resourceUris, null, null);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -370,13 +362,11 @@ public class MessagesApi {
      * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
      * @param limit Number of limits (optional)
      * @param resourceUris URIs of Resource (optional)
-     * @param resourceUnit Resource Unit such as daily, hourly, or singular. Required if resource_time is given (optional)
-     * @param resourceTime Resource Time in UNIX Timestamp (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listMessagesAsync(Integer offset, Integer limit, String resourceUris, String resourceUnit, Integer resourceTime, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call listMessagesAsync(Integer offset, Integer limit, String resourceUris, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -397,7 +387,7 @@ public class MessagesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listMessagesCall(offset, limit, resourceUris, resourceUnit, resourceTime, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listMessagesCall(offset, limit, resourceUris, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

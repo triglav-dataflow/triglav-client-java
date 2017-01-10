@@ -35,7 +35,7 @@ import org.joda.time.DateTime;
 /**
  * TokenResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-10T14:22:10.287+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-01-10T17:49:25.554+09:00")
 public class TokenResponse   {
   @SerializedName("access_token")
   private String accessToken = null;

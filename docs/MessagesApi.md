@@ -118,7 +118,7 @@ This endpoint does not need any parameter.
 
 <a name="listMessages"></a>
 # **listMessages**
-> List&lt;MessageEachResponse&gt; listMessages(offset, limit, resourceUris, resourceUnit, resourceTime)
+> List&lt;MessageEachResponse&gt; listMessages(offset, limit, resourceUris)
 
 
 
@@ -145,10 +145,8 @@ MessagesApi apiInstance = new MessagesApi();
 Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to list from
 Integer limit = 56; // Integer | Number of limits
 String resourceUris = "resourceUris_example"; // String | URIs of Resource
-String resourceUnit = "resourceUnit_example"; // String | Resource Unit such as daily, hourly, or singular. Required if resource_time is given
-Integer resourceTime = 56; // Integer | Resource Time in UNIX Timestamp
 try {
-    List<MessageEachResponse> result = apiInstance.listMessages(offset, limit, resourceUris, resourceUnit, resourceTime);
+    List<MessageEachResponse> result = apiInstance.listMessages(offset, limit, resourceUris);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MessagesApi#listMessages");
@@ -163,8 +161,6 @@ Name | Type | Description  | Notes
  **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to list from |
  **limit** | **Integer**| Number of limits | [optional]
  **resourceUris** | **String**| URIs of Resource | [optional]
- **resourceUnit** | **String**| Resource Unit such as daily, hourly, or singular. Required if resource_time is given | [optional]
- **resourceTime** | **Integer**| Resource Time in UNIX Timestamp | [optional]
 
 ### Return type
 

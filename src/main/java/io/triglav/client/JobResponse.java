@@ -39,13 +39,16 @@ import org.joda.time.DateTime;
 /**
  * JobResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T18:54:22.213+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T19:53:17.612+09:00")
 public class JobResponse   {
   @SerializedName("id")
   private Long id = null;
 
   @SerializedName("uri")
   private String uri = null;
+
+  @SerializedName("logical_op")
+  private String logicalOp = null;
 
   @SerializedName("input_resources")
   private List<ResourceResponse> inputResources = new ArrayList<ResourceResponse>();
@@ -93,6 +96,24 @@ public class JobResponse   {
 
   public void setUri(String uri) {
     this.uri = uri;
+  }
+
+  public JobResponse logicalOp(String logicalOp) {
+    this.logicalOp = logicalOp;
+    return this;
+  }
+
+   /**
+   * Get logicalOp
+   * @return logicalOp
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getLogicalOp() {
+    return logicalOp;
+  }
+
+  public void setLogicalOp(String logicalOp) {
+    this.logicalOp = logicalOp;
   }
 
   public JobResponse inputResources(List<ResourceResponse> inputResources) {
@@ -179,6 +200,7 @@ public class JobResponse   {
     JobResponse jobResponse = (JobResponse) o;
     return Objects.equals(this.id, jobResponse.id) &&
         Objects.equals(this.uri, jobResponse.uri) &&
+        Objects.equals(this.logicalOp, jobResponse.logicalOp) &&
         Objects.equals(this.inputResources, jobResponse.inputResources) &&
         Objects.equals(this.outputResources, jobResponse.outputResources) &&
         Objects.equals(this.createdAt, jobResponse.createdAt) &&
@@ -187,7 +209,7 @@ public class JobResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri, inputResources, outputResources, createdAt, updatedAt);
+    return Objects.hash(id, uri, logicalOp, inputResources, outputResources, createdAt, updatedAt);
   }
 
   @Override
@@ -197,6 +219,7 @@ public class JobResponse   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    logicalOp: ").append(toIndentedString(logicalOp)).append("\n");
     sb.append("    inputResources: ").append(toIndentedString(inputResources)).append("\n");
     sb.append("    outputResources: ").append(toIndentedString(outputResources)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");

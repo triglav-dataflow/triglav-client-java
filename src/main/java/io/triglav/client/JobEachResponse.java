@@ -34,13 +34,16 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T18:54:22.213+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T19:53:17.612+09:00")
 public class JobEachResponse   {
   @SerializedName("id")
   private Long id = null;
 
   @SerializedName("uri")
   private String uri = null;
+
+  @SerializedName("logical_op")
+  private String logicalOp = null;
 
   @SerializedName("created_at")
   private Integer createdAt = null;
@@ -82,6 +85,24 @@ public class JobEachResponse   {
 
   public void setUri(String uri) {
     this.uri = uri;
+  }
+
+  public JobEachResponse logicalOp(String logicalOp) {
+    this.logicalOp = logicalOp;
+    return this;
+  }
+
+   /**
+   * Get logicalOp
+   * @return logicalOp
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public String getLogicalOp() {
+    return logicalOp;
+  }
+
+  public void setLogicalOp(String logicalOp) {
+    this.logicalOp = logicalOp;
   }
 
   public JobEachResponse createdAt(Integer createdAt) {
@@ -132,13 +153,14 @@ public class JobEachResponse   {
     JobEachResponse jobEachResponse = (JobEachResponse) o;
     return Objects.equals(this.id, jobEachResponse.id) &&
         Objects.equals(this.uri, jobEachResponse.uri) &&
+        Objects.equals(this.logicalOp, jobEachResponse.logicalOp) &&
         Objects.equals(this.createdAt, jobEachResponse.createdAt) &&
         Objects.equals(this.updatedAt, jobEachResponse.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, uri, createdAt, updatedAt);
+    return Objects.hash(id, uri, logicalOp, createdAt, updatedAt);
   }
 
   @Override
@@ -148,6 +170,7 @@ public class JobEachResponse   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    logicalOp: ").append(toIndentedString(logicalOp)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");

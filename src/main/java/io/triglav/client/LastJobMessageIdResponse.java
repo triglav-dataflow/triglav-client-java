@@ -29,54 +29,32 @@ import java.util.Objects;
 import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.joda.time.DateTime;
 
 
 /**
- * TokenResponse
+ * LastJobMessageIdResponse
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:15:30.770+09:00")
-public class TokenResponse   {
-  @SerializedName("access_token")
-  private String accessToken = null;
+public class LastJobMessageIdResponse   {
+  @SerializedName("id")
+  private Integer id = null;
 
-  @SerializedName("expires_at")
-  private DateTime expiresAt = null;
-
-  public TokenResponse accessToken(String accessToken) {
-    this.accessToken = accessToken;
+  public LastJobMessageIdResponse id(Integer id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get accessToken
-   * @return accessToken
+   * last message id
+   * @return id
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public String getAccessToken() {
-    return accessToken;
+  @ApiModelProperty(example = "null", value = "last message id")
+  public Integer getId() {
+    return id;
   }
 
-  public void setAccessToken(String accessToken) {
-    this.accessToken = accessToken;
-  }
-
-  public TokenResponse expiresAt(DateTime expiresAt) {
-    this.expiresAt = expiresAt;
-    return this;
-  }
-
-   /**
-   * Get expiresAt
-   * @return expiresAt
-  **/
-  @ApiModelProperty(example = "null", value = "")
-  public DateTime getExpiresAt() {
-    return expiresAt;
-  }
-
-  public void setExpiresAt(DateTime expiresAt) {
-    this.expiresAt = expiresAt;
+  public void setId(Integer id) {
+    this.id = id;
   }
 
 
@@ -88,23 +66,21 @@ public class TokenResponse   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TokenResponse tokenResponse = (TokenResponse) o;
-    return Objects.equals(this.accessToken, tokenResponse.accessToken) &&
-        Objects.equals(this.expiresAt, tokenResponse.expiresAt);
+    LastJobMessageIdResponse lastJobMessageIdResponse = (LastJobMessageIdResponse) o;
+    return Objects.equals(this.id, lastJobMessageIdResponse.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessToken, expiresAt);
+    return Objects.hash(id);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TokenResponse {\n");
+    sb.append("class LastJobMessageIdResponse {\n");
     
-    sb.append("    accessToken: ").append(toIndentedString(accessToken)).append("\n");
-    sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

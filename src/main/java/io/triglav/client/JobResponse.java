@@ -39,7 +39,7 @@ import org.joda.time.DateTime;
 /**
  * JobResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T16:41:48.778+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:15:30.770+09:00")
 public class JobResponse   {
   @SerializedName("id")
   private Long id = null;

@@ -2,7 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 group = 'io.triglav'
-version = '1.0.0'
+version = '0.1.30'
 
 buildscript {
     repositories {

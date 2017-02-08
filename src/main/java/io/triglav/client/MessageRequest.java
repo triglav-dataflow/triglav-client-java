@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MessageRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T19:53:17.612+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T22:35:11.505+09:00")
 public class MessageRequest   {
   @SerializedName("resource_uri")
   private String resourceUri = null;

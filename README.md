@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>io.triglav</groupId>
     <artifactId>triglav-client-java</artifactId>
-    <version>0.1.29</version>
+    <version>0.1.30</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.triglav:triglav-client-java:0.1.29"
+compile "io.triglav:triglav-client-java:0.1.30"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/triglav-client-java-0.1.29.jar
+* target/triglav-client-java-0.1.30.jar
 * target/lib/*.jar
 
 ## Getting Started

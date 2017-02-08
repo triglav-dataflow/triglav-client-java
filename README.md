@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>io.triglav</groupId>
     <artifactId>triglav-client-java</artifactId>
-    <version>1.0.0</version>
+    <version>0.1.29</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.triglav:triglav-client-java:1.0.0"
+compile "io.triglav:triglav-client-java:0.1.29"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/triglav-client-java-1.0.0.jar
+* target/triglav-client-java-0.1.29.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -73,7 +73,7 @@ public class AuthApiExample {
         AuthApi apiInstance = new AuthApi();
         Credential credential = new Credential(); // Credential | 
         try {
-            AccessTokenStruct result = apiInstance.createToken(credential);
+            TokenResponse result = apiInstance.createToken(credential);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AuthApi#createToken");
@@ -93,20 +93,19 @@ Class | Method | HTTP request | Description
 *AuthApi* | [**createToken**](docs/AuthApi.md#createToken) | **POST** /auth/token | 
 *AuthApi* | [**deleteToken**](docs/AuthApi.md#deleteToken) | **DELETE** /auth/token | 
 *AuthApi* | [**me**](docs/AuthApi.md#me) | **GET** /auth/me | 
-*ClustersApi* | [**createCluster**](docs/ClustersApi.md#createCluster) | **POST** /clusters | 
-*ClustersApi* | [**deleteCluster**](docs/ClustersApi.md#deleteCluster) | **DELETE** /clusters/{id_or_name} | 
-*ClustersApi* | [**getCluster**](docs/ClustersApi.md#getCluster) | **GET** /clusters/{id_or_name} | 
-*ClustersApi* | [**listClusters**](docs/ClustersApi.md#listClusters) | **GET** /clusters | 
-*ClustersApi* | [**updateCluster**](docs/ClustersApi.md#updateCluster) | **PATCH** /clusters/{id_or_name} | 
+*JobMessagesApi* | [**fetchJobMessages**](docs/JobMessagesApi.md#fetchJobMessages) | **GET** /job_messages | 
+*JobMessagesApi* | [**getLastJobMessageId**](docs/JobMessagesApi.md#getLastJobMessageId) | **GET** /job_messages/last_id | 
 *JobsApi* | [**createOrUpdateJob**](docs/JobsApi.md#createOrUpdateJob) | **PATCH** /jobs | 
 *JobsApi* | [**deleteJob**](docs/JobsApi.md#deleteJob) | **DELETE** /jobs/{id_or_uri} | 
 *JobsApi* | [**getJob**](docs/JobsApi.md#getJob) | **GET** /jobs/{id_or_uri} | 
 *JobsApi* | [**listJobs**](docs/JobsApi.md#listJobs) | **GET** /jobs | 
 *MessagesApi* | [**fetchMessages**](docs/MessagesApi.md#fetchMessages) | **GET** /messages | 
-*MessagesApi* | [**sendMessage**](docs/MessagesApi.md#sendMessage) | **POST** /messages | 
+*MessagesApi* | [**getLastMessageId**](docs/MessagesApi.md#getLastMessageId) | **GET** /messages/last_id | 
+*MessagesApi* | [**sendMessages**](docs/MessagesApi.md#sendMessages) | **POST** /messages | 
 *ResourcesApi* | [**createResource**](docs/ResourcesApi.md#createResource) | **POST** /resources | 
 *ResourcesApi* | [**deleteResource**](docs/ResourcesApi.md#deleteResource) | **DELETE** /resources/{id_or_uri} | 
 *ResourcesApi* | [**getResource**](docs/ResourcesApi.md#getResource) | **GET** /resources/{id_or_uri} | 
+*ResourcesApi* | [**listAggregatedResources**](docs/ResourcesApi.md#listAggregatedResources) | **GET** /aggregated_resources | 
 *ResourcesApi* | [**listResources**](docs/ResourcesApi.md#listResources) | **GET** /resources | 
 *ResourcesApi* | [**updateResource**](docs/ResourcesApi.md#updateResource) | **PATCH** /resources/{id_or_uri} | 
 *UsersApi* | [**createUser**](docs/UsersApi.md#createUser) | **POST** /users | 
@@ -118,24 +117,27 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [AccessTokenStruct](docs/AccessTokenStruct.md)
- - [Cluster](docs/Cluster.md)
- - [ClusterEach](docs/ClusterEach.md)
- - [ClusterInput](docs/ClusterInput.md)
+ - [AggregatedResourceEachResponse](docs/AggregatedResourceEachResponse.md)
+ - [BulkinsertResponse](docs/BulkinsertResponse.md)
  - [Credential](docs/Credential.md)
  - [ErrorModel](docs/ErrorModel.md)
- - [Job](docs/Job.md)
- - [JobEach](docs/JobEach.md)
- - [JobInput](docs/JobInput.md)
- - [Message](docs/Message.md)
- - [MessageEach](docs/MessageEach.md)
- - [MessageInput](docs/MessageInput.md)
- - [Resource](docs/Resource.md)
- - [ResourceEach](docs/ResourceEach.md)
- - [ResourceInput](docs/ResourceInput.md)
- - [User](docs/User.md)
- - [UserEach](docs/UserEach.md)
- - [UserInput](docs/UserInput.md)
+ - [JobEachResponse](docs/JobEachResponse.md)
+ - [JobMessageEachResponse](docs/JobMessageEachResponse.md)
+ - [JobRequest](docs/JobRequest.md)
+ - [JobResponse](docs/JobResponse.md)
+ - [LastJobMessageIdResponse](docs/LastJobMessageIdResponse.md)
+ - [LastMessageIdResponse](docs/LastMessageIdResponse.md)
+ - [MessageEachResponse](docs/MessageEachResponse.md)
+ - [MessageFetchRequest](docs/MessageFetchRequest.md)
+ - [MessageRequest](docs/MessageRequest.md)
+ - [MessageResponse](docs/MessageResponse.md)
+ - [ResourceEachResponse](docs/ResourceEachResponse.md)
+ - [ResourceRequest](docs/ResourceRequest.md)
+ - [ResourceResponse](docs/ResourceResponse.md)
+ - [TokenResponse](docs/TokenResponse.md)
+ - [UserEachResponse](docs/UserEachResponse.md)
+ - [UserRequest](docs/UserRequest.md)
+ - [UserResponse](docs/UserResponse.md)
 
 
 ## Documentation for Authorization

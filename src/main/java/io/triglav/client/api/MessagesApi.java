@@ -40,7 +40,6 @@ import java.io.IOException;
 
 import io.triglav.client.ErrorModel;
 import io.triglav.client.MessageEachResponse;
-import io.triglav.client.MessageFetchRequest;
 import io.triglav.client.LastMessageIdResponse;
 import io.triglav.client.MessageRequest;
 import io.triglav.client.BulkinsertResponse;
@@ -71,19 +70,25 @@ public class MessagesApi {
     }
 
     /* Build call for fetchMessages */
-    private com.squareup.okhttp.Call fetchMessagesCall(MessageFetchRequest fetchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = fetchRequest;
+    private com.squareup.okhttp.Call fetchMessagesCall(Integer offset, Integer limit, String resourceUris, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
         
-        // verify the required parameter 'fetchRequest' is set
-        if (fetchRequest == null) {
-            throw new ApiException("Missing the required parameter 'fetchRequest' when calling fetchMessages(Async)");
+        // verify the required parameter 'offset' is set
+        if (offset == null) {
+            throw new ApiException("Missing the required parameter 'offset' when calling fetchMessages(Async)");
         }
         
 
         // create path and map variables
-        String localVarPath = "/fetch_messages".replaceAll("\\{format\\}","json");
+        String localVarPath = "/messages".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+        if (resourceUris != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_uris", resourceUris));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -114,43 +119,49 @@ public class MessagesApi {
         }
 
         String[] localVarAuthNames = new String[] { "api_key" };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     /**
      * 
-     * Fetch messages with HTTP POST method
-     * @param fetchRequest Fetch Request (required)
+     * Fetch messages
+     * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
+     * @param limit Number of limits (optional)
+     * @param resourceUris URIs of Resource (optional)
      * @return List&lt;MessageEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MessageEachResponse> fetchMessages(MessageFetchRequest fetchRequest) throws ApiException {
-        ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(fetchRequest);
+    public List<MessageEachResponse> fetchMessages(Integer offset, Integer limit, String resourceUris) throws ApiException {
+        ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(offset, limit, resourceUris);
         return resp.getData();
     }
 
     /**
      * 
-     * Fetch messages with HTTP POST method
-     * @param fetchRequest Fetch Request (required)
+     * Fetch messages
+     * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
+     * @param limit Number of limits (optional)
+     * @param resourceUris URIs of Resource (optional)
      * @return ApiResponse&lt;List&lt;MessageEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(MessageFetchRequest fetchRequest) throws ApiException {
-        com.squareup.okhttp.Call call = fetchMessagesCall(fetchRequest, null, null);
+    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(Integer offset, Integer limit, String resourceUris) throws ApiException {
+        com.squareup.okhttp.Call call = fetchMessagesCall(offset, limit, resourceUris, null, null);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
-     * Fetch messages with HTTP POST method
-     * @param fetchRequest Fetch Request (required)
+     * Fetch messages
+     * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
+     * @param limit Number of limits (optional)
+     * @param resourceUris URIs of Resource (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call fetchMessagesAsync(MessageFetchRequest fetchRequest, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchMessagesAsync(Integer offset, Integer limit, String resourceUris, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -171,7 +182,7 @@ public class MessagesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = fetchMessagesCall(fetchRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = fetchMessagesCall(offset, limit, resourceUris, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -271,124 +282,6 @@ public class MessagesApi {
 
         com.squareup.okhttp.Call call = getLastMessageIdCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<LastMessageIdResponse>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for listMessages */
-    private com.squareup.okhttp.Call listMessagesCall(Integer offset, Integer limit, String resourceUris, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // verify the required parameter 'offset' is set
-        if (offset == null) {
-            throw new ApiException("Missing the required parameter 'offset' when calling listMessages(Async)");
-        }
-        
-
-        // create path and map variables
-        String localVarPath = "/messages".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
-        if (resourceUris != null)
-        localVarQueryParams.addAll(apiClient.parameterToPairs("", "resource_uris", resourceUris));
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] { "api_key" };
-        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-
-    /**
-     * 
-     * List messages with HTTP GET method
-     * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
-     * @param limit Number of limits (optional)
-     * @param resourceUris URIs of Resource (optional)
-     * @return List&lt;MessageEachResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public List<MessageEachResponse> listMessages(Integer offset, Integer limit, String resourceUris) throws ApiException {
-        ApiResponse<List<MessageEachResponse>> resp = listMessagesWithHttpInfo(offset, limit, resourceUris);
-        return resp.getData();
-    }
-
-    /**
-     * 
-     * List messages with HTTP GET method
-     * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
-     * @param limit Number of limits (optional)
-     * @param resourceUris URIs of Resource (optional)
-     * @return ApiResponse&lt;List&lt;MessageEachResponse&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<List<MessageEachResponse>> listMessagesWithHttpInfo(Integer offset, Integer limit, String resourceUris) throws ApiException {
-        com.squareup.okhttp.Call call = listMessagesCall(offset, limit, resourceUris, null, null);
-        Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     *  (asynchronously)
-     * List messages with HTTP GET method
-     * @param offset Offset (Greater than or equal to) ID for Messages to list from (required)
-     * @param limit Number of limits (optional)
-     * @param resourceUris URIs of Resource (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call listMessagesAsync(Integer offset, Integer limit, String resourceUris, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = listMessagesCall(offset, limit, resourceUris, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

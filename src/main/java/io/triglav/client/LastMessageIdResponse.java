@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LastMessageIdResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:15:30.770+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T18:54:22.213+09:00")
 public class LastMessageIdResponse   {
   @SerializedName("id")
   private Integer id = null;

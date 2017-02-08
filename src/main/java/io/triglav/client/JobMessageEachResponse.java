@@ -34,8 +34,11 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobMessageEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T17:15:30.770+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T18:54:22.213+09:00")
 public class JobMessageEachResponse   {
+  @SerializedName("id")
+  private Long id = null;
+
   @SerializedName("job_id")
   private Integer jobId = null;
 
@@ -44,6 +47,24 @@ public class JobMessageEachResponse   {
 
   @SerializedName("timezone")
   private String timezone = null;
+
+  public JobMessageEachResponse id(Long id) {
+    this.id = id;
+    return this;
+  }
+
+   /**
+   * Get id
+   * @return id
+  **/
+  @ApiModelProperty(example = "null", value = "")
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 
   public JobMessageEachResponse jobId(Integer jobId) {
     this.jobId = jobId;
@@ -109,14 +130,15 @@ public class JobMessageEachResponse   {
       return false;
     }
     JobMessageEachResponse jobMessageEachResponse = (JobMessageEachResponse) o;
-    return Objects.equals(this.jobId, jobMessageEachResponse.jobId) &&
+    return Objects.equals(this.id, jobMessageEachResponse.id) &&
+        Objects.equals(this.jobId, jobMessageEachResponse.jobId) &&
         Objects.equals(this.time, jobMessageEachResponse.time) &&
         Objects.equals(this.timezone, jobMessageEachResponse.timezone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(jobId, time, timezone);
+    return Objects.hash(id, jobId, time, timezone);
   }
 
   @Override
@@ -124,6 +146,7 @@ public class JobMessageEachResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class JobMessageEachResponse {\n");
     
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    jobId: ").append(toIndentedString(jobId)).append("\n");
     sb.append("    time: ").append(toIndentedString(time)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");

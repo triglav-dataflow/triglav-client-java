@@ -35,8 +35,8 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 MessagesApi apiInstance = new MessagesApi();
-Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to list from
-Integer limit = 56; // Integer | Number of limits
+Long offset = 789L; // Long | Offset (Greater than or equal to) ID for Messages to list from
+Long limit = 789L; // Long | Number of limits
 String resourceUris = "resourceUris_example"; // String | URIs of Resource
 try {
     List<MessageEachResponse> result = apiInstance.fetchMessages(offset, limit, resourceUris);
@@ -51,8 +51,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to list from |
- **limit** | **Integer**| Number of limits | [optional]
+ **offset** | **Long**| Offset (Greater than or equal to) ID for Messages to list from |
+ **limit** | **Long**| Number of limits | [optional]
  **resourceUris** | **String**| URIs of Resource | [optional]
 
 ### Return type

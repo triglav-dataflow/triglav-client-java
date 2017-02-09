@@ -68,7 +68,7 @@ public class JobMessagesApi {
     }
 
     /* Build call for fetchJobMessages */
-    private com.squareup.okhttp.Call fetchJobMessagesCall(Integer offset, Integer jobId, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call fetchJobMessagesCall(Long offset, Long jobId, Long limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'offset' is set
@@ -134,7 +134,7 @@ public class JobMessagesApi {
      * @return List&lt;JobMessageEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<JobMessageEachResponse> fetchJobMessages(Integer offset, Integer jobId, Integer limit) throws ApiException {
+    public List<JobMessageEachResponse> fetchJobMessages(Long offset, Long jobId, Long limit) throws ApiException {
         ApiResponse<List<JobMessageEachResponse>> resp = fetchJobMessagesWithHttpInfo(offset, jobId, limit);
         return resp.getData();
     }
@@ -148,7 +148,7 @@ public class JobMessagesApi {
      * @return ApiResponse&lt;List&lt;JobMessageEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<JobMessageEachResponse>> fetchJobMessagesWithHttpInfo(Integer offset, Integer jobId, Integer limit) throws ApiException {
+    public ApiResponse<List<JobMessageEachResponse>> fetchJobMessagesWithHttpInfo(Long offset, Long jobId, Long limit) throws ApiException {
         com.squareup.okhttp.Call call = fetchJobMessagesCall(offset, jobId, limit, null, null);
         Type localVarReturnType = new TypeToken<List<JobMessageEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -164,7 +164,7 @@ public class JobMessagesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call fetchJobMessagesAsync(Integer offset, Integer jobId, Integer limit, final ApiCallback<List<JobMessageEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchJobMessagesAsync(Long offset, Long jobId, Long limit, final ApiCallback<List<JobMessageEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

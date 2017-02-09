@@ -70,7 +70,7 @@ public class MessagesApi {
     }
 
     /* Build call for fetchMessages */
-    private com.squareup.okhttp.Call fetchMessagesCall(Integer offset, Integer limit, String resourceUris, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call fetchMessagesCall(Long offset, Long limit, String resourceUris, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // verify the required parameter 'offset' is set
@@ -131,7 +131,7 @@ public class MessagesApi {
      * @return List&lt;MessageEachResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<MessageEachResponse> fetchMessages(Integer offset, Integer limit, String resourceUris) throws ApiException {
+    public List<MessageEachResponse> fetchMessages(Long offset, Long limit, String resourceUris) throws ApiException {
         ApiResponse<List<MessageEachResponse>> resp = fetchMessagesWithHttpInfo(offset, limit, resourceUris);
         return resp.getData();
     }
@@ -145,7 +145,7 @@ public class MessagesApi {
      * @return ApiResponse&lt;List&lt;MessageEachResponse&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(Integer offset, Integer limit, String resourceUris) throws ApiException {
+    public ApiResponse<List<MessageEachResponse>> fetchMessagesWithHttpInfo(Long offset, Long limit, String resourceUris) throws ApiException {
         com.squareup.okhttp.Call call = fetchMessagesCall(offset, limit, resourceUris, null, null);
         Type localVarReturnType = new TypeToken<List<MessageEachResponse>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
@@ -161,7 +161,7 @@ public class MessagesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call fetchMessagesAsync(Integer offset, Integer limit, String resourceUris, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
+    public com.squareup.okhttp.Call fetchMessagesAsync(Long offset, Long limit, String resourceUris, final ApiCallback<List<MessageEachResponse>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

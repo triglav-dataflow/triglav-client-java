@@ -34,9 +34,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 JobMessagesApi apiInstance = new JobMessagesApi();
-Integer offset = 56; // Integer | Offset (Greater than or equal to) ID for Messages to fetch from
-Integer jobId = 56; // Integer | Job ID
-Integer limit = 56; // Integer | Number of limits
+Long offset = 789L; // Long | Offset (Greater than or equal to) ID for Messages to fetch from
+Long jobId = 789L; // Long | Job ID
+Long limit = 789L; // Long | Number of limits
 try {
     List<JobMessageEachResponse> result = apiInstance.fetchJobMessages(offset, jobId, limit);
     System.out.println(result);
@@ -50,9 +50,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| Offset (Greater than or equal to) ID for Messages to fetch from |
- **jobId** | **Integer**| Job ID |
- **limit** | **Integer**| Number of limits | [optional]
+ **offset** | **Long**| Offset (Greater than or equal to) ID for Messages to fetch from |
+ **jobId** | **Long**| Job ID |
+ **limit** | **Long**| Number of limits | [optional]
 
 ### Return type
 

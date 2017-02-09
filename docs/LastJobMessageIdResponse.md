@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** | last message id |  [optional]
+**id** | **Long** | last message id |  [optional]
 
 
 

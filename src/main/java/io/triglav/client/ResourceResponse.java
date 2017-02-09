@@ -36,7 +36,7 @@ import org.joda.time.DateTime;
 /**
  * ResourceResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T22:35:11.505+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-09T13:14:09.550+09:00")
 public class ResourceResponse   {
   @SerializedName("id")
   private Long id = null;
@@ -54,7 +54,7 @@ public class ResourceResponse   {
   private String timezone = null;
 
   @SerializedName("span_in_days")
-  private Integer spanInDays = null;
+  private Long spanInDays = null;
 
   @SerializedName("consumable")
   private Boolean consumable = null;
@@ -158,7 +158,7 @@ public class ResourceResponse   {
     this.timezone = timezone;
   }
 
-  public ResourceResponse spanInDays(Integer spanInDays) {
+  public ResourceResponse spanInDays(Long spanInDays) {
     this.spanInDays = spanInDays;
     return this;
   }
@@ -168,11 +168,11 @@ public class ResourceResponse   {
    * @return spanInDays
   **/
   @ApiModelProperty(example = "null", value = "Time span of resource to monitor, default is 32")
-  public Integer getSpanInDays() {
+  public Long getSpanInDays() {
     return spanInDays;
   }
 
-  public void setSpanInDays(Integer spanInDays) {
+  public void setSpanInDays(Long spanInDays) {
     this.spanInDays = spanInDays;
   }
 

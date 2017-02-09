@@ -34,12 +34,12 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * LastMessageIdResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T22:35:11.505+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-09T13:14:09.550+09:00")
 public class LastMessageIdResponse   {
   @SerializedName("id")
-  private Integer id = null;
+  private Long id = null;
 
-  public LastMessageIdResponse id(Integer id) {
+  public LastMessageIdResponse id(Long id) {
     this.id = id;
     return this;
   }
@@ -49,11 +49,11 @@ public class LastMessageIdResponse   {
    * @return id
   **/
   @ApiModelProperty(example = "null", value = "last message id")
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 

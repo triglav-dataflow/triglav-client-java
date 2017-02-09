@@ -34,13 +34,13 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * JobMessageEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T22:35:11.505+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-09T13:14:09.550+09:00")
 public class JobMessageEachResponse   {
   @SerializedName("id")
   private Long id = null;
 
   @SerializedName("job_id")
-  private Integer jobId = null;
+  private Long jobId = null;
 
   @SerializedName("time")
   private Integer time = null;
@@ -66,7 +66,7 @@ public class JobMessageEachResponse   {
     this.id = id;
   }
 
-  public JobMessageEachResponse jobId(Integer jobId) {
+  public JobMessageEachResponse jobId(Long jobId) {
     this.jobId = jobId;
     return this;
   }
@@ -76,11 +76,11 @@ public class JobMessageEachResponse   {
    * @return jobId
   **/
   @ApiModelProperty(example = "null", value = "Job ID")
-  public Integer getJobId() {
+  public Long getJobId() {
     return jobId;
   }
 
-  public void setJobId(Integer jobId) {
+  public void setJobId(Long jobId) {
     this.jobId = jobId;
   }
 

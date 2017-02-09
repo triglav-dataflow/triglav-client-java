@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * AggregatedResourceEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-08T22:35:11.505+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-09T13:14:09.550+09:00")
 public class AggregatedResourceEachResponse   {
   @SerializedName("uri")
   private String uri = null;
@@ -46,7 +46,7 @@ public class AggregatedResourceEachResponse   {
   private String timezone = null;
 
   @SerializedName("span_in_days")
-  private Integer spanInDays = null;
+  private Long spanInDays = null;
 
   public AggregatedResourceEachResponse uri(String uri) {
     this.uri = uri;
@@ -102,7 +102,7 @@ public class AggregatedResourceEachResponse   {
     this.timezone = timezone;
   }
 
-  public AggregatedResourceEachResponse spanInDays(Integer spanInDays) {
+  public AggregatedResourceEachResponse spanInDays(Long spanInDays) {
     this.spanInDays = spanInDays;
     return this;
   }
@@ -112,11 +112,11 @@ public class AggregatedResourceEachResponse   {
    * @return spanInDays
   **/
   @ApiModelProperty(example = "null", value = "span in days")
-  public Integer getSpanInDays() {
+  public Long getSpanInDays() {
     return spanInDays;
   }
 
-  public void setSpanInDays(Integer spanInDays) {
+  public void setSpanInDays(Long spanInDays) {
     this.spanInDays = spanInDays;
   }
 

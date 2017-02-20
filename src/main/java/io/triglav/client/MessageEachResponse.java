@@ -36,8 +36,11 @@ import org.joda.time.DateTime;
 /**
  * MessageEachResponse
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-09T13:14:09.550+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-20T12:17:01.839+09:00")
 public class MessageEachResponse   {
+  @SerializedName("uuid")
+  private String uuid = null;
+
   @SerializedName("resource_uri")
   private String resourceUri = null;
 
@@ -61,6 +64,24 @@ public class MessageEachResponse   {
 
   @SerializedName("updated_at")
   private DateTime updatedAt = null;
+
+  public MessageEachResponse uuid(String uuid) {
+    this.uuid = uuid;
+    return this;
+  }
+
+   /**
+   * Universally Unique ID to be used to avoid duplicated messages
+   * @return uuid
+  **/
+  @ApiModelProperty(example = "null", value = "Universally Unique ID to be used to avoid duplicated messages")
+  public String getUuid() {
+    return uuid;
+  }
+
+  public void setUuid(String uuid) {
+    this.uuid = uuid;
+  }
 
   public MessageEachResponse resourceUri(String resourceUri) {
     this.resourceUri = resourceUri;
@@ -216,7 +237,8 @@ public class MessageEachResponse   {
       return false;
     }
     MessageEachResponse messageEachResponse = (MessageEachResponse) o;
-    return Objects.equals(this.resourceUri, messageEachResponse.resourceUri) &&
+    return Objects.equals(this.uuid, messageEachResponse.uuid) &&
+        Objects.equals(this.resourceUri, messageEachResponse.resourceUri) &&
         Objects.equals(this.resourceUnit, messageEachResponse.resourceUnit) &&
         Objects.equals(this.resourceTime, messageEachResponse.resourceTime) &&
         Objects.equals(this.resourceTimezone, messageEachResponse.resourceTimezone) &&
@@ -228,7 +250,7 @@ public class MessageEachResponse   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(resourceUri, resourceUnit, resourceTime, resourceTimezone, payload, id, createdAt, updatedAt);
+    return Objects.hash(uuid, resourceUri, resourceUnit, resourceTime, resourceTimezone, payload, id, createdAt, updatedAt);
   }
 
   @Override
@@ -236,6 +258,7 @@ public class MessageEachResponse   {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageEachResponse {\n");
     
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    resourceUri: ").append(toIndentedString(resourceUri)).append("\n");
     sb.append("    resourceUnit: ").append(toIndentedString(resourceUnit)).append("\n");
     sb.append("    resourceTime: ").append(toIndentedString(resourceTime)).append("\n");

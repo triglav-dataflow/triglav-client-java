@@ -34,8 +34,11 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MessageRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-09T13:14:09.550+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-20T12:17:01.839+09:00")
 public class MessageRequest   {
+  @SerializedName("uuid")
+  private String uuid = null;
+
   @SerializedName("resource_uri")
   private String resourceUri = null;
 
@@ -50,6 +53,24 @@ public class MessageRequest   {
 
   @SerializedName("payload")
   private String payload = null;
+
+  public MessageRequest uuid(String uuid) {
+    this.uuid = uuid;
+    return this;
+  }
+
+   /**
+   * Universally Unique ID to be used to avoid duplicated messages
+   * @return uuid
+  **/
+  @ApiModelProperty(example = "null", value = "Universally Unique ID to be used to avoid duplicated messages")
+  public String getUuid() {
+    return uuid;
+  }
+
+  public void setUuid(String uuid) {
+    this.uuid = uuid;
+  }
 
   public MessageRequest resourceUri(String resourceUri) {
     this.resourceUri = resourceUri;
@@ -151,7 +172,8 @@ public class MessageRequest   {
       return false;
     }
     MessageRequest messageRequest = (MessageRequest) o;
-    return Objects.equals(this.resourceUri, messageRequest.resourceUri) &&
+    return Objects.equals(this.uuid, messageRequest.uuid) &&
+        Objects.equals(this.resourceUri, messageRequest.resourceUri) &&
         Objects.equals(this.resourceUnit, messageRequest.resourceUnit) &&
         Objects.equals(this.resourceTime, messageRequest.resourceTime) &&
         Objects.equals(this.resourceTimezone, messageRequest.resourceTimezone) &&
@@ -160,7 +182,7 @@ public class MessageRequest   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(resourceUri, resourceUnit, resourceTime, resourceTimezone, payload);
+    return Objects.hash(uuid, resourceUri, resourceUnit, resourceTime, resourceTimezone, payload);
   }
 
   @Override
@@ -168,6 +190,7 @@ public class MessageRequest   {
     StringBuilder sb = new StringBuilder();
     sb.append("class MessageRequest {\n");
     
+    sb.append("    uuid: ").append(toIndentedString(uuid)).append("\n");
     sb.append("    resourceUri: ").append(toIndentedString(resourceUri)).append("\n");
     sb.append("    resourceUnit: ").append(toIndentedString(resourceUnit)).append("\n");
     sb.append("    resourceTime: ").append(toIndentedString(resourceTime)).append("\n");

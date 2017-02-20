@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**uuid** | **String** | Universally Unique ID to be used to avoid duplicated messages |  [optional]
 **resourceUri** | **String** | URI of Resource | 
 **resourceUnit** | **String** | Time unit of resource to monitor such as singular, daily, or hourly | 
 **resourceTime** | **Integer** | Time of Resource in unix timestamp such as 1476025200 (2016-10-10 in +09:00) | 

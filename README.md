@@ -26,9 +26,9 @@ Add this dependency to your project's POM:
 
 ```xml
 <dependency>
-    <groupId>io.triglav</groupId>
+    <groupId>io.github.triglav_dataflow</groupId>
     <artifactId>triglav-client-java</artifactId>
-    <version>0.1.32</version>
+    <version>0.1.33</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.triglav:triglav-client-java:0.1.32"
+compile "io.github.triglav_dataflow:triglav-client-java:0.1.33"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/triglav-client-java-0.1.32.jar
+* target/triglav-client-java-0.1.33.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -58,10 +58,10 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import io.triglav.client.*;
-import io.triglav.client.auth.*;
-import io.triglav.client.model.*;
-import io.triglav.client.api.AuthApi;
+import io.github.triglav_dataflow.client.*;
+import io.github.triglav_dataflow.client.auth.*;
+import io.github.triglav_dataflow.client.model.*;
+import io.github.triglav_dataflow.client.api.AuthApi;
 
 import java.io.File;
 import java.util.*;

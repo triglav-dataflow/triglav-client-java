@@ -20,8 +20,8 @@ Creates a new token
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiException;
-//import io.triglav.client.api.AuthApi;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.api.AuthApi;
 
 
 AuthApi apiInstance = new AuthApi();
@@ -65,11 +65,11 @@ Deletes (Expires) a token of header
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.AuthApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.AuthApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -115,11 +115,11 @@ Returns a user property of the access_token
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.AuthApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.AuthApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

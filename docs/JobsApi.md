@@ -21,11 +21,11 @@ Creates or Updates a single job
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.JobsApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.JobsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -76,11 +76,11 @@ Deletes single job
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.JobsApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.JobsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -130,11 +130,11 @@ Returns a single job
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.JobsApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.JobsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -185,11 +185,11 @@ Returns all jobs
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.JobsApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.JobsApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

@@ -1,8 +1,8 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "io.triglav",
+    organization := "io.github.triglav_dataflow",
     name := "triglav-client-java",
-    version := "0.1.32",
+    version := "0.1.33",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

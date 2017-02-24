@@ -23,11 +23,11 @@ Creates a new resource
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.ResourcesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.ResourcesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -78,11 +78,11 @@ Deletes single resource
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.ResourcesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.ResourcesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -132,11 +132,11 @@ Returns a single resource
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.ResourcesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.ResourcesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -187,11 +187,11 @@ Returns aggregated resources to be monitored
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.ResourcesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.ResourcesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -242,11 +242,11 @@ Returns all resources
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.ResourcesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.ResourcesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -297,11 +297,11 @@ Updates a single resource
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.ResourcesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.ResourcesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

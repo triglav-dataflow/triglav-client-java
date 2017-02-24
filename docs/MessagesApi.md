@@ -20,11 +20,11 @@ Fetch messages
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.MessagesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.MessagesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -79,11 +79,11 @@ Get the current last message id which would be used as a first offset to fetch m
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.MessagesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.MessagesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -130,11 +130,11 @@ Enqueues new messages
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.MessagesApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.MessagesApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

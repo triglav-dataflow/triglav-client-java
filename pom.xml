@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.triglav</groupId>
+  <groupId>io.github.triglav_dataflow</groupId>
   <artifactId>triglav-client-java</artifactId>
   <packaging>jar</packaging>
   <name>triglav-client-java</name>
-  <version>0.1.32</version>
+  <version>0.1.33</version>
   <scm>
     <connection>scm:git:git@github.com:swagger-api/swagger-mustache.git</connection>
     <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>

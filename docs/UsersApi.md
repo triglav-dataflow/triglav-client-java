@@ -22,11 +22,11 @@ Creates a new user in the store
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.UsersApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -77,11 +77,11 @@ Deletes single user
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.UsersApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -131,11 +131,11 @@ Returns a single user
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.UsersApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -186,11 +186,11 @@ Returns all users from the system that the user has access to
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.UsersApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
@@ -237,11 +237,11 @@ Updates a single user
 ### Example
 ```java
 // Import classes:
-//import io.triglav.client.ApiClient;
-//import io.triglav.client.ApiException;
-//import io.triglav.client.Configuration;
-//import io.triglav.client.auth.*;
-//import io.triglav.client.api.UsersApi;
+//import io.github.triglav_dataflow.client.ApiClient;
+//import io.github.triglav_dataflow.client.ApiException;
+//import io.github.triglav_dataflow.client.Configuration;
+//import io.github.triglav_dataflow.client.auth.*;
+//import io.github.triglav_dataflow.client.api.UsersApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 

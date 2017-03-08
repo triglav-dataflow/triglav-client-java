@@ -37,7 +37,7 @@ import java.util.List;
 /**
  * JobRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-02-24T13:46:21.776+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-08T15:04:46.882+09:00")
 public class JobRequest   {
   @SerializedName("id")
   private Long id = null;

@@ -2,7 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 group = 'io.github.triglav_dataflow'
-version = '0.1.33'
+version = '1.0.0.pre1'
 
 buildscript {
     repositories {

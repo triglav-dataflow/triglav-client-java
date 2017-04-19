@@ -34,7 +34,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MessageRequest
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-03-08T15:04:46.882+09:00")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-19T18:46:55.056+09:00")
 public class MessageRequest   {
   @SerializedName("uuid")
   private String uuid = null;
